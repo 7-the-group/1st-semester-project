@@ -1,1 +1,1 @@
-# Group_7_semester_project
+# Group 7 semester project
