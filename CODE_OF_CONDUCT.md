@@ -58,9 +58,3 @@ Are there any other policies we want to set before getting started?
 
 Agreement signed:
 Printed name:		Signature and Date:
-
-Expertroles:
-Programmer/ Embedded expert (Milan)
-Designer (Kati)
-Practical electronics/Jack of all trades (Roko)
-Manager/schedule, intrapersonal stuff (Jakub) 
