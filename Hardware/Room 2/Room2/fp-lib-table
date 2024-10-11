@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Arduino nano every")(type "KiCad")(uri "C:/Users/Aiwendil/Desktop/SDU/1st-semester-project/Hardware/footprints")(options "")(descr ""))
+)
