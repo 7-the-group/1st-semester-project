@@ -20,3 +20,6 @@ For LDR and potentiometers we need analog pins, those are ones with 'A' prefix.
 |Button room 3|-|D4|
 |Green led room 3|-|~D5|
 |Blue led room 3|-|~D6|
+|Button 1 room 2|-|D0 (TX1)|
+|Button 2 room 2|-|D1 (RX1)|
+|RGB LED room 2|-|D2|
