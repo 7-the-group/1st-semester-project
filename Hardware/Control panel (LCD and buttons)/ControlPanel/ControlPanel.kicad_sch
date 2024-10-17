@@ -374,23 +374,25 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "RV"
-				(at -4.445 0 90)
+			(property "Reference" "RV1"
+				(at -2.54 1.2701 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify right)
 				)
 			)
 			(property "Value" "R_Potentiometer"
-				(at -2.54 0 90)
+				(at -2.54 -1.2699 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify right)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Battery:BatteryHolder_Keystone_1058_1x2032"
 				(at 0 0 0)
 				(effects
 					(font
@@ -533,22 +535,22 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "A"
-				(at -10.16 23.495 0)
+			(property "Reference" "A?"
+				(at 2.1941 -25.4 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left bottom)
+					(justify left)
 				)
 			)
 			(property "Value" "Arduino_Nano_Every"
-				(at 5.08 -24.13 0)
+				(at 2.1941 -27.94 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
+					(justify left)
 				)
 			)
 			(property "Footprint" "Module:Arduino_Nano"
@@ -614,7 +616,7 @@
 				(pin bidirectional line
 					(at -12.7 20.32 0)
 					(length 2.54)
-					(name "TX1"
+					(name "D0"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -704,7 +706,7 @@
 				(pin bidirectional line
 					(at -12.7 -12.7 0)
 					(length 2.54)
-					(name "MOSI"
+					(name "D11"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -722,7 +724,7 @@
 				(pin bidirectional line
 					(at -12.7 -15.24 0)
 					(length 2.54)
-					(name "MISO"
+					(name "D12"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -740,7 +742,7 @@
 				(pin bidirectional line
 					(at -12.7 -17.78 0)
 					(length 2.54)
-					(name "SCK"
+					(name "D13"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -812,7 +814,7 @@
 				(pin bidirectional line
 					(at -12.7 17.78 0)
 					(length 2.54)
-					(name "RX1"
+					(name "D1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1304,7 +1306,7 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "SW?"
+			(property "Reference" "UP"
 				(at 0 7.62 0)
 				(effects
 					(font
@@ -1441,6 +1443,150 @@
 				)
 			)
 		)
+		(symbol "SW_Push_3"
+			(pin_numbers hide)
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "DOWN"
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SW_Push"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "LED_SMD:LED_0201_0603Metric"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Push button switch, generic, two pins"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "switch normally-open pushbutton push-button"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_Push_3_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy -2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Switch:SW_Push"
 			(pin_numbers hide)
 			(pin_names
@@ -1448,24 +1594,23 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "SW"
-				(at 1.27 2.54 0)
+			(property "Reference" "BACK"
+				(at 0 7.62 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Value" "SW_Push"
-				(at 0 -1.524 0)
+				(at 0 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "LED_SMD:LED_0201_0603Metric"
 				(at 0 5.08 0)
 				(effects
 					(font
@@ -1839,13 +1984,13 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 154.94) (xy 40.64 154.94)
+			(xy 45.72 132.08) (xy 46.99 132.08)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "18a482a6-6aa6-4caf-8053-daca9d0eda34")
+		(uuid "20c71086-4774-4101-a0a6-419028492673")
 	)
 	(wire
 		(pts
@@ -1909,6 +2054,16 @@
 	)
 	(wire
 		(pts
+			(xy 44.45 147.32) (xy 44.45 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40a7079a-8c12-4c8c-9207-fce164b16cf9")
+	)
+	(wire
+		(pts
 			(xy 41.91 40.64) (xy 52.07 40.64)
 		)
 		(stroke
@@ -1939,16 +2094,6 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 154.94) (xy 40.64 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4d353bbc-2821-4645-bcc7-e194a3c2ca65")
-	)
-	(wire
-		(pts
 			(xy 83.82 40.64) (xy 83.82 142.24)
 		)
 		(stroke
@@ -1956,6 +2101,16 @@
 			(type default)
 		)
 		(uuid "5781f97b-1bed-4e9f-89ac-0937c26d4332")
+	)
+	(wire
+		(pts
+			(xy 44.45 129.54) (xy 46.99 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "585e4c0f-55e6-4907-9f4e-f32dcd710459")
 	)
 	(wire
 		(pts
@@ -2019,6 +2174,16 @@
 	)
 	(wire
 		(pts
+			(xy 43.18 149.86) (xy 43.18 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73ca45e3-1053-4374-93dc-d16d434319e0")
+	)
+	(wire
+		(pts
 			(xy 168.91 38.1) (xy 168.91 24.13)
 		)
 		(stroke
@@ -2059,6 +2224,16 @@
 	)
 	(wire
 		(pts
+			(xy 158.75 154.94) (xy 45.72 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ebe9d67-aa2b-4b49-9fc0-2322b3596e94")
+	)
+	(wire
+		(pts
 			(xy 152.4 34.29) (xy 152.4 24.13)
 		)
 		(stroke
@@ -2089,6 +2264,16 @@
 	)
 	(wire
 		(pts
+			(xy 43.18 116.84) (xy 46.99 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8becb7b3-34a1-4a9c-b697-535c05039d76")
+	)
+	(wire
+		(pts
 			(xy 152.4 24.13) (xy 135.89 24.13)
 		)
 		(stroke
@@ -2096,16 +2281,6 @@
 			(type default)
 		)
 		(uuid "91cbeb2c-327d-4242-a638-ce8c974dd2ce")
-	)
-	(wire
-		(pts
-			(xy 44.45 147.32) (xy 44.45 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "96036d77-d34a-4fa7-897c-146a88693815")
 	)
 	(wire
 		(pts
@@ -2146,16 +2321,6 @@
 			(type default)
 		)
 		(uuid "aa704e5b-89db-40c7-82fa-96c661e31d5e")
-	)
-	(wire
-		(pts
-			(xy 44.45 124.46) (xy 46.99 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ad7bda17-9280-4da3-827b-3f7f7bac8069")
 	)
 	(wire
 		(pts
@@ -2209,13 +2374,13 @@
 	)
 	(wire
 		(pts
-			(xy 40.64 116.84) (xy 46.99 116.84)
+			(xy 45.72 154.94) (xy 45.72 132.08)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c98fbe02-132b-41a2-ba3e-7fc28f7ed6eb")
+		(uuid "d02f984d-d18e-4e07-825e-ef25277656ad")
 	)
 	(wire
 		(pts
@@ -2259,16 +2424,6 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 149.86) (xy 43.18 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e0a92d9d-cb56-4410-ac91-e62a0f3fda28")
-	)
-	(wire
-		(pts
 			(xy 139.7 149.86) (xy 43.18 149.86)
 		)
 		(stroke
@@ -2286,16 +2441,6 @@
 			(type default)
 		)
 		(uuid "e90390fc-37f3-4c88-80ec-4e57806f44e1")
-	)
-	(wire
-		(pts
-			(xy 43.18 121.92) (xy 46.99 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e9fdb3bd-caf4-4f8d-a57f-08f4970faffd")
 	)
 	(wire
 		(pts
@@ -2348,7 +2493,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0eb9a840-7b33-43ca-ab9e-1d16567a80c2")
-		(property "Reference" "SW?"
+		(property "Reference" "UP"
 			(at 147.32 26.67 0)
 			(effects
 				(font
@@ -2400,7 +2545,7 @@
 		(instances
 			(project "test"
 				(path "/0e23c15d-d18e-4bc4-b815-b9b273b3f9c0"
-					(reference "SW?")
+					(reference "UP")
 					(unit 1)
 				)
 			)
@@ -2728,7 +2873,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "513a890a-e3a1-4106-8b45-e76994004110")
-		(property "Reference" "RV?"
+		(property "Reference" "RV1"
 			(at 177.8 54.6099 0)
 			(effects
 				(font
@@ -2785,7 +2930,7 @@
 		(instances
 			(project "test"
 				(path "/0e23c15d-d18e-4bc4-b815-b9b273b3f9c0"
-					(reference "RV?")
+					(reference "RV1")
 					(unit 1)
 				)
 			)
@@ -2880,7 +3025,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6ee89b45-08a5-4799-9a0f-c0de78cfe30a")
-		(property "Reference" "SW?"
+		(property "Reference" "BACK"
 			(at 163.83 30.48 0)
 			(effects
 				(font
@@ -2932,7 +3077,7 @@
 		(instances
 			(project "test"
 				(path "/0e23c15d-d18e-4bc4-b815-b9b273b3f9c0"
-					(reference "SW?")
+					(reference "BACK")
 					(unit 1)
 				)
 			)
@@ -2945,6 +3090,7 @@
 		)
 	)
 	(symbol
+		(lib_name "SW_Push_3")
 		(lib_id "Switch:SW_Push")
 		(at 147.32 45.72 0)
 		(unit 1)
@@ -2954,7 +3100,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d16c9a94-507b-446a-9ae0-f275d30fd130")
-		(property "Reference" "SW?"
+		(property "Reference" "DOWN"
 			(at 147.32 38.1 0)
 			(effects
 				(font
@@ -3006,7 +3152,7 @@
 		(instances
 			(project "test"
 				(path "/0e23c15d-d18e-4bc4-b815-b9b273b3f9c0"
-					(reference "SW?")
+					(reference "DOWN")
 					(unit 1)
 				)
 			)
