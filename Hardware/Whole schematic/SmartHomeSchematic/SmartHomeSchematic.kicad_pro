@@ -239,7 +239,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Room3.kicad_pro",
+    "filename": "SmartHomeSchematic.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -384,7 +384,7 @@
   },
   "sheets": [
     [
-      "5f9a8620-ee1b-4e13-ab40-480da1a30c55",
+      "11858cf2-bd6b-4d20-a6d0-cbf7ff297707",
       "Root"
     ]
   ],
