@@ -10,6 +10,7 @@ For LDR and potentiometers we need analog pins, those are ones with 'A' prefix.
 |LCD|SCL|D19|
 |Button up|-|D7|
 |Button down|-|D8|
+|RGB LED room 1|-|D9|
 |Button ok|-|D11|
 |Button back|-|D12|
 |Potentiometer LCD|-|A0(D14)|
