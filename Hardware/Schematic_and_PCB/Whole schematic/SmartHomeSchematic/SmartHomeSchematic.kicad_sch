@@ -3092,12 +3092,6 @@
 		(uuid "2447bf57-44cf-4ca2-adb6-8f8f6771ee22")
 	)
 	(junction
-		(at 91.44 60.96)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "31fb6f04-5bfc-4f57-b72f-dc12266deb71")
-	)
-	(junction
 		(at 332.74 190.5)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3114,6 +3108,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6cfd004a-0b79-45a1-bf00-31b0da85edab")
+	)
+	(junction
+		(at 100.33 62.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6fc22fc0-0635-4b40-ba01-767b545a80ed")
 	)
 	(junction
 		(at 99.06 229.87)
@@ -3156,6 +3156,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f43efac3-ddbe-4d3e-817c-8a20be653c14")
+	)
+	(junction
+		(at 83.82 62.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f92a709e-0fd9-461b-962e-54abcbe9dd30")
 	)
 	(junction
 		(at 99.06 234.95)
@@ -3212,16 +3218,6 @@
 			(type default)
 		)
 		(uuid "0661122e-181a-4685-b69b-a0f1d5a702ae")
-	)
-	(wire
-		(pts
-			(xy 91.44 60.96) (xy 92.71 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "072927ef-717c-4027-b9cc-9f16fa76f6d9")
 	)
 	(wire
 		(pts
@@ -3295,6 +3291,16 @@
 	)
 	(wire
 		(pts
+			(xy 83.82 62.23) (xy 83.82 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "147c46b2-2f3e-42cd-8ee1-ea7ff407fc84")
+	)
+	(wire
+		(pts
 			(xy 267.97 152.4) (xy 269.24 152.4)
 		)
 		(stroke
@@ -3302,16 +3308,6 @@
 			(type default)
 		)
 		(uuid "1508a63e-c11c-4006-b471-25ecbf48936d")
-	)
-	(wire
-		(pts
-			(xy 110.49 64.77) (xy 109.22 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "16ad734a-e0d4-483f-952c-0f4a2a5fca40")
 	)
 	(wire
 		(pts
@@ -3332,6 +3328,16 @@
 			(type default)
 		)
 		(uuid "19bdf69d-34bf-4220-9285-ca04e12fe744")
+	)
+	(wire
+		(pts
+			(xy 135.89 100.33) (xy 144.78 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c334aa8-fc26-4f91-96aa-8ea42490c6c2")
 	)
 	(wire
 		(pts
@@ -3362,16 +3368,6 @@
 			(type default)
 		)
 		(uuid "1f2b9a86-40b2-4471-bcd4-721f84ae3526")
-	)
-	(wire
-		(pts
-			(xy 102.87 66.04) (xy 109.22 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "202ef482-d44b-4844-ad3d-8187dd4d6330")
 	)
 	(wire
 		(pts
@@ -3465,6 +3461,16 @@
 	)
 	(wire
 		(pts
+			(xy 93.98 57.15) (xy 95.25 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f87491e-14a3-4927-a08f-d0a8b09f9b10")
+	)
+	(wire
+		(pts
 			(xy 135.89 87.63) (xy 163.83 87.63)
 		)
 		(stroke
@@ -3545,16 +3551,6 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 74.93) (xy 77.47 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3e8eabc9-e22e-4494-86ce-920df0c6a8be")
-	)
-	(wire
-		(pts
 			(xy 308.61 185.42) (xy 309.88 185.42)
 		)
 		(stroke
@@ -3575,7 +3571,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 59.69) (xy 91.44 60.96)
+			(xy 83.82 60.96) (xy 83.82 62.23)
 		)
 		(stroke
 			(width 0)
@@ -3612,6 +3608,26 @@
 			(type default)
 		)
 		(uuid "43da3539-455b-4c6f-9705-93e2f6dcfcde")
+	)
+	(wire
+		(pts
+			(xy 152.4 104.14) (xy 152.4 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47e8de13-ccc1-4890-acd1-0e93d337f03b")
+	)
+	(wire
+		(pts
+			(xy 83.82 62.23) (xy 85.09 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4866dabc-8c6a-474f-a805-9eda0f778da5")
 	)
 	(wire
 		(pts
@@ -3675,16 +3691,6 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 60.96) (xy 91.44 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c50780e-cceb-402a-b400-3f3718e9059a")
-	)
-	(wire
-		(pts
 			(xy 285.75 125.73) (xy 285.75 124.46)
 		)
 		(stroke
@@ -3715,7 +3721,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 66.04) (xy 92.71 66.04)
+			(xy 83.82 67.31) (xy 85.09 67.31)
 		)
 		(stroke
 			(width 0)
@@ -3732,6 +3738,16 @@
 			(type default)
 		)
 		(uuid "65b94d20-2cb2-4164-a13c-d6575918dc91")
+	)
+	(wire
+		(pts
+			(xy 152.4 113.03) (xy 152.4 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66e531fe-53ac-450f-902b-43653b20302d")
 	)
 	(wire
 		(pts
@@ -3845,6 +3861,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 109.22) (xy 148.59 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75d061a5-7ca1-4612-94e8-96bf2597c718")
+	)
+	(wire
+		(pts
 			(xy 166.37 95.25) (xy 172.72 95.25)
 		)
 		(stroke
@@ -3872,6 +3898,26 @@
 			(type default)
 		)
 		(uuid "77debd18-7c3f-4757-a185-cffed7077ec7")
+	)
+	(wire
+		(pts
+			(xy 93.98 54.61) (xy 93.98 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "789e6245-f1be-41e6-8309-4596c2ae7246")
+	)
+	(wire
+		(pts
+			(xy 109.22 64.77) (xy 109.22 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "792289a8-6faa-4481-8f21-c48b595440e6")
 	)
 	(wire
 		(pts
@@ -3925,16 +3971,6 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 62.23) (xy 109.22 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "82742da3-e320-4b89-8378-06823d883401")
-	)
-	(wire
-		(pts
 			(xy 172.72 95.25) (xy 172.72 96.52)
 		)
 		(stroke
@@ -3962,6 +3998,16 @@
 			(type default)
 		)
 		(uuid "8419f86d-b173-4770-b3b0-08bd21e9abab")
+	)
+	(wire
+		(pts
+			(xy 77.47 62.23) (xy 83.82 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84b85abf-bed7-4867-94aa-24a831c7a539")
 	)
 	(wire
 		(pts
@@ -4235,6 +4281,16 @@
 	)
 	(wire
 		(pts
+			(xy 95.25 67.31) (xy 100.33 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "afeac51b-27c3-41ed-b106-ead420b1da2f")
+	)
+	(wire
+		(pts
 			(xy 135.89 97.79) (xy 147.32 97.79)
 		)
 		(stroke
@@ -4325,6 +4381,16 @@
 	)
 	(wire
 		(pts
+			(xy 100.33 62.23) (xy 110.49 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be99427a-8b31-4b55-bece-5db797f19e0b")
+	)
+	(wire
+		(pts
 			(xy 146.05 53.34) (xy 146.05 52.07)
 		)
 		(stroke
@@ -4395,13 +4461,23 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 62.23) (xy 109.22 60.96)
+			(xy 109.22 57.15) (xy 105.41 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d2607278-a5b6-4bbb-92bd-8017b83ac116")
+		(uuid "d501c02d-18e2-47d0-a5e1-b6240ece769f")
+	)
+	(wire
+		(pts
+			(xy 95.25 62.23) (xy 100.33 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d777124c-a37c-4359-9862-71563cd21615")
 	)
 	(wire
 		(pts
@@ -4425,13 +4501,13 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 60.96) (xy 91.44 60.96)
+			(xy 144.78 100.33) (xy 144.78 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "dc11fb4a-8ff0-4c81-8ab1-1d54a3b91ee6")
+		(uuid "d9917a4f-eee3-47a5-82e1-d716233e7792")
 	)
 	(wire
 		(pts
@@ -4455,13 +4531,23 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 60.96) (xy 109.22 60.96)
+			(xy 77.47 74.93) (xy 77.47 62.23)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e40934b0-fe87-4822-904e-75c0d527d8c6")
+		(uuid "e1ea9882-e689-4857-82b0-260c7b7ca00c")
+	)
+	(wire
+		(pts
+			(xy 100.33 62.23) (xy 100.33 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e6559587-66c7-416f-af79-5bf0611d9eb5")
 	)
 	(wire
 		(pts
@@ -4575,16 +4661,6 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 64.77) (xy 109.22 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f96d1041-259a-40f4-9b66-25b1d64eda32")
-	)
-	(wire
-		(pts
 			(xy 172.72 80.01) (xy 179.07 80.01)
 		)
 		(stroke
@@ -4592,6 +4668,16 @@
 			(type default)
 		)
 		(uuid "fb20a5c7-3e2d-424c-a5db-367aa2512aa0")
+	)
+	(wire
+		(pts
+			(xy 110.49 64.77) (xy 109.22 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd95b815-65ed-43d3-8e6f-6f2e6541f069")
 	)
 	(rectangle
 		(start 35.56 180.34)
@@ -4628,6 +4714,16 @@
 			(type none)
 		)
 		(uuid ad6ad5b1-d6d5-4937-9042-aae52a6d195b)
+	)
+	(text "This button will be \non a control panel \nwe will decide on \nfunctionality.\nPropably for sleep mode"
+		(exclude_from_sim no)
+		(at 105.156 49.53 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+		)
+		(uuid "0d38f42e-f027-4c80-a756-38ad780bb289")
 	)
 	(text "Arduino Nano"
 		(exclude_from_sim no)
@@ -6068,6 +6164,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 152.4 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "465b2b62-5e80-4dfb-b245-d3aa07d6108c")
+		(property "Reference" "#PWR013"
+			(at 152.4 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 152.4 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 152.4 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 152.4 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d61611b5-e244-4dd9-bca4-c76d0d3b8da4")
+		)
+		(instances
+			(project "SmartHomeSchematic"
+				(path "/11858cf2-bd6b-4d20-a6d0-cbf7ff297707"
+					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 313.69 87.63 90)
 		(unit 1)
@@ -6835,7 +6996,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "Room_3"
+		(property "Value" "Room_3.1"
 			(at 180.34 91.186 0)
 			(effects
 				(font
@@ -7159,6 +7320,71 @@
 			(project "SmartHomeSchematic"
 				(path "/11858cf2-bd6b-4d20-a6d0-cbf7ff297707"
 					(reference "R19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 93.98 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8acfc142-4349-462a-a564-4dddf9c3517d")
+		(property "Reference" "#PWR025"
+			(at 93.98 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 93.98 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.98 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 93.98 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "39d7b146-8d16-48f4-be11-8a327bc07a1f")
+		)
+		(instances
+			(project "SmartHomeSchematic"
+				(path "/11858cf2-bd6b-4d20-a6d0-cbf7ff297707"
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -7990,7 +8216,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 97.79 60.96 0)
+		(at 90.17 62.23 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7998,7 +8224,7 @@
 		(dnp no)
 		(uuid "aca2b1ac-49b1-42f6-8f4d-d2130d170815")
 		(property "Reference" "SW2"
-			(at 94.996 58.42 0)
+			(at 87.376 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8006,7 +8232,7 @@
 			)
 		)
 		(property "Value" "Room_1.1"
-			(at 102.616 58.42 0)
+			(at 94.996 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8014,7 +8240,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 97.79 55.88 0)
+			(at 90.17 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8023,7 +8249,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 97.79 55.88 0)
+			(at 90.17 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8032,7 +8258,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 97.79 60.96 0)
+			(at 90.17 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8544,6 +8770,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 152.4 104.14 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b9dcce5c-a814-4bec-bd1a-72fa271387e1")
+		(property "Reference" "#PWR024"
+			(at 152.4 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 152.4 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 152.4 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 152.4 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6d266aea-c6de-48ad-a2d8-4ff02729fa45")
+		)
+		(instances
+			(project "SmartHomeSchematic"
+				(path "/11858cf2-bd6b-4d20-a6d0-cbf7ff297707"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 288.29 110.49 90)
 		(unit 1)
@@ -8959,7 +9250,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 97.79 66.04 0)
+		(at 90.17 67.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8967,7 +9258,7 @@
 		(dnp no)
 		(uuid "c22edb6e-f32a-4197-b9ab-c1a309e48390")
 		(property "Reference" "SW3"
-			(at 94.996 63.5 0)
+			(at 87.376 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8975,7 +9266,7 @@
 			)
 		)
 		(property "Value" "Room_1.2"
-			(at 102.616 63.5 0)
+			(at 94.996 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8983,7 +9274,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 97.79 60.96 0)
+			(at 90.17 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8992,7 +9283,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 97.79 60.96 0)
+			(at 90.17 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9001,7 +9292,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 97.79 66.04 0)
+			(at 90.17 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9019,6 +9310,73 @@
 			(project "SmartHomeSchematic"
 				(path "/11858cf2-bd6b-4d20-a6d0-cbf7ff297707"
 					(reference "SW3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 100.33 57.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c3ac1ee5-4745-451a-b9a5-a15a02bb0b2a")
+		(property "Reference" "SW10"
+			(at 97.536 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "some func."
+			(at 106.68 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 100.33 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 100.33 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 100.33 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cb069766-6de1-4570-800f-ee0eb3c8ae13")
+		)
+		(pin "2"
+			(uuid "d01eaf6c-1bfb-4831-ae0f-3f4895a03c8f")
+		)
+		(instances
+			(project "SmartHomeSchematic"
+				(path "/11858cf2-bd6b-4d20-a6d0-cbf7ff297707"
+					(reference "SW10")
 					(unit 1)
 				)
 			)
@@ -10047,7 +10405,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 91.44 59.69 0)
+		(at 83.82 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10055,7 +10413,7 @@
 		(dnp no)
 		(uuid "f0d87e08-5503-43a7-bce2-e8803483c83a")
 		(property "Reference" "#PWR011"
-			(at 91.44 63.5 0)
+			(at 83.82 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10064,7 +10422,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 91.44 55.88 0)
+			(at 83.82 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10072,7 +10430,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 91.44 59.69 0)
+			(at 83.82 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10081,7 +10439,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 91.44 59.69 0)
+			(at 83.82 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10090,7 +10448,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 91.44 59.69 0)
+			(at 83.82 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10320,6 +10678,79 @@
 			(project ""
 				(path "/11858cf2-bd6b-4d20-a6d0-cbf7ff297707"
 					(reference "RV1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Potentiometer")
+		(at 152.4 109.22 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f9d264e6-15c5-4136-83be-292938484540")
+		(property "Reference" "RV4"
+			(at 153.67 108.458 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Room_3.2"
+			(at 153.67 110.236 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 152.4 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 152.4 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Potentiometer"
+			(at 152.4 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "388ee4b6-1640-44f1-b586-b0f27b773dd1")
+		)
+		(pin "3"
+			(uuid "787c3a52-c7eb-479d-a535-abaa99a6c386")
+		)
+		(pin "1"
+			(uuid "909457ac-faf7-4731-b47b-e20d9c419577")
+		)
+		(instances
+			(project "SmartHomeSchematic"
+				(path "/11858cf2-bd6b-4d20-a6d0-cbf7ff297707"
+					(reference "RV4")
 					(unit 1)
 				)
 			)
