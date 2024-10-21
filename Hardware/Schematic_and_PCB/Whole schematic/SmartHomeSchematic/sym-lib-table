@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "arduino_nano_every_custom")(type "KiCad")(uri "C:/Users/Aiwendil/Desktop/SDU/1st-semester-project/Hardware/Schematic_and_PCB/Scematic_Symbol/arduino_nano_every.kicad_sym")(options "")(descr ""))
+)
