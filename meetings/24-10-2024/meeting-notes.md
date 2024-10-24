@@ -1,0 +1,3 @@
+- 3d models and calculations should be ready by Monday
+- tested: lcd, rgb led, photoresistor, pir sensor
+- for photoresistor circuit - voltage divider is used
