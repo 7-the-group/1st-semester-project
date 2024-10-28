@@ -2089,16 +2089,6 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 85.09) (xy 64.77 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0cc4cde9-2b3a-49c4-b156-a8fb26339a93")
-	)
-	(wire
-		(pts
 			(xy 67.31 69.85) (xy 67.31 67.31)
 		)
 		(stroke
@@ -2189,7 +2179,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 58.42) (xy 39.37 58.42)
+			(xy 39.37 58.42) (xy 67.31 58.42)
 		)
 		(stroke
 			(width 0)
@@ -2229,7 +2219,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 85.09) (xy 49.53 85.09)
+			(xy 49.53 85.09) (xy 67.31 85.09)
 		)
 		(stroke
 			(width 0)
@@ -2279,16 +2269,6 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 69.85) (xy 67.31 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8658373e-5858-4610-83f1-5fb03bab18e2")
-	)
-	(wire
-		(pts
 			(xy 34.29 97.79) (xy 34.29 100.33)
 		)
 		(stroke
@@ -2329,7 +2309,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 69.85) (xy 44.45 69.85)
+			(xy 44.45 69.85) (xy 67.31 69.85)
 		)
 		(stroke
 			(width 0)
@@ -2439,16 +2419,6 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 58.42) (xy 64.77 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ce91eea9-4847-4e3d-ba92-000bcf7c37a2")
-	)
-	(wire
-		(pts
 			(xy 121.92 92.71) (xy 140.97 92.71)
 		)
 		(stroke
@@ -2507,38 +2477,27 @@
 		)
 		(uuid "f9082a6e-7c40-475b-9367-2a7540261707")
 	)
-	(text "Green LED\ni=5mA=0.005A\nv_G=2.8V\n\nR_G=(v_s-v_G)/i\n   =(5-2.8)/0.005\n   =2.2/0.005\nR_G=440 => 450 omhs"
+	(text "v(R)=v(Load)-v(D)\nv(R)=R.I(B)-v(D)\n\nv(Red)=507.5(0.01)-1.85\nv(Red)=3.225V\n\nv(Green,Blue)=507.5(0.01)-3\nv(Green,Blue)=2.075V\n\nR(Red)=v(Red)/I(C)\nR(Red)=322.5\n\nR(Green,Blue)=v(Green,Blue)/I(C)\nR(Green,Blue)=207.5"
 		(exclude_from_sim no)
-		(at 13.208 106.172 0)
+		(at 55.118 135.636 0)
 		(effects
 			(font
-				(size 0.762 0.762)
+				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "26693695-dc4c-42f6-a650-aa22e738c9fb")
+		(uuid "565f014c-2ccd-4bce-bc95-bb3b3de62447")
 	)
-	(text "Red LED\ni=5mA=0.005A\nv_R=1.8V\n\nR_R=(v_s-v_R)/i\n   =(5-1.8)/0.005\n   =3.2/0.005\nR_R=640 => 650 ohms"
+	(text "I(C)=-10mA\n\nv(CE-sat)=-0.075V\nh(FE-min)=180\n\nI(B)=I(C)/h(FE)\nI(B)=-0.01/180\nI(B)=-0.055mA\n\nR(Load)={v(cc)-v(CE-sat)}/I(c)\nR(Load)={-5-(-0.075)}/-0.000055A\nR(Load)=507.5\n\nR(bb)={v(cc)-v(be)}/I(B)\nR(bb)={-5-(-0.7)}/-0.000055A\nR(bb)=78 182\n"
 		(exclude_from_sim no)
-		(at 13.208 94.742 0)
+		(at 55.118 102.87 0)
 		(effects
 			(font
-				(size 0.762 0.762)
+				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "79f82f8d-b912-418c-9a8b-f627bc555d14")
-	)
-	(text "Blue LED\ni=5mA=0.005A\nv_B=2.8V\n\nR_B=(v_s-v_B)/i\n   =(5-2.8)/0.005\n   =2.2/0.005\nR_B=440 => 450 ohms"
-		(exclude_from_sim no)
-		(at 13.208 117.856 0)
-		(effects
-			(font
-				(size 0.762 0.762)
-			)
-			(justify left)
-		)
-		(uuid "bd07616c-e716-4059-91e1-e5708b968bc4")
+		(uuid "74b469b2-f890-44eb-b2b5-890e571e998f")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -2558,7 +2517,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "78 182"
 			(at 55.88 46.99 90)
 			(effects
 				(font
@@ -2828,74 +2787,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 60.96 69.85 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1c058d20-ebe0-40b9-ba91-0b2b17c0b324")
-		(property "Reference" "R9"
-			(at 60.96 63.5 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R"
-			(at 60.96 66.04 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 60.96 71.628 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 60.96 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 60.96 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a46a092d-1040-4b6b-8dbe-ba770a4b7d27")
-		)
-		(pin "2"
-			(uuid "ddef880e-fe02-4268-93d8-78ca758d16fe")
-		)
-		(instances
-			(project "Room3"
-				(path "/5f9a8620-ee1b-4e13-ab40-480da1a30c55"
-					(reference "R9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 153.67 129.54 0)
 		(unit 1)
@@ -3121,7 +3012,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "78 182"
 			(at 55.88 72.39 90)
 			(effects
 				(font
@@ -3333,16 +3224,16 @@
 				(font
 					(size 0.762 0.762)
 				)
-				(justify bottom)
+				(justify left)
 			)
 		)
-		(property "Value" "450"
+		(property "Value" "207.5"
 			(at 41.91 94.615 0)
 			(effects
 				(font
 					(size 0.762 0.762)
 				)
-				(justify top)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -3558,16 +3449,16 @@
 				(font
 					(size 0.762 0.762)
 				)
-				(justify bottom)
+				(justify left)
 			)
 		)
-		(property "Value" "650"
+		(property "Value" "322.5"
 			(at 31.75 94.615 0)
 			(effects
 				(font
 					(size 0.762 0.762)
 				)
-				(justify top)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -3630,7 +3521,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "78 182"
 			(at 55.88 58.42 90)
 			(effects
 				(font
@@ -3696,16 +3587,16 @@
 				(font
 					(size 0.762 0.762)
 				)
-				(justify bottom)
+				(justify left)
 			)
 		)
-		(property "Value" "450"
+		(property "Value" "207.5"
 			(at 36.83 94.615 0)
 			(effects
 				(font
 					(size 0.762 0.762)
 				)
-				(justify top)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -3821,74 +3712,6 @@
 			(project "Room3"
 				(path "/5f9a8620-ee1b-4e13-ab40-480da1a30c55"
 					(reference "Q2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 60.96 85.09 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ae8ce437-df5a-4fae-a460-9dfcf3a2f010")
-		(property "Reference" "R10"
-			(at 60.96 78.74 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R"
-			(at 60.96 81.28 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 60.96 86.868 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 60.96 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 60.96 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8fe039ae-d6b8-4f4e-a16a-5b13b8a303fb")
-		)
-		(pin "2"
-			(uuid "c128fa2a-9c4b-42c8-b5f0-142337bdbc85")
-		)
-		(instances
-			(project "Room3"
-				(path "/5f9a8620-ee1b-4e13-ab40-480da1a30c55"
-					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -4420,74 +4243,6 @@
 			(project ""
 				(path "/5f9a8620-ee1b-4e13-ab40-480da1a30c55"
 					(reference "#PWR09")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 60.96 58.42 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ff62abeb-006d-4124-ac4a-bcca24da2853")
-		(property "Reference" "R8"
-			(at 60.96 52.07 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "R"
-			(at 60.96 54.61 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 60.96 60.198 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 60.96 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 60.96 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "931fb2de-e8cc-4512-b130-0a5ddbdc1e28")
-		)
-		(pin "2"
-			(uuid "f0cfe8e4-aba6-4b14-8d0c-f2b880adaa01")
-		)
-		(instances
-			(project "Room3"
-				(path "/5f9a8620-ee1b-4e13-ab40-480da1a30c55"
-					(reference "R8")
 					(unit 1)
 				)
 			)
