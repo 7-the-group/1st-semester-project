@@ -2477,7 +2477,7 @@
 		)
 		(uuid "f9082a6e-7c40-475b-9367-2a7540261707")
 	)
-	(text "v(R)=v(Load)-v(D)\nv(R)=R.I(B)-v(D)\n\nv(Red)=507.5(0.01)-1.85\nv(Red)=3.225V\n\nv(Green,Blue)=507.5(0.01)-3\nv(Green,Blue)=2.075V\n\nR(Red)=v(Red)/I(C)\nR(Red)=322.5\n\nR(Green,Blue)=v(Green,Blue)/I(C)\nR(Green,Blue)=207.5"
+	(text "v(R)=v(cc)-v(CE-sat)-v(D)\n\nv(Red)=v(cc)-v(CE-sat)-v(Red)\nv(Red)=3.075V\n\nv(Green,Blue)=v(cc)-v(CE-sat)-v(G/B)\nv(Green,Blue)=1.925V\n\nR(Red)=v(Red)/I(C)\nR(Red)=307.5\n\nR(Green,Blue)=v(Green,Blue)/I(C)\nR(Green,Blue)=192.5"
 		(exclude_from_sim no)
 		(at 55.118 135.636 0)
 		(effects
@@ -2488,7 +2488,7 @@
 		)
 		(uuid "565f014c-2ccd-4bce-bc95-bb3b3de62447")
 	)
-	(text "I(C)=-10mA\n\nv(CE-sat)=-0.075V\nh(FE-min)=180\n\nI(B)=I(C)/h(FE)\nI(B)=-0.01/180\nI(B)=-0.055mA\n\nR(Load)={v(cc)-v(CE-sat)}/I(c)\nR(Load)={-5-(-0.075)}/-0.000055A\nR(Load)=507.5\n\nR(bb)={v(cc)-v(be)}/I(B)\nR(bb)={-5-(-0.7)}/-0.000055A\nR(bb)=78 182\n"
+	(text "I(C)=-10mA\n\nv(CE-sat)=-0.075V\nh(FE-min)=180\n\nI(B)=I(C)/h(FE)\nI(B)=-0.01/180\nI(B)=-0.055mA\n\nR(Load)={v(cc)-v(CE-sat)}/I(c)\nR(Load)={-5-(-0.075)}/-0.01A\nR(Load)=492.5\n\nR(bb)={v(cc)-v(be)}/I(B)\nR(bb)={-5-(-0.7)}/-0.000055A\nR(bb)=78 182\n"
 		(exclude_from_sim no)
 		(at 55.118 102.87 0)
 		(effects
