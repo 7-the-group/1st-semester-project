@@ -3,7 +3,7 @@
 - Battery problem - fix with filtering or use power bank instead? - we will use Milan's power bank - permanent solution
   
 PCB design:
--built-in - transistors, resistors, connectors
+-built-in - transistors, resistors, connectors  
 -outside - LEDs, buttons, sensors (PIR,LDR), potentiometers, LCD  
  
 PCB design assigned to:  
