@@ -3501,16 +3501,6 @@
 	)
 	(wire
 		(pts
-			(xy 303.53 124.46) (xy 303.53 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "36f71191-54fa-4698-92d2-bba4d56e19cd")
-	)
-	(wire
-		(pts
 			(xy 283.21 110.49) (xy 284.48 110.49)
 		)
 		(stroke
@@ -3631,16 +3621,6 @@
 	)
 	(wire
 		(pts
-			(xy 285.75 133.35) (xy 285.75 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4a8473c7-dc60-4917-ac90-02c24df13ee2")
-	)
-	(wire
-		(pts
 			(xy 114.3 204.47) (xy 116.84 204.47)
 		)
 		(stroke
@@ -3691,7 +3671,7 @@
 	)
 	(wire
 		(pts
-			(xy 285.75 125.73) (xy 285.75 124.46)
+			(xy 285.75 124.46) (xy 285.75 147.32)
 		)
 		(stroke
 			(width 0)
@@ -3728,16 +3708,6 @@
 			(type default)
 		)
 		(uuid "6382db10-33a9-4757-8ddd-c21ac46c173e")
-	)
-	(wire
-		(pts
-			(xy 294.64 133.35) (xy 294.64 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "65b94d20-2cb2-4164-a13c-d6575918dc91")
 	)
 	(wire
 		(pts
@@ -4091,7 +4061,7 @@
 	)
 	(wire
 		(pts
-			(xy 303.53 133.35) (xy 303.53 134.62)
+			(xy 303.53 124.46) (xy 303.53 134.62)
 		)
 		(stroke
 			(width 0)
@@ -4101,7 +4071,7 @@
 	)
 	(wire
 		(pts
-			(xy 294.64 124.46) (xy 294.64 125.73)
+			(xy 294.64 124.46) (xy 294.64 140.97)
 		)
 		(stroke
 			(width 0)
@@ -4704,6 +4674,18 @@
 		(uuid 4c848e24-5888-4f98-8f57-33deb80b2508)
 	)
 	(rectangle
+		(start 353.06 113.03)
+		(end 396.24 207.01)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 7df72a01-7c7c-48c8-9870-a07d4fb8d314)
+	)
+	(rectangle
 		(start 236.22 36.83)
 		(end 350.52 214.63)
 		(stroke
@@ -4715,6 +4697,18 @@
 		)
 		(uuid ad6ad5b1-d6d5-4937-9042-aae52a6d195b)
 	)
+	(rectangle
+		(start 378.46 185.42)
+		(end 378.46 185.42)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid c55891e3-9495-4925-be02-179265acf72e)
+	)
 	(text "This button will be \non a control panel \nwe will decide on \nfunctionality.\nPropably for sleep mode"
 		(exclude_from_sim no)
 		(at 105.156 49.53 0)
@@ -4724,6 +4718,41 @@
 			)
 		)
 		(uuid "0d38f42e-f027-4c80-a756-38ad780bb289")
+	)
+	(text "If R(bb)==82k\nI(B)={-5-(-0.7)}/82000\nI(B)=-0.0524mA\n\nI(C)=I(B)h(FE)\nI(C)=9.44mA\n\nR(Red)=325\nR(Green)=204\nR(Blue)=204"
+		(exclude_from_sim no)
+		(at 354.076 193.294 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2f3125db-c4b2-45b5-83bd-aebd761ce6a1")
+	)
+	(text "Room 3 resistor calculations\n"
+		(exclude_from_sim no)
+		(at 352.298 109.474 0)
+		(effects
+			(font
+				(size 2.032 2.032)
+				(thickness 0.4064)
+				(bold yes)
+			)
+			(justify left)
+		)
+		(uuid "2ffbf443-8859-4433-be7d-5f0bba9eb745")
+	)
+	(text "v(R)=v(cc)-v(CE-sat)-v(D)\n\nv(Red)=v(cc)-v(CE-sat)-v(Red)\nv(Red)=3.075V\n\nv(Green,Blue)=v(cc)-v(CE-sat)-v(G/B)\nv(Green,Blue)=1.925V\n\nR(Red)=v(Red)/I(C)\nR(Red)=307.5\n\nR(Green,Blue)=v(Green,Blue)/I(C)\nR(Green,Blue)=192.5"
+		(exclude_from_sim no)
+		(at 353.822 165.862 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7471c2d1-2b11-4aa7-9b0d-e7eef48c2ccf")
 	)
 	(text "Arduino Nano"
 		(exclude_from_sim no)
@@ -4760,6 +4789,17 @@
 			)
 		)
 		(uuid "dafa5880-baed-4ccd-a896-b224ac987625")
+	)
+	(text "I(C)=-10mA\n\nv(CE-sat)=-0.075V\nh(FE-min)=180\n\nI(B)=I(C)/h(FE)\nI(B)=-0.01/180\nI(B)=-0.055mA\n\nR(Load)={v(cc)-v(CE-sat)}/I(c)\nR(Load)={-5-(-0.075)}/-0.01A\nR(Load)=492.5\n\nR(bb)={v(cc)-v(be)}/I(B)\nR(bb)={-5-(-0.7)}/-0.000055A\nR(bb)=78 182\n"
+		(exclude_from_sim no)
+		(at 353.822 133.096 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f702deab-91da-49df-a851-a94defedb193")
 	)
 	(global_label "led room 2"
 		(shape input)
@@ -5417,7 +5457,7 @@
 				)
 			)
 		)
-		(property "Value" "450"
+		(property "Value" "220"
 			(at 315.976 156.718 90)
 			(effects
 				(font
@@ -5696,7 +5736,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0f9368b7-7997-4e75-ba14-0cd31e27ce86")
-		(property "Reference" "R12"
+		(property "Reference" "R18"
 			(at 270.002 150.114 90)
 			(effects
 				(font
@@ -5704,7 +5744,7 @@
 				)
 			)
 		)
-		(property "Value" "?"
+		(property "Value" "82k"
 			(at 275.844 150.114 90)
 			(effects
 				(font
@@ -5748,7 +5788,7 @@
 		(instances
 			(project "SmartHomeSchematic"
 				(path "/11858cf2-bd6b-4d20-a6d0-cbf7ff297707"
-					(reference "R12")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -6312,7 +6352,7 @@
 				)
 			)
 		)
-		(property "Value" "450"
+		(property "Value" "220"
 			(at 315.976 151.638 90)
 			(effects
 				(font
@@ -7275,7 +7315,7 @@
 				)
 			)
 		)
-		(property "Value" "?"
+		(property "Value" "82k"
 			(at 275.844 143.764 90)
 			(effects
 				(font
@@ -7407,7 +7447,7 @@
 				)
 			)
 		)
-		(property "Value" "650"
+		(property "Value" "330"
 			(at 316.23 146.558 90)
 			(effects
 				(font
@@ -7452,75 +7492,6 @@
 			(project "SmartHomeSchematic"
 				(path "/11858cf2-bd6b-4d20-a6d0-cbf7ff297707"
 					(reference "R14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 285.75 129.54 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8c0de13f-7908-4819-b179-1f53f7afa7ee")
-		(property "Reference" "R18"
-			(at 287.02 128.778 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "?"
-			(at 287.02 130.556 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 283.972 129.54 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 285.75 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 285.75 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7766a059-5b36-4219-bc02-256ba31406fb")
-		)
-		(pin "2"
-			(uuid "bbdf4d1d-1190-4df2-a457-8505a2eec878")
-		)
-		(instances
-			(project "SmartHomeSchematic"
-				(path "/11858cf2-bd6b-4d20-a6d0-cbf7ff297707"
-					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -8001,75 +7972,6 @@
 			(project "SmartHomeSchematic"
 				(path "/11858cf2-bd6b-4d20-a6d0-cbf7ff297707"
 					(reference "R21")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 294.64 129.54 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a58153e6-3620-4f22-aa3d-d9797762d5dd")
-		(property "Reference" "R17"
-			(at 295.91 128.778 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "?"
-			(at 295.91 130.556 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 292.862 129.54 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 294.64 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 294.64 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "86832e19-239c-4577-9cef-51ef45e268d6")
-		)
-		(pin "2"
-			(uuid "4e434507-4002-4fb1-ba00-299c7f352ba3")
-		)
-		(instances
-			(project "SmartHomeSchematic"
-				(path "/11858cf2-bd6b-4d20-a6d0-cbf7ff297707"
-					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -9985,75 +9887,6 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 303.53 129.54 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e283f740-a7e1-4269-9384-0f4cd29ea3c4")
-		(property "Reference" "R13"
-			(at 304.8 128.778 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "?"
-			(at 304.8 130.556 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 301.752 129.54 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 303.53 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 303.53 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ab3412d1-3cec-47f4-aaad-024ff1a0ff1a")
-		)
-		(pin "2"
-			(uuid "ecaabf97-3960-4adf-8fa1-6adbbfd7a5c4")
-		)
-		(instances
-			(project "SmartHomeSchematic"
-				(path "/11858cf2-bd6b-4d20-a6d0-cbf7ff297707"
-					(reference "R13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
 		(at 288.29 74.93 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10773,7 +10606,7 @@
 				)
 			)
 		)
-		(property "Value" "?"
+		(property "Value" "82k"
 			(at 275.844 137.414 90)
 			(effects
 				(font
