@@ -6,7 +6,7 @@ PCB design:
 -built-in - transistors, resistors, connectors
 -outside - LEDs, buttons, sensors (PIR,LDR), potentiometers, LCD  
  
-PCB design assigned to:
+PCB design assigned to:  
 -Jakub - LCD PCB + footprints
 -Kati  - Main PCB  
   
