@@ -7,6 +7,5 @@ int uart_getchar(FILE *stream);
 void uart_init(void);
 void io_redirect(void);
 
-
 #endif
 
