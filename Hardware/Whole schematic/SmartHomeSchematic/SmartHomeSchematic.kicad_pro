@@ -1,14 +1,6 @@
 {
   "board": {
     "3dviewports": [],
-    "design_settings": {
-      "defaults": {},
-      "diff_pair_dimensions": [],
-      "drc_exclusions": [],
-      "rules": {},
-      "track_widths": [],
-      "via_dimensions": []
-    },
     "ipc2581": {
       "dist": "",
       "distpn": "",
@@ -239,7 +231,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "ControlPanel.kicad_pro",
+    "filename": "SmartHomeSchematic.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -384,7 +376,7 @@
   },
   "sheets": [
     [
-      "0e23c15d-d18e-4bc4-b815-b9b273b3f9c0",
+      "11858cf2-bd6b-4d20-a6d0-cbf7ff297707",
       "Root"
     ]
   ],
