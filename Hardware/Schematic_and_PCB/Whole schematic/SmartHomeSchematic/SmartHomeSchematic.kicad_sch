@@ -8962,7 +8962,7 @@
 				)
 			)
 		)
-		(property "Value" "ROOM_1"
+		(property "Value" "DOOR"
 			(at 325.882 199.39 0)
 			(effects
 				(font
