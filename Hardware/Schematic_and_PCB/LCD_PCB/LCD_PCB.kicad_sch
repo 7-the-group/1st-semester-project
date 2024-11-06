@@ -1477,16 +1477,6 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 104.14) (xy 107.95 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "df79ac94-4687-40dc-bfc9-3b122ebbff64")
-	)
-	(wire
-		(pts
 			(xy 80.01 101.6) (xy 80.01 106.68)
 		)
 		(stroke
@@ -1559,7 +1549,7 @@
 	)
 	(global_label "control panel pot"
 		(shape input)
-		(at 76.2 78.74 90)
+		(at 53.34 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1569,7 +1559,7 @@
 		)
 		(uuid "3c0ead3a-b240-4a4c-ac31-c700e18da426")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 76.2 58.8824 90)
+			(at 53.34 58.8824 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1581,7 +1571,7 @@
 	)
 	(global_label "Button OK"
 		(shape input)
-		(at 71.12 78.74 90)
+		(at 66.04 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1591,7 +1581,7 @@
 		)
 		(uuid "3d0fd1e6-b866-4449-ba96-f83afeb52fe8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 71.12 66.0183 90)
+			(at 66.04 66.0183 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1625,7 +1615,7 @@
 	)
 	(global_label "Button Back"
 		(shape input)
-		(at 66.04 78.74 90)
+		(at 60.96 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1635,7 +1625,7 @@
 		)
 		(uuid "3f46efb0-32b0-4add-81b7-6fcbdad576a7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 66.04 64.0831 90)
+			(at 60.96 64.0831 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1669,22 +1659,22 @@
 	)
 	(global_label "control panel pot"
 		(shape input)
-		(at 106.68 104.14 180)
+		(at 115.57 104.14 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "4cbfb756-4284-4a6b-b268-fe7395131fef")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 86.8224 104.14 0)
+			(at 135.4276 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -1735,7 +1725,7 @@
 	)
 	(global_label "lcd SCL"
 		(shape input)
-		(at 55.88 78.74 90)
+		(at 73.66 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1745,7 +1735,7 @@
 		)
 		(uuid "840dbfd3-fca6-4336-8c7e-83de17f8be77")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 55.88 68.3768 90)
+			(at 73.66 68.3768 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1757,7 +1747,7 @@
 	)
 	(global_label "lcd SDA"
 		(shape input)
-		(at 58.42 78.74 90)
+		(at 76.2 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1767,7 +1757,7 @@
 		)
 		(uuid "91ff9e94-e80b-439d-b0c7-dd7d44b67ec9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 58.42 68.3163 90)
+			(at 76.2 68.3163 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1779,7 +1769,7 @@
 	)
 	(global_label "Button Down"
 		(shape input)
-		(at 73.66 78.74 90)
+		(at 63.5 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1789,7 +1779,7 @@
 		)
 		(uuid "a0d2ad2a-1494-403b-8d4d-14ce1365d470")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 73.66 63.7203 90)
+			(at 63.5 63.7203 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1823,7 +1813,7 @@
 	)
 	(global_label "Button Sleep"
 		(shape input)
-		(at 53.34 78.74 90)
+		(at 58.42 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1833,7 +1823,7 @@
 		)
 		(uuid "bc3f4c87-96de-4808-b03f-d949185ed1f0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 53.34 63.4179 90)
+			(at 58.42 63.4179 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1955,7 +1945,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at 63.5 78.74 90)
+		(at 71.12 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1965,7 +1955,7 @@
 		)
 		(uuid "f98c8a82-77c7-4216-844c-07d3848cd3ae")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 63.5 71.8843 90)
+			(at 71.12 71.8843 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1977,7 +1967,7 @@
 	)
 	(global_label "5V"
 		(shape input)
-		(at 60.96 78.74 90)
+		(at 55.88 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1987,7 +1977,7 @@
 		)
 		(uuid "ffd5873e-b8a1-492a-9f5b-199437e0da8a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.96 73.4567 90)
+			(at 55.88 73.4567 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2134,7 +2124,7 @@
 	(symbol
 		(lib_id "Device:R_Potentiometer")
 		(at 111.76 104.14 0)
-		(mirror y)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2142,7 +2132,7 @@
 		(dnp no)
 		(uuid "392a1b9b-75cc-48d0-b967-14f701fcec51")
 		(property "Reference" "RV1"
-			(at 113.03 103.378 0)
+			(at 110.49 104.902 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2151,7 +2141,7 @@
 			)
 		)
 		(property "Value" "Control_panel_pot"
-			(at 113.03 105.156 0)
+			(at 110.49 103.124 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2159,7 +2149,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Potentiometer:PDB182-K-Potentiometer"
+		(property "Footprint" "Potentiometer:PDB182-K-Potentiometer-Horizontal"
 			(at 111.76 104.14 0)
 			(effects
 				(font
