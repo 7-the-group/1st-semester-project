@@ -41,7 +41,7 @@ void pwm3_init(void){
     // Set Fast PWM mode (WGM22:0 = 011 for 8-bit Fast PWM)
     // Non-inverting mode (COM2B1 = 1)
     TCCR2A = (1 << WGM20) | (1 << WGM21) | (1 << WGM22) | (1 << COM2B1);
-    TCCR2B = (1 << CS20);  // Prescaler of 8 for Timer2
+    TCCR2B = (1 << CS22);  // Prescaler of 8 for Timer2
 
     // Step 4: Set initial duty cycles
     OCR0A = 0;  // 0% duty cycle on PD6 (OC0A)
@@ -57,10 +57,10 @@ void pwm1_set_duty(unsigned char input){
        
 }
 
-void pwm3_set_duty(uint8_t input0, uint8_t input1, uint8_t input2){
-    OCR0A = input0;
-    OCR0B = input1;
-    OCR2B = input2;
+void pwm3_set_duty(uint8_t red, uint8_t green, uint8_t blue){
+    OCR0A = 255 - blue; // PD6
+    OCR0B = 255 - green; // PD5
+    OCR2B = 255 - red; // PD3
 }
 
 void adc_init(void){
