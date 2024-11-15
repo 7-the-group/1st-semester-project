@@ -12,9 +12,6 @@ void init_room_3()
     DDRD &= ~(1 << POTENTIOMETER2ROOM3); // set potentiometer 2 to input
     DDRD &= ~(1 << BUTTONROOM3); // set button to input
 
-    DDRD |= (1 << REDLED) | (1 << GREENLED) | (1 << BLUELED); // set leds to output
-
-    PORTD &= ~((1 << REDLED) | (1 << GREENLED) | (1 << BLUELED)); // leds turned off initially
     PORTD &= ~(1 << BUTTONROOM3); // set button to 0
 
     // initialize adc from adcpwm.h library
@@ -83,10 +80,11 @@ void set_color_of_light_HSV_room_3(struct ColorHSV hsv)
 int read_pot_1_value_room_3()
 {
     // return value of potentiometer 1
-    return PINC2;
+    return adc_read(2);
 }
 
 int read_pot_2_value_room_3()
 {
     // return value of potentiometer 2
+    // return adc_read(7);
 }
