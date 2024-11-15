@@ -4,6 +4,8 @@
 
 unsigned char buttonStateRoom3 = 0;
 int rgbMenuActive = 0;
+struct ColorRGB RGBcolor;
+float previousSaturation;
 
 void init_room_3()
 {
@@ -39,7 +41,7 @@ void turn_on_light_room_3()
 
 void turn_off_light_room_3()
 {
-    PORTD |= ~((1 << REDLED) | (1 << GREENLED) | (1 << BLUELED));
+    PORTD &= ~((1 << REDLED) | (1 << GREENLED) | (1 << BLUELED));
 }
 
 void switch_light_room_3()
@@ -57,8 +59,16 @@ int get_status_of_light_room_3()
 
 struct ColorRGB get_color_of_light_RGB_room_3()
 {
+    if (rgbMenuActive) return; // return color displayed on lcd -- add function later
+
+    struct ColorHSV HSVcolor;
+    HSVcolor.h = read_pot_1_value_room_3()/4;
+    HSVcolor.v = read_pot_2_value_room_3()/1023;
+    HSVcolor.s = previousSaturation;
+
     // adcpwm.h library
     // return current color of the light
+    return convert_HSV_to_RGB(HSVcolor);
 }
 
 struct ColorHSV get_color_of_light_HSV_room_3()
@@ -70,6 +80,7 @@ void set_color_of_light_RGB_room_3(struct ColorRGB rgb)
 {
     // adcpwm.h library
     // set color of the light
+    pwm3_set_duty(rgb.r, rgb.g, rgb.b);
 }
 
 void set_color_of_light_HSV_room_3(struct ColorHSV hsv)
@@ -86,5 +97,5 @@ int read_pot_1_value_room_3()
 int read_pot_2_value_room_3()
 {
     // return value of potentiometer 2
-    // return adc_read(7);
+    return adc_read(7);
 }
