@@ -19,6 +19,7 @@ void turn_on_light_room_3();
 void turn_off_light_room_3();
 void switch_light_room_3();
 int get_status_of_light_room_3();
+int keep_color();
 
 struct ColorRGB get_color_of_light_RGB_room_3();
 struct ColorHSV get_color_of_light_HSV_room_3();
