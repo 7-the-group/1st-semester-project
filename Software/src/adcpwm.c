@@ -63,11 +63,21 @@ void pwm3_set_duty(uint8_t red, uint8_t green, uint8_t blue){
     OCR2B = 255 - red; // PD3
 }
 
+struct ColorRGB pwm3_get_duty()
+{
+    struct ColorRGB color;
+
+    color.r = OCR2B;
+    color.g = OCR0B;
+    color.b = OCR0A;
+
+    return color;
+}
+
 void adc_init(void){
     ADMUX = (1<<REFS0); //set prescaler to 128 and turn on the ADC module
     ADCSRA = (1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0)|(1<<ADEN);
 }
-
 
 uint16_t adc_read(uint8_t adc_channel){
     ADMUX &= 0xf0; // clear any previously used channel, but keep internal reference

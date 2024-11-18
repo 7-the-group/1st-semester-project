@@ -4,12 +4,22 @@
 
 #include "color.h"
 
-#define POTENTIOMETER1ROOM3 2
-#define POTENTIOMETER2ROOM3 7
-#define REDLED 3
-#define GREENLED 5
-#define BLUELED 6
-#define BUTTONROOM3 4
+#define POTENTIOMETER1_ROOM3 2
+#define POTENTIOMETER2_ROOM3 7
+#define RED_LED 3
+#define GREEN_LED 5
+#define BLUE_LED 6
+#define BUTTON_ROOM3 4
+
+enum PotControlledValue
+{
+    R,
+    G,
+    B,
+    H,
+    S,
+    V
+} pot_1_controlled_val, pot_2_controlled_val;
 
 void init_room3();
 void update_room3();
@@ -19,7 +29,6 @@ void turn_on_light_room_3();
 void turn_off_light_room_3();
 void switch_light_room_3();
 int get_status_of_light_room_3();
-int keep_color();
 
 struct ColorRGB get_color_of_light_RGB_room_3();
 struct ColorHSV get_color_of_light_HSV_room_3();

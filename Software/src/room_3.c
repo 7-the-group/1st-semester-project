@@ -3,25 +3,20 @@
 #include "adcpwm.h"
 
 unsigned char buttonStateRoom3 = 0;
-int rgbMenuActive = 0;
 struct ColorRGB RGBcolor;
 float previousSaturation;
-int potentiometer1;
-int potentiometer2;
-int keepColor=0;
+int prev_potentiometer_1;
+int prev_potentiometer_2;
 
 void init_room_3()
 {
+    pot_1_controlled_val = B;
     // set all adc pins to input
-    DDRC &= ~(1 << POTENTIOMETER1ROOM3); // set potentiometer 1 to input
-    DDRD &= ~(1 << POTENTIOMETER2ROOM3); // set potentiometer 2 to input
-    DDRD &= ~(1 << BUTTONROOM3); // set button to input
+    DDRC &= ~(1 << POTENTIOMETER1_ROOM3); // set potentiometer 1 to input
+    DDRD &= ~(1 << POTENTIOMETER2_ROOM3); // set potentiometer 2 to input
+    DDRD &= ~(1 << BUTTON_ROOM3); // set button to input
 
-    PORTD &= ~(1 << BUTTONROOM3); // set button to 0
-
-    // set potentiometer values
-    potentiometer1 = read_pot_1_value_room_3();
-    potentiometer2 = read_pot_2_value_room_3();
+    PORTD &= ~(1 << BUTTON_ROOM3); // set button to 0
 
     // initialize adc from adcpwm.h library
     adc_init();
@@ -31,31 +26,48 @@ void init_room_3()
 
 void update_room_3()
 {
-    if (rgbMenuActive || !keepColor) 
+    // measure pots
+    int potentiometer_1 = read_pot_1_value_room_3();
+    int potentiometer_2 = read_pot_2_value_room_3();
+
+    if (abs(potentiometer_1 - prev_potentiometer_1)  >= 3)
     {
-        potentiometer1 = read_pot_1_value_room_3();
-        potentiometer2 = read_pot_2_value_room_3();
+        prev_potentiometer_1 = potentiometer_1;
+        struct ColorRGB current_color = pwm3_get_duty();
+        switch (pot_1_controlled_val)
+        {
+            case R:
+
+                break;
+            case G:
+
+                break;
+            case B:
+
+                break;
+        }
     }
+
     // check if button is pressed, and turn on or off light
     if (check_button_room_3()) switch_light_room_3();
     // read pots values and update color
-    set_color_of_light_RGB_room_3(get_color_of_light_RGB_room_3());
+    set_color_of_light_RGB_room_3();
 }
 
 int check_button_room_3()
 {
   // return 1 if button is pressed otherwise 0
-  return (PIND & (1 << BUTTONROOM3));
+  return (PIND & (1 << BUTTON_ROOM3));
 }
 
 void turn_on_light_room_3()
 {
-    PORTD |= (1 << REDLED) | (1 << GREENLED) | (1 << BLUELED);
+    PORTD |= (1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED);
 }
 
 void turn_off_light_room_3()
 {
-    PORTD &= ~((1 << REDLED) | (1 << GREENLED) | (1 << BLUELED));
+    PORTD &= ~((1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED));
 }
 
 void switch_light_room_3()
@@ -68,24 +80,14 @@ void switch_light_room_3()
 int get_status_of_light_room_3()
 {
     // return 1 if light is on otherwise 0
-    return PORTD & ((1 << REDLED) | (1 << GREENLED) | (1 << BLUELED));
+    return PORTD & ((1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED));
 }
 
 struct ColorRGB get_color_of_light_RGB_room_3()
 {
-    struct ColorHSV HSVcolor;
-    keep_color_room_3(&keepColor);
-    if (keep_color) return; // return color displayed on lcd -- add function later
-    else 
-    {
-        HSVcolor.h = read_pot_1_value_room_3()/4;
-        HSVcolor.v = read_pot_2_value_room_3()/1023;
-        HSVcolor.s = previousSaturation;
-
-        // adcpwm.h library
-        // return current color of the light
-        return convert_HSV_to_RGB(HSVcolor);
-    }
+    // adcpwm.h library
+    // return current color of the light
+    return pwm3_get_duty();
 }
 
 struct ColorHSV get_color_of_light_HSV_room_3()
@@ -115,14 +117,4 @@ int read_pot_2_value_room_3()
 {
     // return value of potentiometer 2
     return adc_read(7);
-}
-
-int keep_color_room_3(int* keepColorPointer) 
-{
-    if (rgbMenuActive) *keepColorPointer=1;
-    else if (!rgbMenuActive && potentiometer1==read_pot_1_value_room_3() && potentiometer2==read_pot_2_value_room_3) 
-    {
-        *keepColorPointer=1;
-    }
-    else *keepColorPointer=0; 
 }

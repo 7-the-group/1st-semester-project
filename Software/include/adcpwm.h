@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-
+#include <color.h>
 
 /**
  * @brief Initialises PWM generation with a frequency of approx. 4 KHz at PB1 (Fast mode, Timer1)
@@ -29,6 +29,8 @@ void pwm1_set_duty(unsigned char);
  * @param[in] dutyPD6 Duty cycle in percent [0-255] (B)
  **/
 void pwm3_set_duty(uint8_t, uint8_t, uint8_t);
+
+struct ColorRGB pwm3_get_duty();
 
 /**
  * @brief Initialises the ADC module

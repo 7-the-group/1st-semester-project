@@ -3,14 +3,14 @@
 
 struct ColorRGB
 {
-    unsigned char r;
-    unsigned char g;
-    unsigned char b;
+    uint8_t r;
+    uint8_t g;
+    uint8_t b;
 };
 
 struct ColorHSV
 {
-    unsigned int h; // 0 - 360
+    uint16_t h; // 0 - 360
     float s; // 0 - 1
     float v; // 0 - 1
 };
