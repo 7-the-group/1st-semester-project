@@ -1,6 +1,7 @@
 #include <room_3.h>
 #include <avr/io.h>
 #include "adcpwm.h"
+#include <stdlib.h>
 
 unsigned char buttonStateRoom3 = 0;
 struct ColorRGB RGBcolor;
@@ -10,7 +11,8 @@ int prev_potentiometer_2;
 
 void init_room_3()
 {
-    pot_1_controlled_val = B;
+    pot_1_controlled_val = H;
+    pot_2_controlled_val = V;
     // set all adc pins to input
     DDRC &= ~(1 << POTENTIOMETER1_ROOM3); // set potentiometer 1 to input
     DDRD &= ~(1 << POTENTIOMETER2_ROOM3); // set potentiometer 2 to input
@@ -34,16 +36,60 @@ void update_room_3()
     {
         prev_potentiometer_1 = potentiometer_1;
         struct ColorRGB current_color = pwm3_get_duty();
+        struct ColorHSV current_color_HSV = convert_RGB_to_HSV(current_color);
         switch (pot_1_controlled_val)
         {
             case R:
-
+                pwm3_set_duty(prev_potentiometer_1/1023*255,current_color.g,current_color.b);
                 break;
             case G:
-
+                pwm3_set_duty(current_color.r, prev_potentiometer_1/1023*255, current_color.b);
                 break;
             case B:
+                pwm3_set_duty(current_color.r, current_color.b, prev_potentiometer_1/1023*255);
+                break;
+            case H:
+                current_color_HSV.h = prev_potentiometer_1/1023*360;
+                set_color_of_light_HSV_room_3(current_color_HSV);
+                break;
+            case S:
+                current_color_HSV.s = prev_potentiometer_1/1023.0;
+                set_color_of_light_HSV_room_3(current_color_HSV);
+                break;
+            case V:
+                current_color_HSV.v = prev_potentiometer_1/1023.0;
+                set_color_of_light_HSV_room_3(current_color_HSV);
+                break;
+        }
+    }
 
+    if (abs(potentiometer_2 - prev_potentiometer_2)  >= 3)
+    {
+        prev_potentiometer_2 = potentiometer_2;
+        struct ColorRGB current_color = pwm3_get_duty();
+        struct ColorHSV current_color_HSV = convert_RGB_to_HSV(current_color);
+        switch (pot_2_controlled_val)
+        {
+            case R:
+                pwm3_set_duty(prev_potentiometer_1/1023*255,current_color.g,current_color.b);
+                break;
+            case G:
+                pwm3_set_duty(current_color.r, prev_potentiometer_1/1023*255, current_color.b);
+                break;
+            case B:
+                pwm3_set_duty(current_color.r, current_color.b, prev_potentiometer_1/1023*255);
+                break;
+            case H:
+                current_color_HSV.h = prev_potentiometer_1/1023*360;
+                set_color_of_light_HSV_room_3(current_color_HSV);
+                break;
+            case S:
+                current_color_HSV.s = prev_potentiometer_1/1023.0;
+                set_color_of_light_HSV_room_3(current_color_HSV);
+                break;
+            case V:
+                current_color_HSV.v = prev_potentiometer_1/1023.0;
+                set_color_of_light_HSV_room_3(current_color_HSV);
                 break;
         }
     }
@@ -51,7 +97,7 @@ void update_room_3()
     // check if button is pressed, and turn on or off light
     if (check_button_room_3()) switch_light_room_3();
     // read pots values and update color
-    set_color_of_light_RGB_room_3();
+    // set_color_of_light_RGB_room_3();
 }
 
 int check_button_room_3()
