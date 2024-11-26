@@ -25,3 +25,4 @@ For LDR and potentiometers we need analog pins, those are ones with 'A' prefix.
 |Button sleep|-|D1 (RX1)|PD1|
 |RGB LED room 2|-|D2|PD2|
 |Potentiometer 2 room 3|-|A7|PC7|
+|PIR sensor|-|D13|PB5|
