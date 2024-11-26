@@ -80,3 +80,20 @@ int get_door_light_status()
 {
     return (PORTB & (1 << PORTB2)) != 0;
 }
+
+void turn_off_door_light_manually()
+{
+    light_switched_manually = 1;
+    turn_off_door_light();
+}
+
+void turn_on_door_light_manually()
+{
+    light_switched_manually = 1;
+    turn_on_door_light();
+}
+
+void reset_automatic_behaviour_door()
+{
+    light_switched_manually = 0;
+}

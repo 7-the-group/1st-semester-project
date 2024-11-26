@@ -6,8 +6,9 @@ void update_door();
 
 void set_ldr_threshold(int threshold);
 
-void turn_off_door_light();
-void turn_on_door_light();
+void turn_off_door_light_manually();
+void turn_on_door_light_manually();
+void reset_automatic_behaviour_door();
 void switch_door_light();
 
 int get_ldr_value();
