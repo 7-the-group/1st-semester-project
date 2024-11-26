@@ -14,4 +14,6 @@ int get_ldr_value();
 int get_ldr_threshold();
 int movement_detected();
 
+int get_door_light_status();
+
 #endif
