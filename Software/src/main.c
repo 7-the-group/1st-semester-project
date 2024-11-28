@@ -23,7 +23,7 @@ int main(void)
   element_folder.type = MENU_FOLDER;
   element_file.element.folder = new_folder;
 
-  Menu_element elms[4][4][4][4][4];
+  Menu_element elm = menu_elements[5];
 
   while(1)
   {
