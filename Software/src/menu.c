@@ -1,6 +1,7 @@
 #include "menu.h"
 #include <math.h>
 #include <stdint.h>
+#include "menu_helper.h"
 
 int menu_position[3]; 
 Menu_element menu_elements[19];
@@ -287,17 +288,38 @@ Menu_element* get_current_elms(int* num_of_elms) {
     if (current_element.type == MENU_FILE) current_ID = current_element.element.file.ID;
     else current_ID = current_element.element.folder.ID;
 
-    unsigned char depth;
-    for (int i=0;i<3;i++) {
-        if (menu_position[i]!=-1) depth++;
-    }
+    Menu_element new_menu[*num_of_elms];
+    
+    for (int i = 0; i < 19; i++)
+    {
+        if (menu_elements[i].type == MENU_FILE) {
+            // depth 1
+            if (get_2nd_level_pos(current_ID) == -1 && get_2nd_level_pos(menu_elements[i].element.file.ID) == -1) 
+                new_menu[get_1st_level_pos(menu_elements[i].element.file.ID) - 1] = menu_elements[i];
+            // depth 2
+            else if (get_3rd_level_pos(current_ID) == -1 && get_3rd_level_pos(menu_elements[i].element.file.ID) == -1 
+                && get_1st_level_pos(current_ID) == get_1st_level_pos(menu_elements[i].element.file.ID))
+                    new_menu[get_2nd_level_pos(menu_elements[i].element.file.ID) - 1] = menu_elements[i];
+            // depth 3
+            else if (get_1st_level_pos(current_ID) == get_1st_level_pos(menu_elements[i].element.file.ID) 
+                && get_2nd_level_pos(current_ID) == get_2nd_level_pos(menu_elements[i].element.file.ID))
+                    new_menu[get_3rd_level_pos(menu_elements[i].element.file.ID) - 1] = menu_elements[i];
+        }
 
-    Menu_element current_menu[4];
-    unsigned char row = 1;
-
-    for (int i = 0;i<*num_of_elms;i++) {
-        if (depth==1) {
-            if (current_ID==row)  
+        else {
+            // depth 1
+            if (get_2nd_level_pos(current_ID == -1) && get_2nd_level_pos(menu_elements[i].element.folder.ID) == -1)
+                new_menu[get_1st_level_pos(menu_elements[i].element.folder.ID) - 1] = menu_elements[i];
+            // depth 2
+            else if (get_3rd_level_pos(current_ID) == -1 && get_3rd_level_pos(menu_elements[i].element.folder.ID) == -1
+                && get_1st_level_pos(current_ID) == get_2nd_level_pos(menu_elements[i].element.folder.ID))
+                    new_menu[get_2nd_level_pos(menu_elements[i].element.folder.ID) - 1] = menu_elements[i];
+            // depth 3
+            else if (get_1st_level_pos(current_ID) == get_1st_level_pos(menu_elements[i].element.folder.ID)
+                && get_2nd_level_pos(current_ID) == get_2nd_level_pos(menu_elements[i].element.folder.ID))
+                    new_menu[get_3rd_level_pos(menu_elements[i].element.folder.ID) - 1] = menu_elements[i];
         }
     }
+
+    return &new_menu;
 }
