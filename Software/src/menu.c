@@ -1,4 +1,6 @@
 #include "menu.h"
+#include <math.h>
+#include <stdint.h>
 
 int menu_position[3]; 
 Menu_element menu_elements[19];
@@ -244,6 +246,7 @@ void init_menu()
 }
 
 Menu_element get_current_elm() {
+    // find the current depth
     unsigned char depth = 0;
     for (int i=0; i<3;i++) {
         if (menu_position[i]!=-1) {
@@ -251,5 +254,50 @@ Menu_element get_current_elm() {
         }
     }
 
-    
+    // deduce ID of element based on the current menu position
+    uint8_t elementID = 0;
+    for (int i=0; i<depth;i++) {
+        elementID+=menu_position[i]*pow(i,10);
+    }
+
+    for (int i=0;i<19;i++) {
+        if (menu_elements[i].type==MENU_FILE) {
+            if (elementID == menu_elements[i].element.file.ID) return menu_elements[i];
+        }
+        else {
+            if (elementID == menu_elements[i].element.folder.ID) return menu_elements[i];
+        }
+    }
+}
+
+void change_bool_val_of_curr_elm(char val) {
+    Menu_element current_element = get_current_elm();
+    current_element.element.file.value += val;
+}
+
+void change_float_val_of_curr_element(float val) {
+    Menu_element current_element = get_current_elm();
+    current_element.element.file.value += val;
+}
+
+Menu_element* get_current_elms(int* num_of_elms) {
+    uint8_t current_ID;
+    Menu_element current_element = get_current_elm();
+
+    if (current_element.type == MENU_FILE) current_ID = current_element.element.file.ID;
+    else current_ID = current_element.element.folder.ID;
+
+    unsigned char depth;
+    for (int i=0;i<3;i++) {
+        if (menu_position[i]!=-1) depth++;
+    }
+
+    Menu_element current_menu[4];
+    unsigned char row = 1;
+
+    for (int i = 0;i<*num_of_elms;i++) {
+        if (depth==1) {
+            if (current_ID==row)  
+        }
+    }
 }
