@@ -246,14 +246,18 @@ void init_menu()
     menu_elements[18] = elm19;
 }
 
+int get_current_depth() {
+    int depth = 0;
+    for (int i=0; i<3;i++) {
+        if (menu_position[i]!=-1) depth++;
+    }
+
+    return depth;
+}
+
 Menu_element get_current_elm() {
     // find the current depth
-    unsigned char depth = 0;
-    for (int i=0; i<3;i++) {
-        if (menu_position[i]!=-1) {
-            depth++;
-        }
-    }
+    int depth = get_current_depth();
 
     // deduce ID of element based on the current menu position
     uint8_t elementID = 0;
@@ -276,15 +280,17 @@ void change_bool_val_of_curr_elm(char val) {
     current_element.element.file.value += val;
 }
 
-void change_float_val_of_curr_element(float val) {
+void change_float_val_of_curr_elm(float val) {
     Menu_element current_element = get_current_elm();
     current_element.element.file.value += val;
 }
 
 Menu_element* get_current_elms(int* num_of_elms) {
+    // get current ID and element
     uint8_t current_ID;
     Menu_element current_element = get_current_elm();
 
+    // assign ID based on the type of current element
     if (current_element.type == MENU_FILE) current_ID = current_element.element.file.ID;
     else current_ID = current_element.element.folder.ID;
 
@@ -294,13 +300,16 @@ Menu_element* get_current_elms(int* num_of_elms) {
     {
         if (menu_elements[i].type == MENU_FILE) {
             // depth 1
+            // if the element is on the first layer
             if (get_2nd_level_pos(current_ID) == -1 && get_2nd_level_pos(menu_elements[i].element.file.ID) == -1) 
                 new_menu[get_1st_level_pos(menu_elements[i].element.file.ID) - 1] = menu_elements[i];
             // depth 2
+            // if the element is on the second layer and has the same origin menu
             else if (get_3rd_level_pos(current_ID) == -1 && get_3rd_level_pos(menu_elements[i].element.file.ID) == -1 
                 && get_1st_level_pos(current_ID) == get_1st_level_pos(menu_elements[i].element.file.ID))
                     new_menu[get_2nd_level_pos(menu_elements[i].element.file.ID) - 1] = menu_elements[i];
             // depth 3
+            // if the origin of the element is the same
             else if (get_1st_level_pos(current_ID) == get_1st_level_pos(menu_elements[i].element.file.ID) 
                 && get_2nd_level_pos(current_ID) == get_2nd_level_pos(menu_elements[i].element.file.ID))
                     new_menu[get_3rd_level_pos(menu_elements[i].element.file.ID) - 1] = menu_elements[i];
@@ -320,6 +329,80 @@ Menu_element* get_current_elms(int* num_of_elms) {
                     new_menu[get_3rd_level_pos(menu_elements[i].element.folder.ID) - 1] = menu_elements[i];
         }
     }
-
     return &new_menu;
+}
+
+int get_hovered_elm_idx() {
+    Menu_element current_elm = get_current_elm();
+    // if folder - must be hovered over
+    if (current_elm.type == MENU_FOLDER) return get_last_level_pos(current_elm.element.folder.ID);
+    // if it is selected - nothing is hovered over
+    if (current_elm.element.file.selected) return -1;
+    // otherwise the current element is hovered over
+    return get_last_level_pos(current_elm.element.file.ID);
+}
+
+int get_selected_elm_idx() {
+    Menu_element current_elm = get_current_elm();
+    // if folder - cant be selected
+    if (current_elm.type == MENU_FOLDER) return -1;
+    // if file is selected - return the elements index
+    if (current_elm.element.file.selected) return get_last_level_pos(current_elm.element.file.ID);
+    // otherwise nothing is selected
+    return -1;
+}
+
+void Move_up() {
+    int depth = get_current_depth();
+
+    if (menu_position[depth]-1<=0) return; // how to make it cycle?
+    menu_position[depth]--;
+}
+
+void Move_down() {
+    int depth = get_current_depth();
+
+    Menu_element current_elm = get_current_elm();
+    uint8_t current_ID;
+    if (current_elm.type == MENU_FILE) current_ID = current_elm.element.file.ID;
+    else current_ID = current_elm.element.folder.ID;
+
+    for (int i=0;i<19;i++) {
+        if (menu_elements[i].type == MENU_FILE) {
+            if (current_ID + 1 == menu_elements[i].element.file.ID) {
+                menu_position[depth]++;
+                return;
+            }
+        } 
+        else {
+            if (current_ID + 1 == menu_elements[i].element.folder.ID) {
+                menu_position[depth]++;
+            }
+        }
+    }
+
+    menu_position[depth] = 0;
+}
+
+void Select() {
+    Menu_element current_elm = get_current_elm();
+
+    if (current_elm.type == MENU_FILE) {
+        if (!current_elm.element.file.selected) current_elm.element.file.selected = true;
+    }
+
+    else {
+        int depth = get_current_depth();
+        menu_position[depth + 1] = 0;
+    }
+}
+
+void Back() {
+    Menu_element current_elm = get_current_elm();
+
+    if (get_selected_elm_idx() != -1) current_elm.element.file.selected = false;
+    else {
+        int depth = get_current_depth();
+        menu_position[depth] = -1;
+    }
 }
