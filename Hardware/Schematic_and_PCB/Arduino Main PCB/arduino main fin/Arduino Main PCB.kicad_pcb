@@ -23950,6 +23950,7 @@
 		(property "Reference" "J10"
 			(at 0 2.33 0)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "2adc18d4-795a-41e1-bd75-6beac4c04726")
 			(effects
 				(font
@@ -23962,6 +23963,7 @@
 		(property "Value" "LED_Room_2"
 			(at 0 -9.95 0)
 			(layer "B.Fab")
+			(hide yes)
 			(uuid "467b84c5-8d5d-4010-8042-be01b94a8516")
 			(effects
 				(font
