@@ -2477,7 +2477,7 @@
 		)
 		(uuid "f9082a6e-7c40-475b-9367-2a7540261707")
 	)
-	(text "v(R)=v(cc)-v(CE-sat)-v(D)\n\nv(Red)=v(cc)-v(CE-sat)-v(Red)\nv(Red)=3.075V\n\nv(Green,Blue)=v(cc)-v(CE-sat)-v(G/B)\nv(Green,Blue)=1.925V\n\nR(Red)=v(Red)/I(C)\nR(Red)=307.5\n\nR(Green,Blue)=v(Green,Blue)/I(C)\nR(Green,Blue)=192.5"
+	(text "v(R)=v(cc)-v(CE-sat)-v(D)(general Equation)\n\nv(Red)=v(cc)-v(CE-sat)-v(r)\nv(r)= Voltage drop of the red diode\nv(Red)=3.075V\n\nv(Green,Blue)=v(cc)-v(CE-sat)-v(G/B)\nv(Green,Blue)=1.925V\n\nR(Red)=v(Red)/I(C)\nR(Red)=307.5\n\nR(Green,Blue)=v(Green,Blue)/I(C)\nR(Green,Blue)=192.5"
 		(exclude_from_sim no)
 		(at 55.118 135.636 0)
 		(effects
@@ -2517,7 +2517,7 @@
 				)
 			)
 		)
-		(property "Value" "78 182"
+		(property "Value" "78k"
 			(at 55.88 46.99 90)
 			(effects
 				(font
