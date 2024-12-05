@@ -1905,7 +1905,7 @@
 	)
 	(global_label "Button Back"
 		(shape input)
-		(at 60.96 78.74 90)
+		(at 58.42 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1915,7 +1915,7 @@
 		)
 		(uuid "3f46efb0-32b0-4add-81b7-6fcbdad576a7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 60.96 64.0831 90)
+			(at 58.42 64.0831 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1993,7 +1993,7 @@
 	)
 	(global_label "Button Up"
 		(shape input)
-		(at 68.58 78.74 90)
+		(at 63.5 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2003,7 +2003,7 @@
 		)
 		(uuid "79e4dd5c-c7a8-49e3-a3ac-8c848cb2d770")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 68.58 66.1393 90)
+			(at 63.5 66.1393 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2059,7 +2059,7 @@
 	)
 	(global_label "Button Down"
 		(shape input)
-		(at 63.5 78.74 90)
+		(at 68.58 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2069,7 +2069,7 @@
 		)
 		(uuid "a0d2ad2a-1494-403b-8d4d-14ce1365d470")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 63.5 63.7203 90)
+			(at 68.58 63.7203 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2103,7 +2103,7 @@
 	)
 	(global_label "Button Sleep"
 		(shape input)
-		(at 58.42 78.74 90)
+		(at 60.96 78.74 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2113,7 +2113,7 @@
 		)
 		(uuid "bc3f4c87-96de-4808-b03f-d949185ed1f0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 58.42 63.4179 90)
+			(at 60.96 63.4179 90)
 			(effects
 				(font
 					(size 1.27 1.27)

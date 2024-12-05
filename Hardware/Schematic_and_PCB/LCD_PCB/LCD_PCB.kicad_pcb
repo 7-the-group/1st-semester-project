@@ -136,7 +136,7 @@
 		(descr "SMD rectangular pad as test Point, square 1.5mm side length")
 		(tags "test point SMD pad rectangle square")
 		(property "Reference" "TP2"
-			(at 0 -1.648 360)
+			(at 0 -1.648 0)
 			(layer "F.SilkS")
 			(uuid "2d6ae6d4-ed46-4923-82d3-a6b0b6604a04")
 			(effects
@@ -147,7 +147,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 0 1.75 360)
+			(at 0 1.75 0)
 			(layer "F.Fab")
 			(uuid "db9c731b-ed07-4aea-9dc7-7c3d93c47517")
 			(effects
@@ -282,7 +282,7 @@
 			(uuid "af774ff6-5e5d-4c22-a28b-07b2c1508232")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 -1.65 360)
+			(at 0 -1.65 0)
 			(layer "F.Fab")
 			(uuid "ea6a03f8-15d6-4f94-9b92-1eb7de162cd3")
 			(effects
@@ -309,7 +309,7 @@
 		(descr "tactile push button, 6x6mm e.g. PHAP33xx series, height=5mm")
 		(tags "tact sw push 6mm")
 		(property "Reference" "SW1"
-			(at 3.25 -2 360)
+			(at 3.25 -2 0)
 			(layer "F.SilkS")
 			(uuid "3eaa8e71-57a6-4273-8b2d-770cd2401be6")
 			(effects
@@ -320,7 +320,7 @@
 			)
 		)
 		(property "Value" "Button_down"
-			(at 3.75 6.7 360)
+			(at 3.75 6.7 0)
 			(layer "F.Fab")
 			(uuid "3375a02e-6110-48b8-b5cd-6a1fc7bdc9c3")
 			(effects
@@ -595,7 +595,7 @@
 			(uuid "efaa86ba-e4ff-44fb-bf49-18dfbf5dfca6")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.25 2.25 360)
+			(at 3.25 2.25 0)
 			(layer "F.Fab")
 			(uuid "52b6c354-6471-47cf-bc47-816e914c8037")
 			(effects
@@ -668,7 +668,7 @@
 		(descr "tactile push button, 6x6mm e.g. PHAP33xx series, height=5mm")
 		(tags "tact sw push 6mm")
 		(property "Reference" "SW2"
-			(at 3.25 -2 360)
+			(at 3.25 -2 0)
 			(layer "F.SilkS")
 			(uuid "94d0a66d-3790-48ba-8707-82d838031cea")
 			(effects
@@ -679,7 +679,7 @@
 			)
 		)
 		(property "Value" "Button_up"
-			(at 3.75 6.7 360)
+			(at 3.75 6.7 0)
 			(layer "F.Fab")
 			(uuid "dd170c2c-9e33-41a3-87a5-22faaa5f13aa")
 			(effects
@@ -954,7 +954,7 @@
 			(uuid "0211cdb4-9af4-4cf6-84d3-866f2f1c19b1")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.25 2.25 360)
+			(at 3.25 2.25 0)
 			(layer "F.Fab")
 			(uuid "f20a3353-d937-4e52-8f17-f132284c96ab")
 			(effects
@@ -1302,7 +1302,7 @@
 		(descr "Mounting Hole 3.2mm, no annular, M3")
 		(tags "mounting hole 3.2mm no annular m3")
 		(property "Reference" "H1"
-			(at 0 -4.2 360)
+			(at 0 -4.2 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "7cb0f806-d4f1-4aad-8862-edcab7cc9b2e")
@@ -1314,7 +1314,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 0 4.2 360)
+			(at 0 4.2 0)
 			(layer "F.Fab")
 			(uuid "8e27a696-2fbe-4da7-9cb1-53fec4f15869")
 			(effects
@@ -1391,7 +1391,7 @@
 			(uuid "d47ed97d-ccb3-483d-b947-b3ce048f84d0")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "a48a2c19-508c-41e1-8a15-357a2fd1a25f")
 			(effects
@@ -1878,7 +1878,7 @@
 		(descr "Mounting Hole 3.2mm, no annular, M3")
 		(tags "mounting hole 3.2mm no annular m3")
 		(property "Reference" "H3"
-			(at 0 -4.2 360)
+			(at 0 -4.2 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "54011173-c9c2-482f-b04b-4233aa0d4ff8")
@@ -1890,7 +1890,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 0 4.2 360)
+			(at 0 4.2 0)
 			(layer "F.Fab")
 			(uuid "775a783a-d471-4797-899d-dd3d3d590207")
 			(effects
@@ -1967,7 +1967,7 @@
 			(uuid "5807cb99-e7a4-47b2-8a68-edffad7e00dc")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "ab817f03-3de1-49ef-89cb-6bfddc8f4c13")
 			(effects
@@ -1992,7 +1992,7 @@
 		(descr "tactile push button, 6x6mm e.g. PHAP33xx series, height=5mm")
 		(tags "tact sw push 6mm")
 		(property "Reference" "SW3"
-			(at 3.25 -2 360)
+			(at 3.25 -2 0)
 			(layer "F.SilkS")
 			(uuid "4eaac328-84d1-4e25-8f2b-d8a1d217cd01")
 			(effects
@@ -2003,7 +2003,7 @@
 			)
 		)
 		(property "Value" "Button_ok"
-			(at 3.75 6.7 360)
+			(at 3.75 6.7 0)
 			(layer "F.Fab")
 			(uuid "a076bb4e-a78b-41ef-983f-dc2a641d216f")
 			(effects
@@ -2278,7 +2278,7 @@
 			(uuid "723b92d8-9ec6-407c-8348-3ba52c80241b")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.25 2.25 360)
+			(at 3.25 2.25 0)
 			(layer "F.Fab")
 			(uuid "420b5eae-3ed3-45fc-9aee-0a91013b6ac9")
 			(effects
@@ -2351,7 +2351,7 @@
 		(descr "Mounting Hole 3.2mm, no annular, M3")
 		(tags "mounting hole 3.2mm no annular m3")
 		(property "Reference" "H4"
-			(at 0 -4.2 360)
+			(at 0 -4.2 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "c50017e4-1298-46de-b13d-ae0c232ccb3f")
@@ -2363,7 +2363,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 0 4.2 360)
+			(at 0 4.2 0)
 			(layer "F.Fab")
 			(uuid "18981e15-ee23-46b8-a414-34db4221cefa")
 			(effects
@@ -2440,7 +2440,7 @@
 			(uuid "224faeae-1a6a-447c-a020-8e8783317aa7")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "0bed45e7-c76d-4148-bc05-385f0ee6850c")
 			(effects
@@ -2465,7 +2465,7 @@
 		(descr "Mounting Hole 3.2mm, no annular, M3")
 		(tags "mounting hole 3.2mm no annular m3")
 		(property "Reference" "H2"
-			(at 0 -4.2 360)
+			(at 0 -4.2 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "de7d0184-d354-490e-bd40-e5e5054bcbdc")
@@ -2477,7 +2477,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 0 4.2 360)
+			(at 0 4.2 0)
 			(layer "F.Fab")
 			(uuid "9f1b32e2-8a0d-496a-8b1a-f1a497a9f14d")
 			(effects
@@ -2554,7 +2554,7 @@
 			(uuid "1970d87b-1e5f-4c3e-a65f-0f5ca05e61a7")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "636f6705-a260-44c6-bf7f-4b41caef939b")
 			(effects
@@ -2579,7 +2579,7 @@
 		(descr "tactile push button, 6x6mm e.g. PHAP33xx series, height=5mm")
 		(tags "tact sw push 6mm")
 		(property "Reference" "SW5"
-			(at 3.25 -2 360)
+			(at 3.25 -2 0)
 			(layer "F.SilkS")
 			(uuid "108ff251-470d-498a-af1a-61317cd79395")
 			(effects
@@ -2590,7 +2590,7 @@
 			)
 		)
 		(property "Value" "SW_Push"
-			(at 3.75 6.7 360)
+			(at 3.75 6.7 0)
 			(layer "F.Fab")
 			(uuid "191a77a3-16f7-49ab-bf1c-dddd2b517442")
 			(effects
@@ -2865,7 +2865,7 @@
 			(uuid "042a5af2-ee02-46b5-930f-84409e10dae8")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.25 2.25 360)
+			(at 3.25 2.25 0)
 			(layer "F.Fab")
 			(uuid "52783500-2790-4e17-a3d0-c724128befed")
 			(effects
@@ -2938,7 +2938,7 @@
 		(descr "SMD rectangular pad as test Point, square 1.5mm side length")
 		(tags "test point SMD pad rectangle square")
 		(property "Reference" "TP6"
-			(at 0 -1.648 360)
+			(at 0 -1.648 0)
 			(layer "F.SilkS")
 			(uuid "15f8d635-06cd-4e5f-a48e-2668a4cd25e3")
 			(effects
@@ -2949,7 +2949,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 0 1.75 360)
+			(at 0 1.75 0)
 			(layer "F.Fab")
 			(uuid "0f24f53c-e5e1-4162-b2ef-ea966d7a82de")
 			(effects
@@ -3084,7 +3084,7 @@
 			(uuid "dc14bfed-05a6-40ce-87c9-6c846c2e5339")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 -1.65 360)
+			(at 0 -1.65 0)
 			(layer "F.Fab")
 			(uuid "b819db69-dfed-4685-9866-4ed0499fd01a")
 			(effects
@@ -3111,7 +3111,7 @@
 		(descr "SMD rectangular pad as test Point, square 1.5mm side length")
 		(tags "test point SMD pad rectangle square")
 		(property "Reference" "TP4"
-			(at 0 -1.648 360)
+			(at 0 -1.648 0)
 			(layer "F.SilkS")
 			(uuid "b8a2aaec-9a80-4836-b254-a755f82d3dff")
 			(effects
@@ -3122,7 +3122,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 0 1.75 360)
+			(at 0 1.75 0)
 			(layer "F.Fab")
 			(uuid "3cb09a5d-3e9f-4d58-8f9e-cbb2c187760e")
 			(effects
@@ -3257,7 +3257,7 @@
 			(uuid "786f8fd9-efb0-4efd-aed1-26bc79d539e3")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 -1.65 360)
+			(at 0 -1.65 0)
 			(layer "F.Fab")
 			(uuid "a933e631-d9da-4fbe-b056-3951633738e3")
 			(effects
@@ -3284,7 +3284,7 @@
 		(descr "tactile push button, 6x6mm e.g. PHAP33xx series, height=5mm")
 		(tags "tact sw push 6mm")
 		(property "Reference" "SW4"
-			(at 3.25 -2 360)
+			(at 3.25 -2 0)
 			(layer "F.SilkS")
 			(uuid "cbff2536-e348-4718-944d-5b0e842858da")
 			(effects
@@ -3295,7 +3295,7 @@
 			)
 		)
 		(property "Value" "Button_back"
-			(at 3.75 6.7 360)
+			(at 3.75 6.7 0)
 			(layer "F.Fab")
 			(uuid "cf30db81-199b-4f0b-a459-eb3f692e455e")
 			(effects
@@ -3570,7 +3570,7 @@
 			(uuid "492f83c2-9388-45d6-ab5a-fbcd7cb171f2")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 3.25 2.25 360)
+			(at 3.25 2.25 0)
 			(layer "F.Fab")
 			(uuid "e17528cb-b942-4cdd-b3f2-3318369455c5")
 			(effects
@@ -3643,7 +3643,7 @@
 		(descr "SMD rectangular pad as test Point, square 1.5mm side length")
 		(tags "test point SMD pad rectangle square")
 		(property "Reference" "TP3"
-			(at 0 -1.648 360)
+			(at 0 -1.648 0)
 			(layer "F.SilkS")
 			(uuid "d965a4a3-4f01-4ae5-8093-086f9a844cec")
 			(effects
@@ -3654,7 +3654,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 0 1.75 360)
+			(at 0 1.75 0)
 			(layer "F.Fab")
 			(uuid "748ebb63-73d0-46fa-b4f0-9ade805f2d1f")
 			(effects
@@ -3789,7 +3789,7 @@
 			(uuid "1e0c14f3-d40b-4cfb-bcd8-5dc63119bb80")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 -1.65 360)
+			(at 0 -1.65 0)
 			(layer "F.Fab")
 			(uuid "5dd03f3b-2a54-40ae-8c0a-f4d28b8e735b")
 			(effects
@@ -3816,7 +3816,7 @@
 		(descr "SMD rectangular pad as test Point, square 1.5mm side length")
 		(tags "test point SMD pad rectangle square")
 		(property "Reference" "TP5"
-			(at 0 -1.648 360)
+			(at 0 -1.648 0)
 			(layer "F.SilkS")
 			(uuid "d67b88f2-8f15-4010-a980-91af038217bc")
 			(effects
@@ -3827,7 +3827,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 0 1.75 360)
+			(at 0 1.75 0)
 			(layer "F.Fab")
 			(uuid "d5cbee57-6ed9-4c7f-bca3-b66f622a515b")
 			(effects
@@ -3962,7 +3962,7 @@
 			(uuid "15449969-359b-4607-9f88-b4da3f5da469")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 -1.65 360)
+			(at 0 -1.65 0)
 			(layer "F.Fab")
 			(uuid "38c3cc5c-e569-4e7a-b4ea-63c3ace32d54")
 			(effects
@@ -3989,7 +3989,7 @@
 		(descr "SMD rectangular pad as test Point, square 1.5mm side length")
 		(tags "test point SMD pad rectangle square")
 		(property "Reference" "TP1"
-			(at 0 -1.648 360)
+			(at 0 -1.648 0)
 			(layer "F.SilkS")
 			(uuid "c67ebccc-25d1-4baa-8cc9-0e36133f3df3")
 			(effects
@@ -4000,7 +4000,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 0 1.75 360)
+			(at 0 1.75 0)
 			(layer "F.Fab")
 			(uuid "9c5cbe2c-005e-4ebe-82ce-0309bd3c62d3")
 			(effects
@@ -4135,7 +4135,7 @@
 			(uuid "c4d099e6-b0b3-4267-b6be-404c0713854a")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 -1.65 360)
+			(at 0 -1.65 0)
 			(layer "F.Fab")
 			(uuid "0f3d4f8c-f9b8-4afb-8e7f-6f469dbed09a")
 			(effects
@@ -4162,7 +4162,7 @@
 		(descr "Through hole straight pin header, 1x04, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x04 2.54mm single row")
 		(property "Reference" "J1"
-			(at 0 2.33 360)
+			(at 0 2.33 0)
 			(layer "B.SilkS")
 			(uuid "2b762a49-c2d4-487e-a4ee-2c031323dc9e")
 			(effects
@@ -4174,7 +4174,7 @@
 			)
 		)
 		(property "Value" "LCD_display"
-			(at 0 -9.95 360)
+			(at 0 -9.95 0)
 			(layer "B.Fab")
 			(uuid "22cc98d3-5527-4cf5-823e-97d9ecfa05aa")
 			(effects
@@ -4677,7 +4677,7 @@
 			(uuid "0c0da7fc-57c7-4b0f-99c7-440fc36aea7a")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 -11.43 360)
+			(at 0 -11.43 0)
 			(layer "B.Fab")
 			(uuid "9779986a-2899-4e96-8a20-23a325e83c37")
 			(effects
@@ -4716,7 +4716,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 10 "Button Sleep")
+			(net 7 "Button Back")
 			(pinfunction "Pin_3")
 			(pintype "passive")
 			(uuid "82dad69b-5f5d-4490-b7b6-029ecd63745d")
@@ -4727,7 +4727,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 7 "Button Back")
+			(net 10 "Button Sleep")
 			(pinfunction "Pin_4")
 			(pintype "passive")
 			(uuid "e29df1e8-45e4-42e4-aa43-c05ce27d51f1")
@@ -4738,7 +4738,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 6 "Button Down")
+			(net 9 "Button Up")
 			(pinfunction "Pin_5")
 			(pintype "passive")
 			(uuid "218d5c76-067d-4366-859a-21cb22592dbd")
@@ -4760,7 +4760,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 9 "Button Up")
+			(net 6 "Button Down")
 			(pinfunction "Pin_7")
 			(pintype "passive")
 			(uuid "ed98e853-9dab-4b1c-8a93-c77be2af73a1")
