@@ -212,7 +212,7 @@ void init_menu()
     // Room 3 Potentiometer 1
     File fileElm12;
     fileElm12.ID = 133;
-    fileElm12.Name = "Potentiometer 1";
+    fileElm12.Name = "Pot 1";
     fileElm12.type = FLOAT;
     fileElm12.value = 0.0f;
 
@@ -253,9 +253,9 @@ void init_menu()
     menu_elements[17] = elm18;
     menu_elements[18] = elm19;
 
-    menu_position[0] = 2;
-    menu_position[1] = -1;
-    menu_position[2] = -1;
+    menu_position[0] = 3;
+    menu_position[1] = 2;
+    menu_position[2] = 2;
 }
 
 int get_current_depth() {
