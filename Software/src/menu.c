@@ -253,8 +253,8 @@ void init_menu()
     menu_elements[17] = elm18;
     menu_elements[18] = elm19;
 
-    menu_position[0] = 4;
-    menu_position[1] = 1;
+    menu_position[0] = 2;
+    menu_position[1] = -1;
     menu_position[2] = -1;
 }
 
@@ -272,7 +272,7 @@ Menu_element get_current_elm() {
     int depth = get_current_depth();
 
     // deduce ID of element based on the current menu position
-    uint8_t elementID = 0;
+    int elementID = 0;
     for (int i=0; i<depth;i++) {
         elementID+=menu_position[i]*pow(10,i);
     }
@@ -299,7 +299,7 @@ void change_float_val_of_curr_elm(float val) {
 
 void get_current_elms(Menu_element* elms[4], int* num_of_elms) {
     // get current ID and element
-    uint8_t current_ID;
+    int current_ID;
     Menu_element current_element = get_current_elm();
 
     *num_of_elms = 0;
@@ -307,19 +307,21 @@ void get_current_elms(Menu_element* elms[4], int* num_of_elms) {
     // assign ID based on the type of current element
     if (current_element.type == MENU_FILE) current_ID = current_element.element.file.ID;
     else current_ID = current_element.element.folder.ID;
-    int curr_depth = get_current_depth();
-    Menu_element* new_menu[4];
     
     for (int i = 0; i < 19; i++)
     {
         if (menu_elements[i].type == MENU_FILE) {
             // depth 1
             // if the element is on the first layer
-            if (compare_paths(current_ID, menu_elements[i].element.file.ID)) elms[(*num_of_elms)++] = &(menu_elements[i]);
+            if (compare_paths(current_ID, menu_elements[i].element.file.ID)) {
+                elms[(*num_of_elms)++] = &(menu_elements[i]);
+            }
         }
         else {
             // depth 1
-            if (compare_paths(current_ID, menu_elements[i].element.folder.ID)) elms[(*num_of_elms)++] = &(menu_elements[i]);
+            if (compare_paths(current_ID, menu_elements[i].element.folder.ID)) {
+                elms[(*num_of_elms)++] = &(menu_elements[i]);
+            }
                 //printf("%d\n", menu_elements[i].element.folder.ID);
         }
     }
@@ -356,7 +358,7 @@ void Move_down() {
     int depth = get_current_depth();
 
     Menu_element current_elm = get_current_elm();
-    uint8_t current_ID;
+    int current_ID;
     if (current_elm.type == MENU_FILE) current_ID = current_elm.element.file.ID;
     else current_ID = current_elm.element.folder.ID;
 
