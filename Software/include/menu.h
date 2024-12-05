@@ -50,7 +50,7 @@ int get_current_depth();
 void change_bool_val_of_curr_elm(char val); // change bool value of current element
 void change_float_val_of_curr_elm(float val); // change float value of current element
 
-Menu_element* get_current_elms(int* num_of_elms); // get elements which should be currently displayed on the display
+Menu_element** get_current_elms(int* num_of_elms); // get elements which should be currently displayed on the display
 int get_hovered_elm_idx(); // if none element is hovered returns -1
 int get_selected_elm_idx(); // if none element is selected returns -1
 
