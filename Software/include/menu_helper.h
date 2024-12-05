@@ -10,4 +10,7 @@ int get_5th_level_pos(int id);
 
 int get_last_level_pos(int id);
 
+int get_level(int id);
+int compare_paths(int id1, int id2);
+
 #endif

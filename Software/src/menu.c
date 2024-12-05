@@ -6,6 +6,12 @@
 int menu_position[3]; 
 Menu_element menu_elements[19];
 
+char elm1_name[] = "ROOM 1";
+char elm2_name[] = "ROOM 2";
+char elm3_name[] = "ROOM 3";
+char elm4_name[] = "DOOR";
+char elm5_name[] = "Pot 2";
+
 void init_menu()
 {
     /* File fileElm1;
@@ -30,7 +36,7 @@ void init_menu()
     // main menu Room1
     Folder folderElm1;
     folderElm1.ID = 1;
-    folderElm1.Name = "ROOM 1";
+    folderElm1.Name = elm1_name;
 
     Menu_element elm1;
     elm1.type = MENU_FOLDER;
@@ -39,7 +45,7 @@ void init_menu()
     // main menu Room2
     Folder folderElm2;
     folderElm2.ID = 2;
-    folderElm2.Name = "ROOM 2";
+    folderElm2.Name = elm2_name;
 
     Menu_element elm2;
     elm2.type = MENU_FOLDER;
@@ -48,7 +54,7 @@ void init_menu()
     // main menu Room3
     Folder folderElm3;
     folderElm3.ID = 3;
-    folderElm3.Name = "ROOM 3";
+    folderElm3.Name = elm3_name;
 
     Menu_element elm3;
     elm3.type = MENU_FOLDER;
@@ -57,7 +63,7 @@ void init_menu()
     // main menu Door
     Folder folderElm4;
     folderElm4.ID = 4;
-    folderElm4.Name = "DOOR";
+    folderElm4.Name = elm4_name;
 
     Menu_element elm4;
     elm4.type = MENU_FOLDER;
@@ -68,7 +74,8 @@ void init_menu()
     fileElm1.ID = 11;
     fileElm1.Name = "Brightness";
     fileElm1.type = FLOAT;
-    fileElm1.value = 0;
+    fileElm1.value = 0.0f;
+    fileElm1.selected = 0;
 
     Menu_element elm5;
     elm5.type = MENU_FILE;
@@ -79,7 +86,7 @@ void init_menu()
     fileElm2.ID = 21;
     fileElm2.Name = "Light status";
     fileElm2.type = BOOL;
-    fileElm2.value = 0;
+    fileElm2.value = 0.0f;
 
     Menu_element elm6;
     elm6.type = MENU_FILE;
@@ -90,7 +97,7 @@ void init_menu()
     fileElm3.ID = 12;
     fileElm3.Name = "Light status";
     fileElm3.type = BOOL;
-    fileElm3.value = 0;
+    fileElm3.value = 0.0f;
 
     Menu_element elm7;
     elm7.type = MENU_FILE;
@@ -101,7 +108,7 @@ void init_menu()
     fileElm4.ID = 13;
     fileElm4.Name = "Light status";
     fileElm4.type = BOOL;
-    fileElm4.value = 0;
+    fileElm4.value = 0.0f;
 
     Menu_element elm8;
     elm8.type = MENU_FILE;
@@ -130,7 +137,7 @@ void init_menu()
     fileElm5.ID = 14;
     fileElm5.Name = "Outside brightness";
     fileElm5.type = FLOAT;
-    fileElm5.value = 0;
+    fileElm5.value = 0.0f;
 
     Menu_element elm11;
     elm11.type = MENU_FILE;
@@ -141,7 +148,7 @@ void init_menu()
     fileElm6.ID = 24;
     fileElm6.Name = "Outside movement";
     fileElm6.type = BOOL;
-    fileElm6.value = 0;
+    fileElm6.value = 0.0f;
 
     Menu_element elm12;
     elm12.type = MENU_FILE;
@@ -152,7 +159,7 @@ void init_menu()
     fileElm7.ID = 34;
     fileElm7.Name = "LDR threshold";
     fileElm7.type = FLOAT;
-    fileElm7.value = 0;
+    fileElm7.value = 0.0f;
 
     Menu_element elm13;
     elm13.type = MENU_FILE;
@@ -163,7 +170,7 @@ void init_menu()
     fileElm8.ID = 123;
     fileElm8.Name = "Value 1";
     fileElm8.type = FLOAT;
-    fileElm8.value = 0;
+    fileElm8.value = 0.0f;
 
     Menu_element elm14;
     elm14.type = MENU_FILE;
@@ -174,7 +181,7 @@ void init_menu()
     fileElm9.ID = 223;
     fileElm9.Name = "Value 2";
     fileElm9.type = FLOAT;
-    fileElm9.value = 0;
+    fileElm9.value = 0.0f;
 
     Menu_element elm15;
     elm15.type = MENU_FILE;
@@ -185,7 +192,7 @@ void init_menu()
     fileElm10.ID = 323;
     fileElm10.Name = "Value 3";
     fileElm10.type = FLOAT;
-    fileElm10.value = 0;
+    fileElm10.value = 0.0f;
 
     Menu_element elm16;
     elm16.type = MENU_FILE;
@@ -196,7 +203,7 @@ void init_menu()
     fileElm11.ID = 423;
     fileElm11.Name = "Change format";
     fileElm11.type = BOOL;
-    fileElm11.value = 0;
+    fileElm11.value = 0.0f;
 
     Menu_element elm17;
     elm17.type = MENU_FILE;
@@ -207,7 +214,7 @@ void init_menu()
     fileElm12.ID = 133;
     fileElm12.Name = "Potentiometer 1";
     fileElm12.type = FLOAT;
-    fileElm12.value = 0;
+    fileElm12.value = 0.0f;
 
     Menu_element elm18;
     elm18.type = MENU_FILE;
@@ -216,9 +223,10 @@ void init_menu()
     // Room 3 Potentiometer 2
     File fileElm13;
     fileElm13.ID = 233;
-    fileElm13.Name = "Potentiometer 2";
+    fileElm13.Name = "Pot 2";
     fileElm13.type = FLOAT;
-    fileElm13.value = 0;
+    fileElm13.value = 0.0f;
+    fileElm13.selected = 0;
 
     Menu_element elm19;
     elm19.type = MENU_FILE;
@@ -244,6 +252,10 @@ void init_menu()
     menu_elements[16] = elm17;
     menu_elements[17] = elm18;
     menu_elements[18] = elm19;
+
+    menu_position[0] = 4;
+    menu_position[1] = 1;
+    menu_position[2] = -1;
 }
 
 int get_current_depth() {
@@ -262,7 +274,7 @@ Menu_element get_current_elm() {
     // deduce ID of element based on the current menu position
     uint8_t elementID = 0;
     for (int i=0; i<depth;i++) {
-        elementID+=menu_position[i]*pow(i,10);
+        elementID+=menu_position[i]*pow(10,i);
     }
 
     for (int i=0;i<19;i++) {
@@ -285,51 +297,32 @@ void change_float_val_of_curr_elm(float val) {
     current_element.element.file.value += val;
 }
 
-Menu_element* get_current_elms(int* num_of_elms) {
+void get_current_elms(Menu_element* elms[4], int* num_of_elms) {
     // get current ID and element
     uint8_t current_ID;
     Menu_element current_element = get_current_elm();
 
+    *num_of_elms = 0;
+
     // assign ID based on the type of current element
     if (current_element.type == MENU_FILE) current_ID = current_element.element.file.ID;
     else current_ID = current_element.element.folder.ID;
-
-    Menu_element new_menu[*num_of_elms];
+    int curr_depth = get_current_depth();
+    Menu_element* new_menu[4];
     
     for (int i = 0; i < 19; i++)
     {
         if (menu_elements[i].type == MENU_FILE) {
             // depth 1
             // if the element is on the first layer
-            if (get_2nd_level_pos(current_ID) == -1 && get_2nd_level_pos(menu_elements[i].element.file.ID) == -1) 
-                new_menu[get_1st_level_pos(menu_elements[i].element.file.ID) - 1] = menu_elements[i];
-            // depth 2
-            // if the element is on the second layer and has the same origin menu
-            else if (get_3rd_level_pos(current_ID) == -1 && get_3rd_level_pos(menu_elements[i].element.file.ID) == -1 
-                && get_1st_level_pos(current_ID) == get_1st_level_pos(menu_elements[i].element.file.ID))
-                    new_menu[get_2nd_level_pos(menu_elements[i].element.file.ID) - 1] = menu_elements[i];
-            // depth 3
-            // if the origin of the element is the same
-            else if (get_1st_level_pos(current_ID) == get_1st_level_pos(menu_elements[i].element.file.ID) 
-                && get_2nd_level_pos(current_ID) == get_2nd_level_pos(menu_elements[i].element.file.ID))
-                    new_menu[get_3rd_level_pos(menu_elements[i].element.file.ID) - 1] = menu_elements[i];
+            if (compare_paths(current_ID, menu_elements[i].element.file.ID)) elms[(*num_of_elms)++] = &(menu_elements[i]);
         }
-
         else {
             // depth 1
-            if (get_2nd_level_pos(current_ID == -1) && get_2nd_level_pos(menu_elements[i].element.folder.ID) == -1)
-                new_menu[get_1st_level_pos(menu_elements[i].element.folder.ID) - 1] = menu_elements[i];
-            // depth 2
-            else if (get_3rd_level_pos(current_ID) == -1 && get_3rd_level_pos(menu_elements[i].element.folder.ID) == -1
-                && get_1st_level_pos(current_ID) == get_2nd_level_pos(menu_elements[i].element.folder.ID))
-                    new_menu[get_2nd_level_pos(menu_elements[i].element.folder.ID) - 1] = menu_elements[i];
-            // depth 3
-            else if (get_1st_level_pos(current_ID) == get_1st_level_pos(menu_elements[i].element.folder.ID)
-                && get_2nd_level_pos(current_ID) == get_2nd_level_pos(menu_elements[i].element.folder.ID))
-                    new_menu[get_3rd_level_pos(menu_elements[i].element.folder.ID) - 1] = menu_elements[i];
+            if (compare_paths(current_ID, menu_elements[i].element.folder.ID)) elms[(*num_of_elms)++] = &(menu_elements[i]);
+                //printf("%d\n", menu_elements[i].element.folder.ID);
         }
     }
-    return &new_menu;
 }
 
 int get_hovered_elm_idx() {
@@ -393,7 +386,7 @@ void Select() {
 
     else {
         int depth = get_current_depth();
-        menu_position[depth + 1] = 0;
+        menu_position[depth + 1] = 1;
     }
 }
 

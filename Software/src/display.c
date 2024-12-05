@@ -1,6 +1,8 @@
 #include "display.h"
 #include "i2cmaster.h"
 #include "lcd.h"
+#include <stdio.h>
+#include <string.h>
 
 void init_display()
 {
@@ -8,32 +10,48 @@ void init_display()
     LCD_init();
 }
 
-void update_display(Menu_element* elems, int elements_count, int element_hovered, int element_selected)
+void update_display(Menu_element* elems[4], int elements_count, int element_hovered, int element_selected)
 {
-    char cursor;
+    char str_to_print[25];
     
+    if (elements_count > 4)
+    {
+        elements_count = 4;
+    }
+
     for (int i = 0; i < elements_count; i++) {
-        LCD_set_cursor(1,i);
-        if (elems[i].type == MENU_FILE) {
-            if (elems[i].element.file.selected) {
-                printf("%s: %s", elems[i].element.file.Name, elems[i].element.file.value);
+        LCD_set_cursor(1,(unsigned char)i);
+        if (elems[i]->type == MENU_FILE) {
+            if (elems[i]->element.file.type == BOOL) {
+                if (elems[i]->element.file.value == 0)
+                    sprintf(str_to_print, "%s: %s", elems[i]->element.file.Name, "OFF");
+                else 
+                    sprintf(str_to_print, "%s: %s", elems[i]->element.file.Name, "ON");
             }
-            else {
-                printf("%s", elems[i].element.file.Name);
+
+            else if (elems[i]->element.file.type == INT) {
+                sprintf(str_to_print, "%s: %3.0f", elems[i]->element.file.Name, elems[i]->element.file.value);
             }
+
+            else if (elems[i]->element.file.type = FLOAT) {
+                sprintf(str_to_print, "%s: %3.1f", elems[i]->element.file.Name, elems[i]->element.file.value);
+            }
+            
+            LCD_write_str(str_to_print);
         }
         else {
-            pritf("%s", elems[i].element.folder.Name);
+            sprintf(str_to_print, "%s", elems[i]->element.folder.Name);
+            LCD_write_str(str_to_print);
+            //printf("%d", elems[i]->element.folder.ID);
         }
     }
 
     if (element_hovered != -1) {
-        cursor = "*";
         LCD_set_cursor(0,element_hovered-1);
-        printf("%c", &cursor);
+        LCD_write_char('*');
     }
     else {
-        cursor = ">";
         LCD_set_cursor(0,element_selected-1);
+        LCD_write_char('>');
     }
 }
