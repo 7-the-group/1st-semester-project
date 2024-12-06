@@ -1,0 +1,19 @@
+Room 1
+LED works
+BUTTON works
+POT works
+
+Room 2
+LED works
+BUTTONS works (but not when using serial, because of the same pin probably)
+
+Room 3
+LED needs to be tested with osciloscope
+POT 1 works
+POT 2 works
+BUTTON does not work
+
+Door
+PIR works
+LDR does not work
+LED works
