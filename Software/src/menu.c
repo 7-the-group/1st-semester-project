@@ -255,7 +255,7 @@ void init_menu()
 
     menu_position[0] = 3;
     menu_position[1] = 2;
-    menu_position[2] = 2;
+    menu_position[2] = 1;
 }
 
 int get_current_depth() {
@@ -274,7 +274,7 @@ Menu_element get_current_elm() {
     // deduce ID of element based on the current menu position
     int elementID = 0;
     for (int i=0; i<depth;i++) {
-        elementID+=menu_position[i]*pow(10,i);
+        elementID+=menu_position[i]*round(pow(10,i));
     }
 
     for (int i=0;i<19;i++) {
