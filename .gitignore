@@ -47,3 +47,4 @@ fp-info-cache
 # Built Visual Studio Code Extensions
 *.vsix
 /Software/.vscode/c_cpp_properties.json
+/Software/.pio/build/project.checksum
