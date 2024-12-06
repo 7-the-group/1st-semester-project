@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 unsigned char buttonStateRoom3 = 0;
-struct ColorRGB RGBcolor;
+ColorRGB RGBcolor;
 float previousSaturation;
 int prev_potentiometer_1;
 int prev_potentiometer_2;
@@ -18,7 +18,7 @@ void init_room_3()
     DDRD &= ~(1 << POTENTIOMETER2_ROOM3); // set potentiometer 2 to input
     DDRD &= ~(1 << BUTTON_ROOM3); // set button to input
 
-    PORTD &= ~(1 << BUTTON_ROOM3); // set button to 0
+    PORTD |= (1 << BUTTON_ROOM3); // add pull up
 
     // initialize adc from adcpwm.h library
     adc_init();
@@ -35,8 +35,8 @@ void update_room_3()
     if (abs(potentiometer_1 - prev_potentiometer_1)  >= 3)
     {
         prev_potentiometer_1 = potentiometer_1;
-        struct ColorRGB current_color = pwm3_get_duty();
-        struct ColorHSV current_color_HSV = convert_RGB_to_HSV(current_color);
+        ColorRGB current_color = pwm3_get_duty();
+        ColorHSV current_color_HSV = convert_RGB_to_HSV(current_color);
         switch (pot_1_controlled_val)
         {
             case R:
@@ -66,8 +66,8 @@ void update_room_3()
     if (abs(potentiometer_2 - prev_potentiometer_2)  >= 3)
     {
         prev_potentiometer_2 = potentiometer_2;
-        struct ColorRGB current_color = pwm3_get_duty();
-        struct ColorHSV current_color_HSV = convert_RGB_to_HSV(current_color);
+        ColorRGB current_color = pwm3_get_duty();
+        ColorHSV current_color_HSV = convert_RGB_to_HSV(current_color);
         switch (pot_2_controlled_val)
         {
             case R:
@@ -103,7 +103,7 @@ void update_room_3()
 int check_button_room_3()
 {
   // return 1 if button is pressed otherwise 0
-  return (PIND & (1 << BUTTON_ROOM3));
+  return (PIND & (1 << BUTTON_ROOM3)) == 0;
 }
 
 void turn_on_light_room_3()
@@ -129,26 +129,26 @@ int get_status_of_light_room_3()
     return PORTD & ((1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED));
 }
 
-struct ColorRGB get_color_of_light_RGB_room_3()
+ColorRGB get_color_of_light_RGB_room_3()
 {
     // adcpwm.h library
     // return current color of the light
     return pwm3_get_duty();
 }
 
-struct ColorHSV get_color_of_light_HSV_room_3()
+ColorHSV get_color_of_light_HSV_room_3()
 {
     return convert_RGB_to_HSV(get_color_of_light_RGB_room_3());
 }
 
-void set_color_of_light_RGB_room_3(struct ColorRGB rgb)
+void set_color_of_light_RGB_room_3(ColorRGB rgb)
 {
     // adcpwm.h library
     // set color of the light
     pwm3_set_duty(rgb.r, rgb.g, rgb.b);
 }
 
-void set_color_of_light_HSV_room_3(struct ColorHSV hsv)
+void set_color_of_light_HSV_room_3(ColorHSV hsv)
 {
     set_color_of_light_RGB_room_3(convert_HSV_to_RGB(hsv));
 }

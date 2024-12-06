@@ -3,21 +3,21 @@
 
 #include <stdint.h>
 
-struct ColorRGB
+typedef struct
 {
     uint8_t r;
     uint8_t g;
     uint8_t b;
-};
+} ColorRGB;
 
-struct ColorHSV
+typedef struct
 {
     uint16_t h; // 0 - 360
     float s; // 0 - 1
     float v; // 0 - 1
-};
+} ColorHSV;
 
-struct ColorRGB convert_HSV_to_RGB(struct ColorHSV hsv);
-struct ColorHSV convert_RGB_to_HSV(struct ColorRGB rgb);
+ColorRGB convert_HSV_to_RGB(ColorHSV hsv);
+ColorHSV convert_RGB_to_HSV(ColorRGB rgb);
 
 #endif

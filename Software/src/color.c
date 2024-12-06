@@ -1,10 +1,10 @@
 #include <color.h>
 
-struct ColorRGB convert_HSV_to_RGB(struct ColorHSV hsv) // ChatGPT wrote it
+ColorRGB convert_HSV_to_RGB(ColorHSV hsv) // ChatGPT wrote it
 {
     float hh, p, q, t, ff;
     long i;
-    struct ColorRGB rgb;
+    ColorRGB rgb;
 
     if (hsv.s <= 0.0) { // If saturation is 0, the color is a shade of gray
         rgb.r = rgb.g = rgb.b = (int)(hsv.v * 255.0);
@@ -58,7 +58,7 @@ struct ColorRGB convert_HSV_to_RGB(struct ColorHSV hsv) // ChatGPT wrote it
     return rgb;
 }
 
-struct ColorHSV convert_RGB_to_HSV(struct ColorRGB rgb) // ChatGPT wrote it
+ColorHSV convert_RGB_to_HSV(ColorRGB rgb) // ChatGPT wrote it
 {
     float r = rgb.r / 255.0;
     float g = rgb.g / 255.0;
@@ -68,7 +68,7 @@ struct ColorHSV convert_RGB_to_HSV(struct ColorRGB rgb) // ChatGPT wrote it
     float min = (r < g ? (r < b ? r : b) : (g < b ? g : b));
     float delta = max - min;
 
-    struct ColorHSV hsv;
+    ColorHSV hsv;
     hsv.v = max;
 
     if (delta < 0.00001) { // if max == min, then it's a shade of gray

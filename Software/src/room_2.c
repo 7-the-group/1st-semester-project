@@ -10,7 +10,7 @@ void init_room_2()
     DDRD |= (1 << LIGHT_PIN_R2); // set light pin as output
 
     PORTD |= (1 << BTN_PIN_R2); // add pull up resistor for button
-    PORTD &= ~(1 << LIGHT_PIN_R2); // turn off light
+    PORTD |= (1 << LIGHT_PIN_R2); // turn off light
 }
 
 void update_room_2()
@@ -19,7 +19,7 @@ void update_room_2()
     
     // if button is pressed and it wasn't previously pressed, switch light
     // checking if button wasn't previously pressed get rid of switching light when when button is being held for longer.
-    if (!button_pressed && previous_button_state != 0)
+    if (button_pressed && previous_button_state == 0)
     {
         switch_light_room_2();
     }
@@ -30,7 +30,7 @@ void update_room_2()
 
 int check_button_room_2()
 {
-    return (PIND & (1 << BTN_PIN_R2)) != 0; // get value of button bit in PINC register
+    return (PIND & (1 << BTN_PIN_R2)) == 0; // get value of button bit in PINC register
 }
 
 void turn_on_light_room_2()
@@ -45,14 +45,7 @@ void turn_off_light_room_2()
 
 void switch_light_room_2()
 {
-    if (get_status_of_light())
-    {
-        turn_off_light_room_2(); // turn on light if it is off
-    }
-    else
-    {
-        turn_on_light_room_2(); // turn off light if it is on
-    }
+    PORTD ^= (1 << LIGHT_PIN_R2); // set light's pin to 1
 }
 
 int get_status_of_light()
