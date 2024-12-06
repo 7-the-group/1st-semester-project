@@ -60,9 +60,9 @@ void pwm3_set_duty(uint8_t red, uint8_t green, uint8_t blue){
     OCR2B = 255 - red; // PD3
 }
 
-struct ColorRGB pwm3_get_duty()
+ColorRGB pwm3_get_duty()
 {
-    struct ColorRGB color;
+    ColorRGB color;
 
     color.r = OCR2B;
     color.g = OCR0B;

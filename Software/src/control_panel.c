@@ -28,7 +28,7 @@ typedef enum
     PRESS_BTN_SELECT,
     PRESS_BTN_BACK,
     CHANGE_POT
-} what_happenned;
+} What_happened;
 
 Menu_element* curr_element = 0;
 
@@ -116,7 +116,12 @@ void react_btn_back_pressed()
     show_curr_elems_on_display();
 }
 
-what_happenned check_controls()
+void react_pot_value_changed()
+{
+    
+}
+
+What_happened check_controls()
 {
     if (check_btn_up())
     {
@@ -133,7 +138,7 @@ what_happenned check_controls()
         return PRESS_BTN_SELECT;
     }
 
-    if (check_btn_BACK())
+    if (check_btn_back())
     {
         return PRESS_BTN_BACK;
     }
@@ -146,7 +151,22 @@ what_happenned check_controls()
 
 void update_control_panel()
 {
-    
-    // check butons and pot
-    // act according to pressed button and current postion
+    switch(check_controls())
+    {
+        case PRESS_BTN_UP:
+            react_btn_up_pressed();
+            break;
+        case PRESS_BTN_DOWN:
+            react_btn_down_pressed();
+            break;
+        case PRESS_BTN_SELECT:
+            react_btn_select_pressed();
+            break;
+        case PRESS_BTN_BACK:
+            react_btn_back_pressed();
+            break;
+        case CHANGE_POT:
+            react_pot_value_changed();
+            break;
+    }
 }

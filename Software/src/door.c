@@ -16,8 +16,8 @@ void init_door()
     DDRB &= ~(1 << DDB5); // set PIR sensor pin as input
     DDRB |= (1 << DDB2); // set LED pin to output
 
-    PORTB |= (1 << PORTB5); // set pull up resistor
-    PORTB &= ~(1 << PORTB2); // turn off the light
+    //PORTB |= (1 << PORTB5); // set pull up resistor
+    PORTB |= (1 << PORTB2); // turn off the light
 }
 
 void update_door()

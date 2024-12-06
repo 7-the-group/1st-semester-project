@@ -88,10 +88,10 @@ int get_light_intensity_room_1()
 
 int read_pot_room_1()
 {
-    adc_read(6);
+    return adc_read(6);
 }
 
 int check_btn_room_1()
 {
-    return PINC & (1 << BTN_PIN) == 0;
+    return (PINC & (1 << BTN_PIN)) == 0;
 }
