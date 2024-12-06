@@ -126,7 +126,7 @@ void init_menu()
     // Room 3 Potentiometers
     Folder folderElm6;
     folderElm6.ID = 33;
-    folderElm6.Name = "Potentiometer type";
+    folderElm6.Name = "Pot type";
 
     Menu_element elm10;
     elm10.type = MENU_FOLDER;
@@ -135,7 +135,7 @@ void init_menu()
     // Door LDR
     File fileElm5;
     fileElm5.ID = 14;
-    fileElm5.Name = "Outside brightness";
+    fileElm5.Name = "Brightness OUT";
     fileElm5.type = FLOAT;
     fileElm5.value = 0.0f;
 
@@ -146,7 +146,7 @@ void init_menu()
     // Door PIR
     File fileElm6;
     fileElm6.ID = 24;
-    fileElm6.Name = "Outside movement";
+    fileElm6.Name = "Movement OUT";
     fileElm6.type = BOOL;
     fileElm6.value = 0.0f;
 
@@ -253,9 +253,9 @@ void init_menu()
     menu_elements[17] = elm18;
     menu_elements[18] = elm19;
 
-    menu_position[0] = 3;
-    menu_position[1] = 2;
-    menu_position[2] = 1;
+    menu_position[0] = 4;
+    menu_position[1] = 3;
+    menu_position[2] = -1;
 }
 
 int get_current_depth() {

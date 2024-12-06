@@ -3,9 +3,8 @@
 #include "adcpwm.h"
 #include <stdlib.h>
 
-unsigned char buttonStateRoom3 = 0;
+unsigned char previousButtonStateRoom3 = 1;
 ColorRGB RGBcolor;
-float previousSaturation;
 int prev_potentiometer_1;
 int prev_potentiometer_2;
 
@@ -16,9 +15,12 @@ void init_room_3()
     // set all adc pins to input
     DDRC &= ~(1 << POTENTIOMETER1_ROOM3); // set potentiometer 1 to input
     DDRD &= ~(1 << POTENTIOMETER2_ROOM3); // set potentiometer 2 to input
+
     DDRD &= ~(1 << BUTTON_ROOM3); // set button to input
+    DDRD |= (1 << RED_LED | 1 << GREEN_LED | 1 << BLUE_LED); // set lights as output
 
     PORTD |= (1 << BUTTON_ROOM3); // add pull up
+    PORTD |= (1 << RED_LED | 1 << GREEN_LED | 1 << BLUE_LED); // turn of led
 
     // initialize adc from adcpwm.h library
     adc_init();
@@ -95,7 +97,11 @@ void update_room_3()
     }
 
     // check if button is pressed, and turn on or off light
-    if (check_button_room_3()) switch_light_room_3();
+    int button_pressed = check_button_room_3();
+    if (button_pressed && previousButtonStateRoom3 == 0) switch_light_room_3();
+
+    previousButtonStateRoom3 = button_pressed;
+    _delay_ms(10);
     // read pots values and update color
     // set_color_of_light_RGB_room_3();
 }
@@ -126,7 +132,7 @@ void switch_light_room_3()
 int get_status_of_light_room_3()
 {
     // return 1 if light is on otherwise 0
-    return PORTD & ((1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED));
+    return PORTD & ((1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED)) != 0;
 }
 
 ColorRGB get_color_of_light_RGB_room_3()
