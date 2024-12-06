@@ -51,10 +51,7 @@ void pwm3_init(void){
 
 
 void pwm1_set_duty(unsigned char input){
-    if (input <= 100){
-        OCR1A = input*2.55; // 0 .. 255 range
-    }
-       
+    OCR1A = input; // 0 .. 255 range
 }
 
 void pwm3_set_duty(uint8_t red, uint8_t green, uint8_t blue){
