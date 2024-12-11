@@ -28,7 +28,7 @@ void init_room_3()
     PORTD |= (1 << BUTTON_ROOM3); // add pull up
     PORTD &= ~(1 << RED_LED | 1 << GREEN_LED | 1 << BLUE_LED); // turn off led
 
-    pwm3_set_duty(255,255,255);
+    pwm3_set_duty((uint8_t)255,(uint8_t)255,(uint8_t)255);
 }
 
 void update_room_3()
