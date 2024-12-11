@@ -267,7 +267,7 @@ int get_current_depth() {
     return depth;
 }
 
-Menu_element get_current_elm() {
+Menu_element* get_current_elm() {
     // find the current depth
     int depth = get_current_depth();
 
@@ -279,34 +279,34 @@ Menu_element get_current_elm() {
 
     for (int i=0;i<19;i++) {
         if (menu_elements[i].type==MENU_FILE) {
-            if (elementID == menu_elements[i].element.file.ID) return menu_elements[i];
+            if (elementID == menu_elements[i].element.file.ID) return &menu_elements[i];
         }
         else {
-            if (elementID == menu_elements[i].element.folder.ID) return menu_elements[i];
+            if (elementID == menu_elements[i].element.folder.ID) return &menu_elements[i];
         }
     }
 }
 
 void change_bool_val_of_curr_elm(char val) {
-    Menu_element current_element = get_current_elm();
-    current_element.element.file.value += val;
+    Menu_element* current_element = get_current_elm();
+    current_element->element.file.value += val;
 }
 
 void change_float_val_of_curr_elm(float val) {
-    Menu_element current_element = get_current_elm();
-    current_element.element.file.value += val;
+    Menu_element* current_element = get_current_elm();
+    current_element->element.file.value += val;
 }
 
 void get_current_elms(Menu_element* elms[4], int* num_of_elms) {
     // get current ID and element
     int current_ID;
-    Menu_element current_element = get_current_elm();
+    Menu_element* current_element = get_current_elm();
 
     *num_of_elms = 0;
 
     // assign ID based on the type of current element
-    if (current_element.type == MENU_FILE) current_ID = current_element.element.file.ID;
-    else current_ID = current_element.element.folder.ID;
+    if (current_element->type == MENU_FILE) current_ID = current_element->element.file.ID;
+    else current_ID = current_element->element.folder.ID;
     
     for (int i = 0; i < 19; i++)
     {
@@ -328,21 +328,21 @@ void get_current_elms(Menu_element* elms[4], int* num_of_elms) {
 }
 
 int get_hovered_elm_idx() {
-    Menu_element current_elm = get_current_elm();
+    Menu_element* current_elm = get_current_elm();
     // if folder - must be hovered over
-    if (current_elm.type == MENU_FOLDER) return get_last_level_pos(current_elm.element.folder.ID);
+    if (current_elm->type == MENU_FOLDER) return get_last_level_pos(current_elm->element.folder.ID);
     // if it is selected - nothing is hovered over
-    if (current_elm.element.file.selected) return -1;
+    if (current_elm->element.file.selected) return -1;
     // otherwise the current element is hovered over
-    return get_last_level_pos(current_elm.element.file.ID);
+    return get_last_level_pos(current_elm->element.file.ID);
 }
 
 int get_selected_elm_idx() {
-    Menu_element current_elm = get_current_elm();
+    Menu_element* current_elm = get_current_elm();
     // if folder - cant be selected
-    if (current_elm.type == MENU_FOLDER) return -1;
+    if (current_elm->type == MENU_FOLDER) return -1;
     // if file is selected - return the elements index
-    if (current_elm.element.file.selected) return get_last_level_pos(current_elm.element.file.ID);
+    if (current_elm->element.file.selected) return get_last_level_pos(current_elm->element.file.ID);
     // otherwise nothing is selected
     return -1;
 }
@@ -357,10 +357,10 @@ void Move_up() {
 void Move_down() {
     int depth = get_current_depth();
 
-    Menu_element current_elm = get_current_elm();
+    Menu_element* current_elm = get_current_elm();
     int current_ID;
-    if (current_elm.type == MENU_FILE) current_ID = current_elm.element.file.ID;
-    else current_ID = current_elm.element.folder.ID;
+    if (current_elm->type == MENU_FILE) current_ID = current_elm->element.file.ID;
+    else current_ID = current_elm->element.folder.ID;
 
     for (int i=0;i<19;i++) {
         if (menu_elements[i].type == MENU_FILE) {
@@ -380,10 +380,10 @@ void Move_down() {
 }
 
 void Select() {
-    Menu_element current_elm = get_current_elm();
+    Menu_element* current_elm = get_current_elm();
 
-    if (current_elm.type == MENU_FILE) {
-        if (!current_elm.element.file.selected) current_elm.element.file.selected = true;
+    if (current_elm->type == MENU_FILE) {
+        if (!current_elm->element.file.selected) current_elm->element.file.selected = true;
     }
 
     else {
@@ -393,9 +393,9 @@ void Select() {
 }
 
 void Back() {
-    Menu_element current_elm = get_current_elm();
+    Menu_element* current_elm = get_current_elm();
 
-    if (get_selected_elm_idx() != -1) current_elm.element.file.selected = false;
+    if (get_selected_elm_idx() != -1) current_elm->element.file.selected = false;
     else {
         int depth = get_current_depth();
         menu_position[depth] = -1;

@@ -45,7 +45,7 @@ void Move_down();
 void Select();
 void Back();
 
-Menu_element get_current_elm(); // returns currently selected or hovered element
+Menu_element* get_current_elm(); // returns currently selected or hovered element
 int get_current_depth();
 void change_bool_val_of_curr_elm(char val); // change bool value of current element
 void change_float_val_of_curr_elm(float val); // change float value of current element
