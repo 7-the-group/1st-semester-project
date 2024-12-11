@@ -34,14 +34,18 @@ void pwm3_init(void){
     // Step 2: Configure Timer0 for Fast PWM on PD5 (OC0B) and PD6 (OC0A)
     // Set Fast PWM mode (WGM02:0 = 011 for 8-bit Fast PWM)
     // Non-inverting mode (COM0A1 = 1, COM0B1 = 1)
-    TCCR0A = (1 << WGM00) | (1 << WGM01) | (1 << WGM02) | (1 << COM0A1) | (1 << COM0B1);
+    TCCR0A = (1 << COM0A1) | (1 << COM0B1);
+    TCCR0A &= ~((1 << WGM00) | (1 << WGM01));
     TCCR0B = (1 << CS02);  // Prescaler of 8 for Timer0
+    TCCR0B &= ~(1 << WGM02);
 
     // Step 3: Configure Timer2 for Fast PWM on PD3 (OC2B)
     // Set Fast PWM mode (WGM22:0 = 011 for 8-bit Fast PWM)
     // Non-inverting mode (COM2B1 = 1)
-    TCCR2A = (1 << WGM20) | (1 << WGM21) | (1 << WGM22) | (1 << COM2B1);
+    TCCR2A = (1 << COM2B1);
+    TCCR2A &= ~((1 << WGM20) | (1 << WGM21));
     TCCR2B = (1 << CS22);  // Prescaler of 8 for Timer2
+    TCCR2B &= ~(1 << WGM22);
 
     // Step 4: Set initial duty cycles
     OCR0A = 0;  // 0% duty cycle on PD6 (OC0A)
