@@ -117,25 +117,45 @@ int check_button_room_3()
 
 void turn_on_light_room_3()
 {
-    PORTD |= (1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED);
+    pwm3_set_duty((uint8_t)255, (uint8_t)255, (uint8_t)255);
+    //PORTD |= (1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED);
 }
 
 void turn_off_light_room_3()
 {
-    PORTD &= ~((1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED));
+    pwm3_set_duty((uint8_t)0, (uint8_t)0, (uint8_t)0);
+    //PORTD &= ~((1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED));
 }
 
 void switch_light_room_3()
 {
     // switch state of a light
-    if (get_status_of_light_room_3()) turn_off_light_room_3();
-    else turn_on_light_room_3();
+    //if (get_status_of_light_room_3()) turn_off_light_room_3();
+    //else turn_on_light_room_3();
+
+    ColorRGB color = get_color_of_light_RGB_room_3();
+
+    if (color.r != 0 || color.g != 0 || color.b != 0)
+    {
+        pwm3_set_duty((uint8_t)0, (uint8_t)0, (uint8_t)0);
+    }
+
+    pwm3_set_duty((uint8_t)255, (uint8_t)255, (uint8_t)255);
 }
 
 int get_status_of_light_room_3()
 {
     // return 1 if light is on otherwise 0
-    return (PORTD & ((1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED))) != 0;
+    //return (PORTD & ((1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED))) != 0;
+
+    ColorRGB color = get_color_of_light_RGB_room_3();
+
+    if (color.r != 0 || color.g != 0 || color.b != 0)
+    {
+        return 1;
+    }
+
+    return 0;
 }
 
 ColorRGB get_color_of_light_RGB_room_3()
