@@ -23,10 +23,10 @@ void init_room_3()
     DDRD &= ~(1 << POTENTIOMETER2_ROOM3); // set potentiometer 2 to input
 
     DDRD &= ~(1 << BUTTON_ROOM3); // set button to input
-    DDRD |= (1 << RED_LED | 1 << GREEN_LED | 1 << BLUE_LED); // set lights as output
+    //DDRD |= (1 << RED_LED | 1 << GREEN_LED | 1 << BLUE_LED); // set lights as output
 
     PORTD |= (1 << BUTTON_ROOM3); // add pull up
-    PORTD &= ~(1 << RED_LED | 1 << GREEN_LED | 1 << BLUE_LED); // turn off led
+    //PORTD &= ~(1 << RED_LED | 1 << GREEN_LED | 1 << BLUE_LED); // turn off led
 
     pwm3_set_duty((uint8_t)255,(uint8_t)255,(uint8_t)255);
 }
