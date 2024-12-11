@@ -11,8 +11,8 @@ void pwm1_init(void){
     cli();
     DDRB |= (1<<PB1);
     // Set Fast PWM mode, non-inverted output on Timer 1
-    TCCR1A = (1 << WGM10) | (1 << COM1A1); // Fast PWM, 8-bit
-    TCCR1B = (1 << CS11); // Prescaler: 8 > Frequency approx. 4 kHz
+    TCCR1A |= (1 << WGM10) | (1 << COM1A1); // Fast PWM, 8-bit
+    TCCR1B |= (1 << CS11); // Prescaler: 8 > Frequency approx. 4 kHz
 }
 
 
@@ -21,11 +21,11 @@ void pwm3_init(void){
     DDRD |= (1<<PD3)|(1<<PD5)|(1<<PD6);
     // Disable Timer1
     // TCCR1B = 0; // Makes sure timer 1 is not running
-    TCCR1A = (1 << WGM11); // Normal Mode
-    TIMSK1 = (1 << OCIE1A);
+    TCCR1A |= (1 << WGM11); // Normal Mode
+    TIMSK1 |= (1 << OCIE1A);
     OCR1A = 1;
     sei();
-    TCCR1B = (1 << CS10); // No prescaler:  Frequency approx. 150Hz
+    TCCR1B |= (1 << CS10); // No prescaler:  Frequency approx. 150Hz
     
     /*
     // Step 1: Set PD3, PD5, and PD6 as output pins
