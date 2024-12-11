@@ -490,7 +490,7 @@
       "plot": "C:/Users/arina/Desktop/Semester Project/gerber_fin/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../../../../../../../Downloads/Arduino Main PCB.step",
       "svg": "./",
       "vrml": ""
     },

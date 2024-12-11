@@ -21,8 +21,8 @@ enum PotControlledValue
     V
 } pot_1_controlled_val, pot_2_controlled_val;
 
-void init_room3();
-void update_room3();
+void init_room_3();
+void update_room_3();
 
 int check_button_room_3();
 void turn_on_light_room_3();

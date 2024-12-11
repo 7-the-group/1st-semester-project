@@ -2,6 +2,7 @@
 #include <avr/io.h>
 #include "adcpwm.h"
 #include <stdlib.h>
+#include <util/delay.h>
 
 unsigned char previousButtonStateRoom3 = 1;
 ColorRGB RGBcolor;
@@ -10,6 +11,11 @@ int prev_potentiometer_2;
 
 void init_room_3()
 {
+    // initialize adc from adcpwm.h library
+    adc_init();
+    // initialize pwm from adcpwm.h library
+    pwm3_init();
+
     pot_1_controlled_val = H;
     pot_2_controlled_val = V;
     // set all adc pins to input
@@ -20,12 +26,9 @@ void init_room_3()
     DDRD |= (1 << RED_LED | 1 << GREEN_LED | 1 << BLUE_LED); // set lights as output
 
     PORTD |= (1 << BUTTON_ROOM3); // add pull up
-    PORTD |= (1 << RED_LED | 1 << GREEN_LED | 1 << BLUE_LED); // turn of led
+    PORTD &= ~(1 << RED_LED | 1 << GREEN_LED | 1 << BLUE_LED); // turn off led
 
-    // initialize adc from adcpwm.h library
-    adc_init();
-    // initialize pwm from adcpwm.h library
-    pwm3_init();
+    pwm3_set_duty(255,255,255);
 }
 
 void update_room_3()
@@ -132,7 +135,7 @@ void switch_light_room_3()
 int get_status_of_light_room_3()
 {
     // return 1 if light is on otherwise 0
-    return PORTD & ((1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED)) != 0;
+    return (PORTD & ((1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED))) != 0;
 }
 
 ColorRGB get_color_of_light_RGB_room_3()
