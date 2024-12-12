@@ -253,8 +253,8 @@ void init_menu()
     menu_elements[17] = elm18;
     menu_elements[18] = elm19;
 
-    menu_position[0] = 4;
-    menu_position[1] = 3;
+    menu_position[0] = 1;
+    menu_position[1] = -1;
     menu_position[2] = -1;
 }
 
@@ -348,56 +348,79 @@ int get_selected_elm_idx() {
 }
 
 void Move_up() {
+    Menu_element* curr_element = get_current_elm();
+    if (curr_element->type == MENU_FILE &&
+        curr_element->element.file.selected)
+    {
+        return;
+    }
+
+    int elements_count;
+    Menu_element* curr_elements[4];
+    get_current_elms(curr_elements, &elements_count);
+
     int depth = get_current_depth();
 
-    if (menu_position[depth]-1<=0) return; // how to make it cycle?
-    menu_position[depth]--;
+    menu_position[depth - 1] = ((--menu_position[depth - 1] + (elements_count - 1)) % elements_count) + 1;
 }
 
-void Move_down() {
+void Move_down() 
+{
+    Menu_element* curr_element = get_current_elm();
+    if (curr_element->type == MENU_FILE &&
+        curr_element->element.file.selected)
+    {
+        return;
+    }
+    int elements_count;
+    Menu_element* curr_elements[4];
+    get_current_elms(curr_elements, &elements_count);
+
     int depth = get_current_depth();
 
-    Menu_element* current_elm = get_current_elm();
-    int current_ID;
-    if (current_elm->type == MENU_FILE) current_ID = current_elm->element.file.ID;
-    else current_ID = current_elm->element.folder.ID;
+    menu_position[depth - 1] = (menu_position[depth - 1] % elements_count) + 1;
+}
 
-    for (int i=0;i<19;i++) {
-        if (menu_elements[i].type == MENU_FILE) {
-            if (current_ID + 1 == menu_elements[i].element.file.ID) {
-                menu_position[depth]++;
-                return;
-            }
-        } 
-        else {
-            if (current_ID + 1 == menu_elements[i].element.folder.ID) {
-                menu_position[depth]++;
-            }
+void Select()
+{
+    Menu_element* current_elm = get_current_elm();
+
+    if (current_elm->type == MENU_FILE)
+    {
+        if (!current_elm->element.file.selected)
+        {
+            current_elm->element.file.selected = true;
         }
     }
-
-    menu_position[depth] = 0;
-}
-
-void Select() {
-    Menu_element* current_elm = get_current_elm();
-
-    if (current_elm->type == MENU_FILE) {
-        if (!current_elm->element.file.selected) current_elm->element.file.selected = true;
-    }
-
-    else {
+    else
+    {
         int depth = get_current_depth();
-        menu_position[depth + 1] = 1;
+        menu_position[depth] = 1;
     }
 }
 
 void Back() {
     Menu_element* current_elm = get_current_elm();
 
-    if (get_selected_elm_idx() != -1) current_elm->element.file.selected = false;
-    else {
+    if (current_elm->type == MENU_FILE)
+    {
+        if (current_elm->element.file.selected)
+        {
+            current_elm->element.file.selected = 0;
+        }
+        else
+        {
+            int depth = get_current_depth();
+            menu_position[depth - 1] = -1;
+        }
+    }
+    else if (current_elm->type == MENU_FOLDER)
+    {
         int depth = get_current_depth();
-        menu_position[depth] = -1;
+
+        if (depth > 1)
+        {
+            menu_position[depth - 1] = -1;
+        }
     }
 }
