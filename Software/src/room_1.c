@@ -18,7 +18,7 @@ void init_room_1()
 
     // set led pin to output and turn off the led
     DDRB |= (1 << LED_PIN);
-    PORTB |= (1 << LED_PIN);
+    PORTB &= ~(1 << LED_PIN);
 
     // set button pin to input and add pull up resistor
     DDRC &= ~(1 << BTN_PIN);

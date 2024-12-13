@@ -18,16 +18,28 @@
 
 int main(void)
 {
-  uart_init();
-  io_redirect();
+  //uart_init();
+  //io_redirect();
 
-  init_room_1();
-  init_room_2();
+  //init_room_1();
+  //init_room_2();
   init_room_3();
-  init_door();
+  ColorRGB color;
+  color.r = 128;
+  color.g = 128;
+  color.b = 128;
+  set_color_of_light_RGB_room_3(color);
+  //init_door();
   //init_control_panel();
 
-  /* while(1)
+  /*while (1) {
+    update_room_1();
+    update_room_2();
+    update_room_3();
+    update_door();
+  }
+
+  while(1)
   {
     _delay_ms(50);
     printf("%d\n", movement_detected());
