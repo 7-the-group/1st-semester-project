@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdint.h>
 #include "menu_helper.h"
+#include <functions_for_rooms.h>
 
 int menu_position[3]; 
 Menu_element menu_elements[19];
@@ -135,7 +136,7 @@ void init_menu()
     // Door LDR
     File fileElm5;
     fileElm5.ID = 14;
-    fileElm5.Name = "Brightness OUT";
+    fileElm5.Name = "door LDR";
     fileElm5.type = FLOAT;
     fileElm5.value = 0.0f;
 
@@ -146,7 +147,7 @@ void init_menu()
     // Door PIR
     File fileElm6;
     fileElm6.ID = 24;
-    fileElm6.Name = "Movement OUT";
+    fileElm6.Name = "Movement det.";
     fileElm6.type = BOOL;
     fileElm6.value = 0.0f;
 
@@ -202,7 +203,7 @@ void init_menu()
     File fileElm11;
     fileElm11.ID = 423;
     fileElm11.Name = "Change format";
-    fileElm11.type = BOOL;
+    fileElm11.type = ENUM;
     fileElm11.value = 0.0f;
 
     Menu_element elm17;
@@ -213,7 +214,7 @@ void init_menu()
     File fileElm12;
     fileElm12.ID = 133;
     fileElm12.Name = "Pot 1";
-    fileElm12.type = FLOAT;
+    fileElm12.type = ENUM;
     fileElm12.value = 0.0f;
 
     Menu_element elm18;
@@ -224,7 +225,7 @@ void init_menu()
     File fileElm13;
     fileElm13.ID = 233;
     fileElm13.Name = "Pot 2";
-    fileElm13.type = FLOAT;
+    fileElm13.type = ENUM;
     fileElm13.value = 0.0f;
     fileElm13.selected = 0;
 
@@ -352,6 +353,11 @@ void Move_up() {
     if (curr_element->type == MENU_FILE &&
         curr_element->element.file.selected)
     {
+        change_value_by_func change_by = get_changer_func(curr_element->element.file.ID);
+        if (change_by != 0)
+        {
+            change_by(1);
+        }
         return;
     }
 
@@ -370,6 +376,11 @@ void Move_down()
     if (curr_element->type == MENU_FILE &&
         curr_element->element.file.selected)
     {
+        change_value_by_func change_by = get_changer_func(curr_element->element.file.ID);
+        if (change_by != 0)
+        {
+            change_by(-1);
+        }
         return;
     }
     int elements_count;
@@ -421,6 +432,27 @@ void Back() {
         if (depth > 1)
         {
             menu_position[depth - 1] = -1;
+        }
+    }
+}
+
+Menu_element* get_element_by_id(int id)
+{
+    for (int i = 0; i < 19; i++)
+    {
+        if (menu_elements[i].type == MENU_FILE)
+        {
+            if (menu_elements[i].element.file.ID == id)
+            {
+                return &menu_elements[i];
+            }
+        }
+        else if (menu_elements[i].type == MENU_FOLDER)
+        {
+            if (menu_elements[i].element.folder.ID == id)
+            {
+                return &menu_elements[i];
+            }
         }
     }
 }

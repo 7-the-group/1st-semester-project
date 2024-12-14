@@ -12,6 +12,6 @@ int check_button_room_2(); // returns 1 when button 1 is pressed
 void turn_on_light_room_2();
 void turn_off_light_room_2();
 void switch_light_room_2(); // if light is on turn off light and vice versa
-int get_status_of_light(); // returns 1 when light is lit and 0 when not
+int get_status_of_light_room_2(); // returns 1 when light is lit and 0 when not
 
 #endif

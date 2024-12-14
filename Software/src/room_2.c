@@ -48,7 +48,7 @@ void switch_light_room_2()
     PORTD ^= (1 << LIGHT_PIN_R2); // set light's pin to 1
 }
 
-int get_status_of_light()
+int get_status_of_light_room_2()
 {
     return (PORTD & (1 << LIGHT_PIN_R2)) != 0; // read bit which indicates if light is on
 }

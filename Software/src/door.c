@@ -6,7 +6,7 @@ int ldr_threshold = 512;
 char light_switched_manually = 0;
 
 int light_length = 10000;
-int light_timer = 0;
+uint32_t light_timer = 0;
 
 void init_door()
 {
@@ -22,31 +22,25 @@ void init_door()
 
 void update_door()
 {
-    light_timer = (light_timer + 1) % light_length + 10;
-    if (!light_switched_manually)
-    {
-        int current_ldr = get_ldr_value();
-        int movement = movement_detected();
+    light_timer++;
+    int current_ldr = get_ldr_value();
+    int movement = movement_detected();
 
-        if (current_ldr < ldr_threshold)
+    if (current_ldr < ldr_threshold)
+    {
+        if (movement)
         {
-            if (movement)
-            {
-                if (!get_door_light_status())
-                {
-                    turn_on_door_light();
-                    light_timer = 0;
-                }
-            }
-            else if (light_length < light_timer)
-            {
-                turn_off_door_light();
-            }
+            turn_on_door_light();
         }
+    }
+
+    if (light_length < light_timer)
+    {
+        turn_off_door_light();
     }
 }
 
-void set_ldr_threshold(int threshold)
+void set_ldr_threshold_door(int threshold)
 {
     ldr_threshold = threshold;
 }
@@ -58,6 +52,7 @@ void turn_off_door_light()
 
 void turn_on_door_light()
 {
+    light_timer = 0;
     PORTB |= (1 << PORTB2);
 }
 
@@ -66,12 +61,12 @@ void switch_door_light()
     PORTB ^= (1 << PORTB2);
 }
 
-int get_ldr_value()
+int get_ldr_value_door()
 {
     return adc_read(3);
 }
 
-int movement_detected()
+int movement_detected_door()
 {
     return (PINB & (1 << PINB5)) != 0;
 }
@@ -83,17 +78,10 @@ int get_door_light_status()
 
 void turn_off_door_light_manually()
 {
-    light_switched_manually = 1;
     turn_off_door_light();
 }
 
 void turn_on_door_light_manually()
 {
-    light_switched_manually = 1;
     turn_on_door_light();
-}
-
-void reset_automatic_behaviour_door()
-{
-    light_switched_manually = 0;
 }

@@ -19,7 +19,7 @@ enum PotControlledValue
     H,
     S,
     V
-} pot_1_controlled_val, pot_2_controlled_val;
+} pot_1_controlled_val_room_3, pot_2_controlled_val_room_3;
 
 void init_room_3();
 void update_room_3();

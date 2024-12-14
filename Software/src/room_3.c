@@ -16,8 +16,8 @@ void init_room_3()
     // initialize pwm from adcpwm.h library
     pwm3_init();
 
-    pot_1_controlled_val = H;
-    pot_2_controlled_val = V;
+    pot_1_controlled_val_room_3 = H;
+    pot_2_controlled_val_room_3 = V;
     // set all adc pins to input
     DDRC &= ~(1 << POTENTIOMETER1_ROOM3); // set potentiometer 1 to input
     DDRD &= ~(1 << POTENTIOMETER2_ROOM3); // set potentiometer 2 to input
@@ -42,7 +42,7 @@ void update_room_3()
         prev_potentiometer_1 = potentiometer_1;
         ColorRGB current_color = pwm3_get_duty();
         ColorHSV current_color_HSV = convert_RGB_to_HSV(current_color);
-        switch (pot_1_controlled_val)
+        switch (pot_1_controlled_val_room_3)
         {
             case R:
                 pwm3_set_duty(prev_potentiometer_1/1023*255,current_color.g,current_color.b);
@@ -73,7 +73,7 @@ void update_room_3()
         prev_potentiometer_2 = potentiometer_2;
         ColorRGB current_color = pwm3_get_duty();
         ColorHSV current_color_HSV = convert_RGB_to_HSV(current_color);
-        switch (pot_2_controlled_val)
+        switch (pot_2_controlled_val_room_3)
         {
             case R:
                 pwm3_set_duty(prev_potentiometer_1/1023*255,current_color.g,current_color.b);

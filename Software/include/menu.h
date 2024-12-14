@@ -5,7 +5,7 @@
 #include <stdbool.h>
 
 typedef enum {
-    INT,
+    ENUM,
     BOOL,
     FLOAT
 } type_of_file;
@@ -53,5 +53,7 @@ void change_float_val_of_curr_elm(float val); // change float value of current e
 void get_current_elms(Menu_element* elms[4], int* num_of_elms); // get elements which should be currently displayed on the display
 int get_hovered_elm_idx(); // if none element is hovered returns -1
 int get_selected_elm_idx(); // if none element is selected returns -1
+
+Menu_element* get_element_by_id(int id);
 
 #endif
