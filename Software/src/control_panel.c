@@ -264,7 +264,7 @@ void update_control_panel()
     {
         if (curr_elems[i]->type == MENU_FILE)
         {
-            get_value_func get_value = get_getter_func(curr_elems[i]->element.file.value);
+            get_value_func get_value = get_getter_func(curr_elems[i]->element.file.ID);
             float new_value = get_value();
 
             if (new_value != curr_elems[i]->element.file.value)

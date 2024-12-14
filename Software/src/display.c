@@ -86,20 +86,22 @@ void update_file_element(Menu_element* elem)
     if (elem->element.file.type == BOOL) {
         if (elem->element.file.value == 0)
         {
-            sprintf(str_to_print, "%s: %s", elem->element.file.Name, "OFF");
+            sprintf(str_to_print, "%s:%s", elem->element.file.Name, "OFF");
         }
         else
         {
-            sprintf(str_to_print, "%s: %s", elem->element.file.Name, "ON");
+            sprintf(str_to_print, "%s:%s", elem->element.file.Name, "ON");
         }
     }
     else if (elem->element.file.type == ENUM) 
     {
         char* enum_val = determine_enum_value(elem->element.file.ID, elem->element.file.value);
-        sprintf(str_to_print, "%s: %s", elem->element.file.Name, enum_val);
+        sprintf(str_to_print, "%s:%s", elem->element.file.Name, enum_val);
     }
     else if (elem->element.file.type == FLOAT) 
     {
-        sprintf(str_to_print, "%s: %3.1f", elem->element.file.Name, elem->element.file.value);
+        sprintf(str_to_print, "%s:%3.1f", elem->element.file.Name, elem->element.file.value);
     }
+
+    LCD_write_str(str_to_print);
 }
