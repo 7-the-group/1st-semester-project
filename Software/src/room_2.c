@@ -25,13 +25,13 @@ void update_room_2()
     }
 
     previous_button_state = button_pressed; // set previous state of a button to current state
-    _delay_ms(10); // wait for fluctuations when button is pressed to disappear
 }
 
 int check_button_room_2()
 {
     if ((PIND & (1 << BTN_PIN_R2)) == 0)
     {
+        _delay_ms(50);
         return 1;
     }
     return 0;

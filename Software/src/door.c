@@ -1,6 +1,7 @@
 #include <door.h>
 #include <adcpwm.h>
 #include <avr/io.h>
+#include <util/delay.h>
 
 int ldr_threshold = 512;
 char light_switched_manually = 0;
@@ -70,6 +71,7 @@ int movement_detected_door()
 {
     if ((PINB & (1 << PINB5)) != 0)
     {
+        _delay_ms(50);
         return 1;
     }
     return 0;

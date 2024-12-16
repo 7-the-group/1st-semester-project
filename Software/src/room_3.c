@@ -112,7 +112,12 @@ void update_room_3()
 int check_button_room_3()
 {
   // return 1 if button is pressed otherwise 0
-  return (PIND & (1 << BUTTON_ROOM3)) == 0;
+  if ((PIND & (1 << BUTTON_ROOM3)) == 0)
+  {
+    _delay_ms(50);
+    return 1;
+  }
+  return 0;
 }
 
 void turn_on_light_room_3()

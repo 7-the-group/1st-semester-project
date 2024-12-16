@@ -39,7 +39,6 @@ void update_room_1()
     {
         if (!was_btn_pressed_previously)
         {
-            _delay_ms(5);
             was_btn_pressed_previously = 1;
             switch_light_room_1();
         }
@@ -48,7 +47,6 @@ void update_room_1()
     {
         if (was_btn_pressed_previously)
         {
-            _delay_ms(5);
             was_btn_pressed_previously = 0;
         }
     }
@@ -95,6 +93,7 @@ int check_btn_room_1()
 {
     if ((PINC & (1 << BTN_PIN)) == 0)
     {
+        _delay_ms(50);
         return 1;
     }
     return 0;
