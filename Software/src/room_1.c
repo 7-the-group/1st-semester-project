@@ -56,12 +56,12 @@ void update_room_1()
 
 void turn_on_light_room_1()
 {
-    pwm1_set_duty(255);
+    pwm1_set_duty(0);
 }
 
 void turn_off_light_room_1()
 {
-    pwm1_set_duty(0);
+    pwm1_set_duty(255);
 }
 
 void switch_light_room_1()
@@ -93,5 +93,9 @@ int read_pot_room_1()
 
 int check_btn_room_1()
 {
-    return (PINC & (1 << BTN_PIN)) == 0;
+    if ((PINC & (1 << BTN_PIN)) == 0)
+    {
+        return 1;
+    }
+    return 0;
 }

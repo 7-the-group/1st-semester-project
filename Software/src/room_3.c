@@ -117,13 +117,13 @@ int check_button_room_3()
 
 void turn_on_light_room_3()
 {
-    pwm3_set_duty((uint8_t)255, (uint8_t)255, (uint8_t)255);
+    pwm3_set_duty((uint8_t)0, (uint8_t)0, (uint8_t)0);
     //PORTD |= (1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED);
 }
 
 void turn_off_light_room_3()
 {
-    pwm3_set_duty((uint8_t)0, (uint8_t)0, (uint8_t)0);
+    pwm3_set_duty((uint8_t)255, (uint8_t)255, (uint8_t)255);
     //PORTD &= ~((1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED));
 }
 

@@ -47,13 +47,13 @@ void set_ldr_threshold_door(int threshold)
 
 void turn_off_door_light()
 {
-    PORTB &= ~(1 << PORTB2);
+    PORTB |= (1 << PORTB2);
 }
 
 void turn_on_door_light()
 {
     light_timer = 0;
-    PORTB |= (1 << PORTB2);
+    PORTB &= ~(1 << PORTB2);
 }
 
 void switch_door_light()
@@ -68,7 +68,11 @@ int get_ldr_value_door()
 
 int movement_detected_door()
 {
-    return (PINB & (1 << PINB5)) != 0;
+    if ((PINB & (1 << PINB5)) != 0)
+    {
+        return 1;
+    }
+    return 0;
 }
 
 int get_door_light_status()

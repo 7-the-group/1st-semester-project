@@ -30,17 +30,21 @@ void update_room_2()
 
 int check_button_room_2()
 {
-    return (PIND & (1 << BTN_PIN_R2)) == 0; // get value of button bit in PINC register
+    if ((PIND & (1 << BTN_PIN_R2)) == 0)
+    {
+        return 1;
+    }
+    return 0;
 }
 
 void turn_on_light_room_2()
 {
-    PORTD |= (1 << LIGHT_PIN_R2); // set light's pin to 1
+    PORTD &= ~(1 << LIGHT_PIN_R2); // set light's pin to 0
 }
 
 void turn_off_light_room_2()
 {
-    PORTD &= ~(1 << LIGHT_PIN_R2); // set light's pin to 0
+    PORTD |= (1 << LIGHT_PIN_R2); // set light's pin to 1
 }
 
 void switch_light_room_2()
@@ -50,5 +54,9 @@ void switch_light_room_2()
 
 int get_status_of_light_room_2()
 {
-    return (PORTD & (1 << LIGHT_PIN_R2)) != 0; // read bit which indicates if light is on
+    if ((PORTD & (1 << LIGHT_PIN_R2)) == 0)
+    {
+        return 1;
+    }
+    return 0;
 }
