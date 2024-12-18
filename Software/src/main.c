@@ -6,7 +6,7 @@
 // Alin's libraries
 #include <usart.h>
 #include <lcd.h>
-//#include <adcpwm.h>
+#include <adcpwm.h>
 
 // Our libraries ☭
 #include <room_1.h>
@@ -22,22 +22,28 @@ int main(void)
   uart_init();
   io_redirect();
   //adc_init();
+  //pwm3_init();
   //init_room_1();
   //init_room_2();
   init_room_3();
-  ColorRGB color;
-  color.r = 128;
-  color.g = 128;
-  color.b = 128;
-  set_color_of_light_RGB_room_3(color);
-  init_door();
+  ColorRGB color1, color2;
+  color1.r = 128;
+  color1.g = 128;
+  color1.b = 128;
+  
+  //init_door();
   //init_control_panel();
   
   while (1) {
+    set_color_of_light_RGB_room_3(color1);
+    color2= pwm3_get_duty();
+    printf("%d,%d,%d\n",color2.r,color2.g,color2.b);
+    //int value = check_button_room_3;
+    //printf("%d\n",value);
     //update_room_1();
     //update_room_2();
     //update_room_3();
-    update_door();
+    //update_door();
   }
 
   while(1)
