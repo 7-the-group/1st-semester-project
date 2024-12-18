@@ -6,10 +6,10 @@ int previous_button_state = 1; // at start button wasn't pressed yet
 
 void init_room_2()
 {
-    DDRD &= ~(1 << BTN_PIN_R2); // set button pin as input
+    DDRC &= ~(1 << BTN_PIN_R2); // set button pin as input
     DDRD |= (1 << LIGHT_PIN_R2); // set light pin as output
 
-    PORTD |= (1 << BTN_PIN_R2); // add pull up resistor for button
+    PORTC |= (1 << BTN_PIN_R2); // add pull up resistor for button
     PORTD |= (1 << LIGHT_PIN_R2); // turn off light
 }
 
@@ -29,7 +29,7 @@ void update_room_2()
 
 int check_button_room_2()
 {
-    if ((PIND & (1 << BTN_PIN_R2)) == 0)
+    if ((PINC & (1 << BTN_PIN_R2)) == 0)
     {
         _delay_ms(50);
         return 1;
