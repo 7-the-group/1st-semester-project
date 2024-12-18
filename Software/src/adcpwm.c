@@ -60,9 +60,9 @@ void pwm1_set_duty(unsigned char input){
 }
 
 void pwm3_set_duty(uint8_t red, uint8_t green, uint8_t blue){
-    _duty2 = blue; // PD6
-    _duty1 = green; // PD5
-    _duty0 = red; // PD3
+    _duty2 = 255-blue; // PD6
+    _duty1 = 255-green; // PD5
+    _duty0 = 255-red; // PD3
 }
 
 ColorRGB pwm3_get_duty(ColorRGB* color)
