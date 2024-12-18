@@ -40,7 +40,8 @@ void update_room_3()
     if (abs(potentiometer_1 - prev_potentiometer_1)  >= 3)
     {
         prev_potentiometer_1 = potentiometer_1;
-        ColorRGB current_color = pwm3_get_duty();
+        ColorRGB current_color;
+        pwm3_get_duty(&current_color);
         ColorHSV current_color_HSV = convert_RGB_to_HSV(current_color);
         switch (pot_1_controlled_val_room_3)
         {
@@ -71,7 +72,8 @@ void update_room_3()
     if (abs(potentiometer_2 - prev_potentiometer_2)  >= 3)
     {
         prev_potentiometer_2 = potentiometer_2;
-        ColorRGB current_color = pwm3_get_duty();
+        ColorRGB current_color;
+        pwm3_get_duty(&current_color);
         ColorHSV current_color_HSV = convert_RGB_to_HSV(current_color);
         switch (pot_2_controlled_val_room_3)
         {
@@ -163,16 +165,16 @@ int get_status_of_light_room_3()
     return 0;
 }
 
-ColorRGB get_color_of_light_RGB_room_3()
+ColorRGB get_color_of_light_RGB_room_3(ColorRGB color)
 {
     // adcpwm.h library
     // return current color of the light
-    return pwm3_get_duty();
+    pwm3_get_duty(&color);
 }
 
-ColorHSV get_color_of_light_HSV_room_3()
+ColorHSV get_color_of_light_HSV_room_3(ColorRGB color)
 {
-    return convert_RGB_to_HSV(get_color_of_light_RGB_room_3());
+    return convert_RGB_to_HSV(get_color_of_light_RGB_room_3(color));
 }
 
 void set_color_of_light_RGB_room_3(ColorRGB rgb)

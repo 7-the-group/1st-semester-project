@@ -36,7 +36,7 @@ int main(void)
   
   while (1) {
     set_color_of_light_RGB_room_3(color1);
-    color2= pwm3_get_duty();
+    pwm3_get_duty(&color2);
     printf("%d,%d,%d\n",color2.r,color2.g,color2.b);
     //int value = check_button_room_3;
     //printf("%d\n",value);
