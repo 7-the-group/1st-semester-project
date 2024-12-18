@@ -65,15 +65,13 @@ void pwm3_set_duty(uint8_t red, uint8_t green, uint8_t blue){
     _duty0 = red; // PD3
 }
 
-ColorRGB pwm3_get_duty()
+ColorRGB pwm3_get_duty(ColorRGB* color)
 {
     ColorRGB color;
 
-    color.r = OCR2B;
-    color.g = OCR0B;
-    color.b = OCR0A;
-
-    return color;
+    color->r = OCR2B;
+    color->g = OCR0B;
+    color->b = OCR0A;
 }
 
 void adc_init(void){
