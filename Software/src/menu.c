@@ -4,8 +4,10 @@
 #include "menu_helper.h"
 #include <functions_for_rooms.h>
 
+#define ELM_COUNT 18
+
 int menu_position[3]; 
-Menu_element menu_elements[19];
+Menu_element menu_elements[ELM_COUNT];
 
 char elm1_name[] = "ROOM 1";
 char elm2_name[] = "ROOM 2";
@@ -221,18 +223,6 @@ void init_menu()
     elm18.type = MENU_FILE;
     elm18.element.file = fileElm12;
 
-    // Room 3 Potentiometer 2
-    File fileElm13;
-    fileElm13.ID = 233;
-    fileElm13.Name = "Pot 2";
-    fileElm13.type = ENUM;
-    fileElm13.value = 0.0f;
-    fileElm13.selected = 0;
-
-    Menu_element elm19;
-    elm19.type = MENU_FILE;
-    elm19.element.file = fileElm13;
-
     // add to array
     menu_elements[0] = elm1;
     menu_elements[1] = elm2;
@@ -252,7 +242,6 @@ void init_menu()
     menu_elements[15] = elm16;
     menu_elements[16] = elm17;
     menu_elements[17] = elm18;
-    menu_elements[18] = elm19;
 
     menu_position[0] = 1;
     menu_position[1] = -1;
@@ -278,7 +267,7 @@ Menu_element* get_current_elm() {
         elementID+=menu_position[i]*round(pow(10,i));
     }
 
-    for (int i=0;i<19;i++) {
+    for (int i=0;i<ELM_COUNT;i++) {
         if (menu_elements[i].type==MENU_FILE) {
             if (elementID == menu_elements[i].element.file.ID) return &menu_elements[i];
         }
@@ -309,7 +298,7 @@ void get_current_elms(Menu_element* elms[4], int* num_of_elms) {
     if (current_element->type == MENU_FILE) current_ID = current_element->element.file.ID;
     else current_ID = current_element->element.folder.ID;
     
-    for (int i = 0; i < 19; i++)
+    for (int i = 0; i < ELM_COUNT; i++)
     {
         if (menu_elements[i].type == MENU_FILE) {
             // depth 1
@@ -438,7 +427,7 @@ void Back() {
 
 Menu_element* get_element_by_id(int id)
 {
-    for (int i = 0; i < 19; i++)
+    for (int i = 0; i < ELM_COUNT; i++)
     {
         if (menu_elements[i].type == MENU_FILE)
         {
