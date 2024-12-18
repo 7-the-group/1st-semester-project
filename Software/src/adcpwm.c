@@ -59,6 +59,11 @@ void pwm1_set_duty(unsigned char input){
     OCR1A = input; // 0 .. 255 range
 }
 
+int pwm1_get_duty()
+{
+    return OCR1A;
+}
+
 void pwm3_set_duty(uint8_t red, uint8_t green, uint8_t blue){
     _duty2 = 255-blue; // PD6
     _duty1 = 255-green; // PD5
@@ -69,9 +74,9 @@ ColorRGB pwm3_get_duty()
 {
     ColorRGB color;
 
-    color.r = OCR2B;
-    color.g = OCR0B;
-    color.b = OCR0A;
+    color.r = _duty0;
+    color.g = _duty1;
+    color.b = _duty2;
 
     return color;
 }
