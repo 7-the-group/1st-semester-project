@@ -166,16 +166,16 @@ int get_status_of_light_room_3()
     return 0;
 }
 
-ColorRGB get_color_of_light_RGB_room_3(ColorRGB color)
+ColorRGB get_color_of_light_RGB_room_3()
 {
     // adcpwm.h library
     // return current color of the light
-    pwm3_get_duty(&color);
+    return pwm3_get_duty();
 }
 
-ColorHSV get_color_of_light_HSV_room_3(ColorRGB color)
+ColorHSV get_color_of_light_HSV_room_3()
 {
-    return convert_RGB_to_HSV(get_color_of_light_RGB_room_3(color));
+    return convert_RGB_to_HSV(get_color_of_light_RGB_room_3());
 }
 
 void set_color_of_light_RGB_room_3(ColorRGB rgb)
