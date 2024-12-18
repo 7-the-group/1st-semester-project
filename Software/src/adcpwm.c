@@ -70,7 +70,7 @@ void pwm3_set_duty(uint8_t red, uint8_t green, uint8_t blue){
     _duty0 = 255-red; // PD3
 }
 
-ColorRGB pwm3_get_duty(ColorRGB* color)
+ColorRGB pwm3_get_duty()
 {
     ColorRGB color;
 
