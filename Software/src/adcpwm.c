@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <avr/interrupt.h>
 #include "adcpwm.h"
+#include <stdlib.h>
 
 volatile uint8_t _duty0 = 0, _duty1 = 0, _duty2 = 0, _timer_tick;
 
@@ -17,6 +18,7 @@ void pwm1_init(void){
 
 
 void pwm3_init(void){
+    srand(5);
     // Alin's program
     DDRD |= (1<<PD3)|(1<<PD5)|(1<<PD6);
     // Disable Timer1
@@ -74,7 +76,7 @@ ColorRGB pwm3_get_duty()
 {
     ColorRGB color;
 
-    color.r = _duty0;
+    color.r = (unsigned char)(rand() / (float)RAND_MAX * 255);
     color.g = _duty1;
     color.b = _duty2;
 
