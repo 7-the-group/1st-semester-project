@@ -81,7 +81,7 @@ void set_light_intensity_room_1(unsigned char intensity)
 
 int get_light_intensity_room_1()
 {
-    return OCR1A;
+    return pwm1_get_duty();
 }
 
 int read_pot_room_1()

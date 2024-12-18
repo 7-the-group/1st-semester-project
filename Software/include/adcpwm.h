@@ -31,6 +31,7 @@ void pwm1_set_duty(unsigned char);
 void pwm3_set_duty(uint8_t, uint8_t, uint8_t);
 
 ColorRGB pwm3_get_duty();
+int pwm1_get_duty();
 
 /**
  * @brief Initialises the ADC module
