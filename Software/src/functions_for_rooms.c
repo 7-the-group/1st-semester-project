@@ -19,7 +19,6 @@ float get_room3_led_value2(); // id = 223
 float get_room3_led_value3(); // id = 323
 float get_room3_color_format(); // id = 423
 float get_room3_pot1_controlled_val(); // id = 133
-float get_room3_pot2_controlled_val(); // id = 233
 
 void change_room1_led_brightness_by(int); // id = 11
 void change_room1_led_status_by(int); // id = 21
@@ -32,7 +31,6 @@ void change_room3_led_value2_by(int); // id = 223
 void change_room3_led_value3_by(int); // id = 323
 void change_room3_color_format_by(int); // id = 423
 void change_room3_pot1_controlled_val_by(int); // id = 133
-void change_room3_pot2_controlled_val_by(int); // id = 233
 
 get_value_func get_getter_func(int id)
 {
@@ -62,8 +60,6 @@ get_value_func get_getter_func(int id)
             return get_room3_color_format;
         case 133:
             return get_room3_pot1_controlled_val;
-        case 233:
-            return get_room3_pot2_controlled_val;
         default:
             return 0;
     }
@@ -95,8 +91,6 @@ change_value_by_func get_changer_func(int id)
             return change_room3_color_format_by;
         case 133:
             return change_room3_pot1_controlled_val_by;
-        case 233:
-            return change_room3_pot2_controlled_val_by;
         default:
             return 0;
     }
@@ -215,11 +209,6 @@ float get_room3_color_format()
 float get_room3_pot1_controlled_val()
 {
     return (float)pot_1_controlled_val_room_3;
-}
-
-float get_room3_pot2_controlled_val()
-{
-    return (float)pot_2_controlled_val_room_3;
 }
 
 void change_room1_led_brightness_by(int amount)
@@ -488,18 +477,4 @@ void change_room3_pot1_controlled_val_by(int amount) // id = 133
     }
 
     pot_1_controlled_val_room_3 = (int)(elem->element.file.value);
-}
-
-void change_room3_pot2_controlled_val_by(int amount) // id = 233
-{
-    Menu_element* elem = get_element_by_id(233);
-
-    elem->element.file.value = (int)(elem->element.file.value + amount) % 6;
-
-    if (elem->element.file.value < 0.0f)
-    {
-        elem->element.file.value = 6.0f + elem->element.file.value;
-    }
-
-    pot_2_controlled_val_room_3 = (int)(elem->element.file.value);
 }
