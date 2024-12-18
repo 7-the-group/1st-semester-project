@@ -312,11 +312,11 @@ void change_door_led_status_by(int amount) // id = 14
 
     if (elem->element.file.value == 1.0f)
     {
-        turn_on_door_light_manually();
+        turn_on_light_manually_door();
     }
     else
     {
-        turn_off_door_light_manually();
+        turn_off_light_manually_door();
     }
 }
 

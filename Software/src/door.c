@@ -3,8 +3,8 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-int ldr_threshold = 512;
-char light_switched_manually = 0;
+int ldr_threshold = 500;
+char light_switched_manually_door = 0;
 
 int light_length = 10000;
 uint32_t light_timer = 0;
@@ -24,20 +24,20 @@ void init_door()
 void update_door()
 {
     light_timer++;
-    int current_ldr = get_ldr_value();
-    int movement = movement_detected();
+    int current_ldr = get_ldr_value_door();
+    int movement = movement_detected_door();
 
-    if (current_ldr < ldr_threshold)
+    if (current_ldr > ldr_threshold)
     {
         if (movement)
         {
-            turn_on_door_light();
+            turn_on_light_door();
         }
     }
 
     if (light_length < light_timer)
     {
-        turn_off_door_light();
+        turn_off_light_door();
     }
 }
 
@@ -46,18 +46,18 @@ void set_ldr_threshold_door(int threshold)
     ldr_threshold = threshold;
 }
 
-void turn_off_door_light()
+void turn_off_light_door()
 {
     PORTB |= (1 << PORTB2);
 }
 
-void turn_on_door_light()
+void turn_on_light_door()
 {
     light_timer = 0;
     PORTB &= ~(1 << PORTB2);
 }
 
-void switch_door_light()
+void switch_light_door()
 {
     PORTB ^= (1 << PORTB2);
 }
@@ -82,12 +82,12 @@ int get_door_light_status()
     return (PORTB & (1 << PORTB2)) != 0;
 }
 
-void turn_off_door_light_manually()
+void turn_off_light_manually_door()
 {
-    turn_off_door_light();
+    turn_off_light_door();
 }
 
-void turn_on_door_light_manually()
+void turn_on_light_manually_door()
 {
-    turn_on_door_light();
+    turn_on_light_door();
 }
