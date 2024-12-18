@@ -2,7 +2,7 @@
 #define ROOM_2_H_INCLUDED
 
 #define LIGHT_PIN_R2 2
-#define BTN_PIN_R2   0
+#define BTN_PIN_R2   1
 
 void init_room_2(); // initializes input and output pins and turns the light off
 void update_room_2(); // check if any button was pressed and change the state of light accordingly
