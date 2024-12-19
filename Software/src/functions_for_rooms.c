@@ -162,9 +162,9 @@ float get_ldr_threshold()
     return (float)get_ldr_threshold_door();
 }
 
-float get_door_led_status()
+float get_door_ldr_value()
 {
-    return (float)get_door_light_status();
+    return get_ldr_value_door();
 }
 
 float get_room3_led_value1()
@@ -296,7 +296,7 @@ void change_room3_led_status_by(int amount) // id = 13
     }
 }
 
-void change_door_led_status_by(int amount) // id = 14
+void change_door_led_status_by(int amount) // id = 44
 {
     Menu_element* elem = get_element_by_id(14);
 
