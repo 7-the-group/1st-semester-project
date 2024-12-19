@@ -126,12 +126,12 @@ void update_color_HSV_room_3()
 
 float get_room1_led_brightness()
 {
-    return (float)get_light_intensity_room_1();
+    return 255 - (float)get_light_intensity_room_1();
 }
 
 float get_room1_led_status()
 {
-    return (float)(get_light_intensity_room_1() != 0);
+    return (float)(255 - get_light_intensity_room_1() != 0);
 }
 
 float get_room2_led_status()

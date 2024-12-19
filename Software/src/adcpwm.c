@@ -6,7 +6,7 @@
 #include "adcpwm.h"
 #include <stdlib.h>
 
-volatile uint8_t _duty0 = 0, _duty1 = 0, _duty2 = 0, _timer_tick;
+volatile uint8_t _duty0 = 255, _duty1 = 255, _duty2 = 255, _timer_tick;
 
 void pwm1_init(void){
     cli();
@@ -76,9 +76,9 @@ ColorRGB pwm3_get_duty()
 {
     ColorRGB color;
 
-    color.r = (unsigned char)(rand() / (float)RAND_MAX * 255);
-    color.g = _duty1;
-    color.b = _duty2;
+    color.r = 255 - _duty0;
+    color.g = 255 - _duty1;
+    color.b = 255 - _duty2;
 
     return color;
 }

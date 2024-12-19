@@ -182,6 +182,11 @@ void react_pot_value_changed()
 
 What_happened check_controls()
 {
+    if (check_btn_select())
+    {
+        return PRESS_BTN_SELECT;
+    }
+
     if (check_btn_up())
     {
         return PRESS_BTN_UP;
@@ -192,19 +197,9 @@ What_happened check_controls()
         return PRESS_BTN_DOWN;
     }
 
-    if (check_btn_select())
-    {
-        return PRESS_BTN_SELECT;
-    }
-
     if (check_btn_back())
     {
         return PRESS_BTN_BACK;
-    }
-
-    if (check_btn_up())
-    {
-        return PRESS_BTN_UP;
     }
 
     return NOTHING;
@@ -265,12 +260,15 @@ void update_control_panel()
         if (curr_elems[i]->type == MENU_FILE)
         {
             get_value_func get_value = get_getter_func(curr_elems[i]->element.file.ID);
-            float new_value = get_value();
-
-            if (new_value != curr_elems[i]->element.file.value)
+            if (get_value != 0) 
             {
-                curr_elems[i]->element.file.value = new_value;
-                update_file_element(curr_elems[i]);
+                float new_value = get_value();
+
+                if (new_value != curr_elems[i]->element.file.value)
+                {
+                    curr_elems[i]->element.file.value = new_value;
+                    update_file_element(curr_elems[i]);
+                }
             }
         }
     }

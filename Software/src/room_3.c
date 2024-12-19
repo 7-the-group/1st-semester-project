@@ -37,33 +37,32 @@ void update_room_3()
     int potentiometer_1 = read_pot_1_value_room_3();
     // int potentiometer_2 = read_pot_2_value_room_3();
 
-    if (abs(potentiometer_1 - prev_potentiometer_1)  >= 3)
+    if (abs(potentiometer_1 - prev_potentiometer_1)  >= 1)
     {
         prev_potentiometer_1 = potentiometer_1;
-        ColorRGB current_color;
-        pwm3_get_duty(&current_color);
+        ColorRGB current_color = pwm3_get_duty();
         ColorHSV current_color_HSV = convert_RGB_to_HSV(current_color);
         switch (pot_1_controlled_val_room_3)
         {
             case R:
-                pwm3_set_duty(prev_potentiometer_1/1023*255,current_color.g,current_color.b);
+                pwm3_set_duty(prev_potentiometer_1/1023.0f*255,current_color.g,current_color.b);
                 break;
             case G:
-                pwm3_set_duty(current_color.r, prev_potentiometer_1/1023*255, current_color.b);
+                pwm3_set_duty(current_color.r, prev_potentiometer_1/1023.0f*255, current_color.b);
                 break;
             case B:
-                pwm3_set_duty(current_color.r, current_color.b, prev_potentiometer_1/1023*255);
+                pwm3_set_duty(current_color.r, current_color.b, prev_potentiometer_1/1023.0f*255);
                 break;
             case H:
-                current_color_HSV.h = prev_potentiometer_1/1023*360;
+                current_color_HSV.h = prev_potentiometer_1/1023.0f*360;
                 set_color_of_light_HSV_room_3(current_color_HSV);
                 break;
             case S:
-                current_color_HSV.s = prev_potentiometer_1/1023.0;
+                current_color_HSV.s = prev_potentiometer_1/1023.0f;
                 set_color_of_light_HSV_room_3(current_color_HSV);
                 break;
             case V:
-                current_color_HSV.v = prev_potentiometer_1/1023.0;
+                current_color_HSV.v = prev_potentiometer_1/1023.0f;
                 set_color_of_light_HSV_room_3(current_color_HSV);
                 break;
         }
@@ -140,8 +139,7 @@ void switch_light_room_3()
     //if (get_status_of_light_room_3()) turn_off_light_room_3();
     //else turn_on_light_room_3();
 
-    ColorRGB color;
-    get_color_of_light_RGB_room_3(color);
+    ColorRGB color = get_color_of_light_RGB_room_3();
 
     if (color.r != 0 || color.g != 0 || color.b != 0)
     {
@@ -155,8 +153,7 @@ int get_status_of_light_room_3()
     // return 1 if light is on otherwise 0
     //return (PORTD & ((1 << RED_LED) | (1 << GREEN_LED) | (1 << BLUE_LED))) != 0;
 
-    ColorRGB color;
-    get_color_of_light_RGB_room_3(color);
+    ColorRGB color = get_color_of_light_RGB_room_3();
 
     if (color.r != 0 || color.g != 0 || color.b != 0)
     {
