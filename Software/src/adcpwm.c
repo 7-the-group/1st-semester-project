@@ -6,28 +6,41 @@
 #include "adcpwm.h"
 #include <stdlib.h>
 
-volatile uint8_t _duty0 = 0, _duty1 = 0, _duty2 = 0, _timer_tick;
+volatile uint8_t _duty0 = 255, _duty1 = 255, _duty2 = 255, _timer_tick, _duty4 = 255;
+
+int initialized = 0;
 
 void pwm1_init(void){
-    cli();
     DDRB |= (1<<PB1);
-    // Set Fast PWM mode, non-inverted output on Timer 1
-    TCCR1A |= (1 << WGM10) | (1 << COM1A1); // Fast PWM, 8-bit
-    TCCR1B |= (1 << CS11); // Prescaler: 8 > Frequency approx. 4 kHz
+    if (!initialized)
+    {
+        cli();
+        // Set Fast PWM mode, non-inverted output on Timer 1
+        TCCR1A |= (1 << WGM11); // Normal Mode
+        TIMSK1 |= (1 << OCIE1A);
+        OCR1A = 1;
+        sei();
+        TCCR1B |= (1 << CS10); // No prescaler:  Frequency approx. 150Hz
+        initialized = 1;
+    }
 }
 
 
 void pwm3_init(void){
-    srand(5);
     // Alin's program
     DDRD |= (1<<PD3)|(1<<PD5)|(1<<PD6);
-    // Disable Timer1
-    // TCCR1B = 0; // Makes sure timer 1 is not running
-    TCCR1A |= (1 << WGM11); // Normal Mode
-    TIMSK1 |= (1 << OCIE1A);
-    OCR1A = 1;
-    sei();
-    TCCR1B |= (1 << CS10); // No prescaler:  Frequency approx. 150Hz
+    if (!initialized)
+    {
+        // Disable Timer1
+        cli();
+        // TCCR1B = 0; // Makes sure timer 1 is not running
+        TCCR1A |= (1 << WGM11); // Normal Mode
+        TIMSK1 |= (1 << OCIE1A);
+        OCR1A = 1;
+        sei();
+        TCCR1B |= (1 << CS10); // No prescaler:  Frequency approx. 150Hz
+        initialized = 1;
+    }
     
     /*
     // Step 1: Set PD3, PD5, and PD6 as output pins
@@ -58,12 +71,12 @@ void pwm3_init(void){
 
 
 void pwm1_set_duty(unsigned char input){
-    OCR1A = input; // 0 .. 255 range
+    _duty4 = input; // 0 .. 255 range
 }
 
 int pwm1_get_duty()
 {
-    return OCR1A;
+    return _duty4;
 }
 
 void pwm3_set_duty(uint8_t red, uint8_t green, uint8_t blue){
@@ -76,9 +89,9 @@ ColorRGB pwm3_get_duty()
 {
     ColorRGB color;
 
-    color.r = (unsigned char)(rand() / (float)RAND_MAX * 255);
-    color.g = _duty1;
-    color.b = _duty2;
+    color.r = 255 - _duty0;
+    color.g = 255 - _duty1;
+    color.b = 255 - _duty2;
 
     return color;
 }
@@ -114,6 +127,10 @@ ISR(TIMER1_COMPA_vect){
     }
     if (_timer_tick == _duty2){
         PORTD &=~(1<<PD6);
+    }
+    if (_timer_tick == _duty4)
+    {
+        PORTB &= ~(1<<PB1);
     }
     
     _timer_tick++;

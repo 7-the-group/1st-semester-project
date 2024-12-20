@@ -6,7 +6,7 @@
 int ldr_threshold = 500;
 char light_switched_manually_door = 0;
 
-int light_length = 10000;
+int light_length = 1000;
 uint32_t light_timer = 0;
 
 void init_door()
@@ -90,4 +90,8 @@ void turn_off_light_manually_door()
 void turn_on_light_manually_door()
 {
     turn_on_light_door();
+}
+
+int get_ldr_threshold_door() {
+    return ldr_threshold;
 }

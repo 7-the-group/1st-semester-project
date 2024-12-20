@@ -4,7 +4,7 @@
 #include "menu_helper.h"
 #include <functions_for_rooms.h>
 
-#define ELM_COUNT 18
+#define ELM_COUNT 19
 
 int menu_position[3]; 
 Menu_element menu_elements[ELM_COUNT];
@@ -160,13 +160,24 @@ void init_menu()
     // Door LDR threshold
     File fileElm7;
     fileElm7.ID = 34;
-    fileElm7.Name = "LDR threshold";
+    fileElm7.Name = "LDR Tresh.";
     fileElm7.type = FLOAT;
     fileElm7.value = 0.0f;
 
     Menu_element elm13;
     elm13.type = MENU_FILE;
     elm13.element.file = fileElm7;
+
+    // LED status
+    File fileElm44;
+    fileElm44.ID = 44;
+    fileElm44.Name = "LED status";
+    fileElm44.type = BOOL;
+    fileElm44.value = 0.0f;
+
+    Menu_element elm44;
+    elm44.type = MENU_FILE;
+    elm44.element.file = fileElm44;
 
     // Room 3 LED Val 1
     File fileElm8;
@@ -242,6 +253,7 @@ void init_menu()
     menu_elements[15] = elm16;
     menu_elements[16] = elm17;
     menu_elements[17] = elm18;
+    menu_elements[18] = elm44;
 
     menu_position[0] = 1;
     menu_position[1] = -1;
