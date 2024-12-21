@@ -286,7 +286,7 @@ void change_room3_led_status_by(int amount) // id = 13
         elem->element.file.value = 2.0f + elem->element.file.value;
     }
 
-    if ((int)elem->element.file.value == 1)
+    if (elem->element.file.value == 1.0f)
     {
         turn_on_light_room_3();
     }
@@ -364,7 +364,7 @@ void change_room3_led_value2_by(int amount) // id = 223
 {
     Menu_element* elem = get_element_by_id(223);
     Menu_element* format_elm = get_element_by_id(423);
-    float amount_float = (float)amount * 0.01;
+    float amount_float = (float)amount * 0.01f;
 
     if (format_elm->element.file.value == 0) // RGB
     {
@@ -399,7 +399,7 @@ void change_room3_led_value3_by(int amount) // id = 323
 {
     Menu_element* elem = get_element_by_id(323);
     Menu_element* format_elm = get_element_by_id(423);
-    float amount_float = (float)amount * 0.01;
+    float amount_float = (float)amount * 0.01f;
 
     if (format_elm->element.file.value == 0) // RGB
     {
