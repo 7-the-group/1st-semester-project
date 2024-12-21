@@ -223,11 +223,16 @@ void change_room1_led_brightness_by(int amount)
 {
     Menu_element* elem = get_element_by_id(11);
 
-    elem->element.file.value = (int)(elem->element.file.value + amount) % 256;
+    elem->element.file.value += (float)amount;
 
     if (elem->element.file.value < 0.0f)
     {
-        elem->element.file.value = 256.0f + elem->element.file.value;
+        elem->element.file.value = 255.0f;
+    }
+
+    if (elem->element.file.value > 255.0f)
+    {
+        elem->element.file.value = 0.0f;
     }
 
     set_light_intensity_room_1((unsigned char)elem->element.file.value);
