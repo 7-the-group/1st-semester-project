@@ -51,7 +51,7 @@ void update_room_3()
                 pwm3_set_duty(current_color.r, prev_potentiometer_1/1023.0f*255, current_color.b);
                 break;
             case B:
-                pwm3_set_duty(current_color.r, current_color.b, prev_potentiometer_1/1023.0f*255);
+                pwm3_set_duty(current_color.r, current_color.g, prev_potentiometer_1/1023.0f*255);
                 break;
             case H:
                 current_color_HSV.h = prev_potentiometer_1/1023.0f*360;
