@@ -353,12 +353,12 @@ void change_room3_led_value1_by(int amount) // id = 123
 
         if (elem->element.file.value < 0.0f)
         {
-            elem->element.file.value = 360.0f + elem->element.file.value;
+            elem->element.file.value = 359.0f;
         }
 
         if (elem->element.file.value >= 360.0f)
         {
-            elem->element.file.value = elem->element.file.value - 360.0f;
+            elem->element.file.value = 0.0f;
         }
 
         update_color_HSV_room_3();
