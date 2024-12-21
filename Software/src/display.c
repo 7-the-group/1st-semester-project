@@ -100,7 +100,7 @@ void update_file_element(Menu_element* elem)
     }
     else if (elem->element.file.type == FLOAT) 
     {
-        sprintf(str_to_print, "%s:%3.1f", elem->element.file.Name, elem->element.file.value);
+        sprintf(str_to_print, "%s:%3.2f", elem->element.file.Name, elem->element.file.value);
     }
 
     LCD_write_str(str_to_print);
