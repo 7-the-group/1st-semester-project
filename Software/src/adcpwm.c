@@ -6,16 +6,16 @@
 #include "adcpwm.h"
 #include <stdlib.h>
 
-volatile uint8_t _duty0 = 255, _duty1 = 255, _duty2 = 255, _timer_tick;
+volatile uint8_t _duty0 = 255, _duty1 = 255, _duty2 = 255, _duty4 = 255, _timer_tick;
 
 int initialized = 0;
 
 void pwm1_init(void){
-    cli();
+    //cli();
     DDRB |= (1<<PB1);
     // Set Fast PWM mode, non-inverted output on Timer 1
-    TCCR1A = (1 << WGM10) | (1 << COM1A1); // Fast PWM, 8-bit
-    TCCR1B = (1 << CS11); // Prescaler: 8 > Frequency approx. 4 kHz
+    //TCCR1A = (1 << WGM10) | (1 << COM1A1); // Fast PWM, 8-bit
+    //TCCR1B = (1 << CS11); // Prescaler: 8 > Frequency approx. 4 kHz
 }
 
 
@@ -32,12 +32,12 @@ void pwm3_init(void){
 
 
 void pwm1_set_duty(unsigned char input){
-    OCR1A = input; // 0 .. 255 range
+    _duty4 = input; // 0 .. 255 range
 }
 
 int pwm1_get_duty()
 {
-    return OCR1A;
+    return _duty4;
 }
 
 void pwm3_set_duty(uint8_t red, uint8_t green, uint8_t blue){
@@ -78,6 +78,7 @@ ISR(TIMER1_COMPA_vect){
     // sets the pins to HIGH at start
     if (_timer_tick == 0){
         PORTD |= (1<<PD3)|(1<<PD5)|(1<<PD6);
+        PORTB |= (1<<PB1)
     }
      // sets the pins to LOW at corresponding duty cycle
     if (_timer_tick == _duty0){
@@ -88,6 +89,10 @@ ISR(TIMER1_COMPA_vect){
     }
     if (_timer_tick == _duty2){
         PORTD &=~(1<<PD6);
+    }
+    if (_timer_tick == _duty4)
+    {
+        PORTB &= ~(1 << PB1);
     }
     
     _timer_tick++;
