@@ -17,19 +17,18 @@
 
 int main(void)
 {
-  init_room_1();
-  init_room_2();
+  //init_room_1();
+  //init_room_2();
   init_room_3();
-  init_door();
+  //init_door();
 
   init_control_panel();
-
   while(1)
   {
-    update_room_1();
-    update_room_2();
+    //update_room_1();
+    //update_room_2();
     update_room_3();
-    update_door();
+    //update_door();
 
     update_control_panel();
   }
