@@ -286,7 +286,7 @@ void change_room3_led_status_by(int amount) // id = 13
         elem->element.file.value = 2.0f + elem->element.file.value;
     }
 
-    if (elem->element.file.value == 1.0f)
+    if ((int)elem->element.file.value == 1)
     {
         turn_on_light_room_3();
     }
@@ -307,7 +307,7 @@ void change_door_led_status_by(int amount) // id = 44
         elem->element.file.value = 2.0f + elem->element.file.value;
     }
 
-    if (elem->element.file.value == 1.0f)
+    if ((int)elem->element.file.value == 1)
     {
         turn_on_light_manually_door();
     }
@@ -377,7 +377,7 @@ void change_room3_led_value2_by(int amount) // id = 223
 
         update_color_RGB_room_3();
     }
-    else if (format_elm->element.file.value == 1) // HSV
+    else // HSV
     {
         elem->element.file.value = elem->element.file.value + amount_float;
 
@@ -412,7 +412,7 @@ void change_room3_led_value3_by(int amount) // id = 323
 
         update_color_RGB_room_3();
     }
-    else if (format_elm->element.file.value == 1) // HSV
+    else // HSV
     {
         elem->element.file.value = elem->element.file.value + amount_float;
 
