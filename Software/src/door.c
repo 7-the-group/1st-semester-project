@@ -79,7 +79,11 @@ int movement_detected_door()
 
 int get_door_light_status()
 {
-    return (PORTB & (1 << PORTB2)) != 0;
+    if ((PORTB & (1 << PORTB2)) == 0)
+    {
+        return 1;
+    }
+    return 0;
 }
 
 void turn_off_light_manually_door()
