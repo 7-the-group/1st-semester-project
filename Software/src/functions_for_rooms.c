@@ -349,7 +349,7 @@ void change_room3_led_value1_by(int amount) // id = 123
     }
     else // HSV
     {
-        elem->element.file.value = (int)(elem->element.file.value + amount) % 360;
+        elem->element.file.value = fmod(elem->element.file.value + (float)amount, 360.0f);
 
         if (elem->element.file.value < 0.0f)
         {
