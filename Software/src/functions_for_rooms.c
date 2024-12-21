@@ -120,9 +120,9 @@ void update_color_HSV_room_3()
     Menu_element* value3_elem = get_element_by_id(323);
     
     ColorHSV hsv;
-    hsv.h = (uint8_t)value1_elem->element.file.value;
-    hsv.s = (uint8_t)value2_elem->element.file.value;
-    hsv.v = (uint8_t)value3_elem->element.file.value;
+    hsv.h = (uint16_t)value1_elem->element.file.value;
+    hsv.s = (float)value2_elem->element.file.value;
+    hsv.v = (float)value3_elem->element.file.value;
 
     set_color_of_light_HSV_room_3(hsv);
 }
