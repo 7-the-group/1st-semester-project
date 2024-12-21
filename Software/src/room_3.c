@@ -37,7 +37,7 @@ void update_room_3()
     int potentiometer_1 = read_pot_1_value_room_3();
     // int potentiometer_2 = read_pot_2_value_room_3();
 
-    if (abs(potentiometer_1 - prev_potentiometer_1)  >= 1)
+    if (abs(potentiometer_1 - prev_potentiometer_1)  >= 3)
     {
         prev_potentiometer_1 = potentiometer_1;
         ColorRGB current_color = pwm3_get_duty();

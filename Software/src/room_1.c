@@ -27,7 +27,7 @@ void update_room_1()
 {
     int current_pot_value = read_pot_room_1();
 
-    if (current_pot_value > previous_pot_value || current_pot_value < previous_pot_value)
+    if (current_pot_value > previous_pot_value + 3 || current_pot_value < previous_pot_value - 3)
     {
         set_light_intensity_room_1(current_pot_value);
         previous_pot_value = current_pot_value;
@@ -52,17 +52,17 @@ void update_room_1()
 
 void turn_on_light_room_1()
 {
-    pwm1_set_duty(255);
+    pwm1_set_duty(0);
 }
 
 void turn_off_light_room_1()
 {
-    pwm1_set_duty(0);
+    pwm1_set_duty(255);
 }
 
 void switch_light_room_1()
 {
-    if (get_light_intensity_room_1() > 0)
+    if (get_light_intensity_room_1() < 255)
     {
         turn_off_light_room_1();
     }
@@ -84,7 +84,7 @@ int get_light_intensity_room_1()
 
 int read_pot_room_1()
 {
-    return adc_read(6)/4;
+    return adc_read(6)/4.0f;
 }
 
 int check_btn_room_1()
