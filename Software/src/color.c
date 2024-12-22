@@ -60,42 +60,53 @@ ColorRGB convert_HSV_to_RGB(ColorHSV hsv) // ChatGPT wrote it
 
 ColorHSV convert_RGB_to_HSV(ColorRGB rgb) // ChatGPT wrote it
 {
-    float r = rgb.r / 255.0;
-    float g = rgb.g / 255.0;
-    float b = rgb.b / 255.0;
+    float maxc, minc, rc, gc, bc, h_tmp;
 
-    float max = (r > g ? (r > b ? r : b) : (g > b ? g : b));
-    float min = (r < g ? (r < b ? r : b) : (g < b ? g : b));
-    float delta = max - min;
+    float r = rgb.r / 255.0f;
+    float g = rgb.g / 255.0f;
+    float b = rgb.b / 255.0f;
 
-    ColorHSV hsv;
-    hsv.v = max;
+    float hue, saturation, value;
 
-    if (delta < 0.00001) { // if max == min, then it's a shade of gray
-        hsv.s = 0;
-        hsv.h = 0; // Undefined, maybe nan?
+    maxc = (r > g) ? ((r > b) ? r : b) : ((g > b) ? g : b);
+    minc = (r < g) ? ((r < b) ? r : b) : ((g < b) ? g : b);
+    value = maxc;
+
+    // If the min and max values are the same, it's a shade of gray (no hue, no saturation)
+    if (minc == maxc) {
+        hue = 0.0f;
+        saturation = 0.0f;
+
+        ColorHSV hsv = { hue, saturation, value };
         return hsv;
     }
 
-    if (max > 0.0) {
-        hsv.s = delta / max; // Saturation
-    } else {
-        hsv.s = 0.0;
-        hsv.h = 0.0; // Undefined
-        return hsv;
+    // Saturation calculation
+    saturation = (maxc - minc) / maxc;
+
+    // Calculate the RGB components normalized by the range (max - min)
+    rc = (maxc - r) / (maxc - minc);
+    gc = (maxc - g) / (maxc - minc);
+    bc = (maxc - b) / (maxc - minc);
+
+    // Hue calculation based on which RGB component is the maximum
+    if (r == maxc) {
+        h_tmp = bc - gc;
+    }
+    else if (g == maxc) {
+        h_tmp = 2.0 + rc - bc;
+    }
+    else {
+        h_tmp = 4.0 + gc - rc;
     }
 
-    if (r >= max)
-        hsv.h = (g - b) / delta;
-    else if (g >= max)
-        hsv.h = 2.0 + (b - r) / delta;
-    else
-        hsv.h = 4.0 + (r - g) / delta;
+    // Normalize hue to be in the range [0, 360]
+    hue = h_tmp * 60;
+    if (hue < 0.0f)
+    {
+        hue += 360.0f;
+    }
 
-    hsv.h *= 60.0; // Convert to degrees
-
-    if (hsv.h < 0.0)
-        hsv.h += 360.0;
-
+    ColorHSV hsv = { hue, saturation, value };
     return hsv;
 }
