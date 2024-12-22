@@ -16,10 +16,10 @@
 #define BTN_SELECT  3 // port B
 #define BTN_BACK    4 // port B
 #else
-#define BTN_UP      0 // port D
-#define BTN_DOWN    1 // port D
-#define BTN_SELECT  2 // port D
-#define BTN_BACK    3 // port D
+#define BTN_UP      0 // port C
+#define BTN_DOWN    1 // port C
+#define BTN_SELECT  2 // port C
+#define BTN_BACK    3 // port C
 #endif
 
 enum
