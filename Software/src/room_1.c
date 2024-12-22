@@ -52,12 +52,12 @@ void update_room_1()
 
 void turn_on_light_room_1()
 {
-    pwm1_set_duty(0);
+    pwm1_set_duty(255);
 }
 
 void turn_off_light_room_1()
 {
-    pwm1_set_duty(255);
+    pwm1_set_duty(0);
 }
 
 void switch_light_room_1()

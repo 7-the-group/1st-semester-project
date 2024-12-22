@@ -32,12 +32,12 @@ void pwm3_init(void){
 
 
 void pwm1_set_duty(unsigned char input){
-    _duty4 = input; // 0 .. 255 range
+    _duty4 = 255 - input; // 0 .. 255 range
 }
 
 int pwm1_get_duty()
 {
-    return _duty4;
+    return 255 - _duty4;
 }
 
 void pwm3_set_duty(uint8_t red, uint8_t green, uint8_t blue){
