@@ -1,19 +1,23 @@
 #include <color.h>
 
-ColorRGB convert_HSV_to_RGB(ColorHSV hsv) // ChatGPT wrote it
+// Code is from https://github.com/python/cpython/blob/3.9/Lib/colorsys.py
+ColorRGB convert_HSV_to_RGB(ColorHSV hsv)
 {
     float hh, p, q, t, ff;
     long i;
     ColorRGB rgb;
 
-    if (hsv.s <= 0.0) { // If saturation is 0, the color is a shade of gray
+    if (hsv.s <= 0.0) 
+    {
         rgb.r = rgb.g = rgb.b = (int)(hsv.v * 255.0);
         return rgb;
     }
 
     hh = hsv.h;
     if (hh >= 360.0)
+    {
         hh = 0.0;
+    }
     hh /= 60.0;
     i = (long)hh;
     ff = hh - i;
@@ -21,7 +25,8 @@ ColorRGB convert_HSV_to_RGB(ColorHSV hsv) // ChatGPT wrote it
     q = hsv.v * (1.0 - (hsv.s * ff));
     t = hsv.v * (1.0 - (hsv.s * (1.0 - ff)));
 
-    switch (i) {
+    switch (i) 
+    {
     case 0:
         rgb.r = (int)(hsv.v * 255.0);
         rgb.g = (int)(t * 255.0);
@@ -58,7 +63,7 @@ ColorRGB convert_HSV_to_RGB(ColorHSV hsv) // ChatGPT wrote it
     return rgb;
 }
 
-ColorHSV convert_RGB_to_HSV(ColorRGB rgb) // ChatGPT wrote it
+ColorHSV convert_RGB_to_HSV(ColorRGB rgb)
 {
     float maxc, minc, rc, gc, bc, h_tmp;
 
@@ -73,7 +78,8 @@ ColorHSV convert_RGB_to_HSV(ColorRGB rgb) // ChatGPT wrote it
     value = maxc;
 
     // If the min and max values are the same, it's a shade of gray (no hue, no saturation)
-    if (minc == maxc) {
+    if (minc == maxc)
+    {
         hue = 0.0f;
         saturation = 0.0f;
 
@@ -90,10 +96,12 @@ ColorHSV convert_RGB_to_HSV(ColorRGB rgb) // ChatGPT wrote it
     bc = (maxc - b) / (maxc - minc);
 
     // Hue calculation based on which RGB component is the maximum
-    if (r == maxc) {
+    if (r == maxc)
+    {
         h_tmp = bc - gc;
     }
-    else if (g == maxc) {
+    else if (g == maxc)
+    {
         h_tmp = 2.0 + rc - bc;
     }
     else {
