@@ -52,7 +52,7 @@ void update_display(Menu_element* elems[4], int elements_count, int element_hove
                 sprintf(str_to_print, "%s: %s", elems[i]->element.file.Name, enum_val);
             }
             else if (elems[i]->element.file.type == FLOAT) {
-                sprintf(str_to_print, "%s: %3.2f", elems[i]->element.file.Name, elems[i]->element.file.value);
+                sprintf(str_to_print, "%s:%3.2f", elems[i]->element.file.Name, elems[i]->element.file.value);
             }
             
             LCD_write_str(str_to_print);
