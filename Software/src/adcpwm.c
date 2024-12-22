@@ -78,7 +78,7 @@ ISR(TIMER1_COMPA_vect){
     // sets the pins to HIGH at start
     if (_timer_tick == 0){
         PORTD |= (1<<PD3)|(1<<PD5)|(1<<PD6);
-        PORTB |= (1<<PB1)
+        PORTB |= (1<<PB1);
     }
      // sets the pins to LOW at corresponding duty cycle
     if (_timer_tick == _duty0){
