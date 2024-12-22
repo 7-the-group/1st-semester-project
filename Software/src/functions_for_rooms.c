@@ -171,11 +171,11 @@ float get_room3_led_value1()
 {
     Menu_element* elm = get_element_by_id(423);
 
-    if (elm->element.file.value == 0) // RGB
+    if (elm->element.file.value == 0.0f) // RGB
     {
         return (float)get_color_of_light_RGB_room_3().r;
     }
-    else if (elm->element.file.value == 1) // HSV
+    else if (elm->element.file.value == 1.0f) // HSV
     {
         return (float)get_color_of_light_HSV_room_3().h;
     }
@@ -185,11 +185,11 @@ float get_room3_led_value2()
 {
     Menu_element* elm = get_element_by_id(423);
 
-    if (elm->element.file.value == 0) // RGB
+    if (elm->element.file.value == 0.0f) // RGB
     {
         return (float)get_color_of_light_RGB_room_3().g;
     }
-    else if (elm->element.file.value == 1) // HSV
+    else if (elm->element.file.value == 1.0f) // HSV
     {
         return (float)get_color_of_light_HSV_room_3().s;
     }
@@ -199,11 +199,11 @@ float get_room3_led_value3()
 {
     Menu_element* elm = get_element_by_id(423);
 
-    if (elm->element.file.value == 0) // RGB
+    if (elm->element.file.value == 0.0f) // RGB
     {
         return (float)get_color_of_light_RGB_room_3().b;
     }
-    else if (elm->element.file.value == 1) // HSV
+    else if (elm->element.file.value == 1.0f) // HSV
     {
         return (float)get_color_of_light_HSV_room_3().v;
     }
