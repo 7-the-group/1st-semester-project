@@ -6,6 +6,7 @@
 #include <door.h>
 #include <color.h>
 #include <menu.h>
+#include <math.h>
 
 float get_room1_led_brightness(); // id = 11
 float get_room1_led_status(); // id = 21
@@ -267,7 +268,7 @@ void change_room2_led_status_by(int amount) // id = 12
 
     if (elem->element.file.value < 0.0f)
     {
-        elem->element.file.value = 2.0f + elem->element.file.value;
+        elem->element.file.value += 2.0f;
     }
 
     if (elem->element.file.value == 1.0f)

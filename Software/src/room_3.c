@@ -68,41 +68,12 @@ void update_room_3()
         }
     }
 
-    /* if (abs(potentiometer_2 - prev_potentiometer_2)  >= 3)
-    {
-        prev_potentiometer_2 = potentiometer_2;
-        ColorRGB current_color;
-        pwm3_get_duty(&current_color);
-        ColorHSV current_color_HSV = convert_RGB_to_HSV(current_color);
-        switch (pot_2_controlled_val_room_3)
-        {
-            case R:
-                pwm3_set_duty(prev_potentiometer_1/1023*255,current_color.g,current_color.b);
-                break;
-            case G:
-                pwm3_set_duty(current_color.r, prev_potentiometer_1/1023*255, current_color.b);
-                break;
-            case B:
-                pwm3_set_duty(current_color.r, current_color.b, prev_potentiometer_1/1023*255);
-                break;
-            case H:
-                current_color_HSV.h = prev_potentiometer_1/1023*360;
-                set_color_of_light_HSV_room_3(current_color_HSV);
-                break;
-            case S:
-                current_color_HSV.s = prev_potentiometer_1/1023.0;
-                set_color_of_light_HSV_room_3(current_color_HSV);
-                break;
-            case V:
-                current_color_HSV.v = prev_potentiometer_1/1023.0;
-                set_color_of_light_HSV_room_3(current_color_HSV);
-                break;
-        }
-    } */
-
     // check if button is pressed, and turn on or off light
     int button_pressed = check_button_room_3();
-    if (button_pressed && previousButtonStateRoom3 == 0) switch_light_room_3();
+    if (button_pressed && previousButtonStateRoom3 == 0) 
+    {
+        switch_light_room_3();
+    }
 
     previousButtonStateRoom3 = button_pressed;
     _delay_ms(10);
@@ -145,7 +116,10 @@ void switch_light_room_3()
     {
         pwm3_set_duty((uint8_t)0, (uint8_t)0, (uint8_t)0);
     }
-    else pwm3_set_duty((uint8_t)255, (uint8_t)255, (uint8_t)255);
+    else 
+    {
+        pwm3_set_duty((uint8_t)255, (uint8_t)255, (uint8_t)255);
+    }
 }
 
 int get_status_of_light_room_3()
