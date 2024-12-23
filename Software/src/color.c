@@ -1,8 +1,20 @@
 #include <color.h>
+#include <math.h>
+#include <RGBConverter.h>
 
 // Code is from https://github.com/python/cpython/blob/3.9/Lib/colorsys.py
 ColorRGB convert_HSV_to_RGB(ColorHSV hsv)
 {
+    uint8_t rgb_out[3];
+    hsvToRgb(hsv.h / 360.0, hsv.s, hsv.v, rgb_out);
+
+    ColorRGB rgb;
+    rgb.r = rgb_out[0];
+    rgb.g = rgb_out[1];
+    rgb.b = rgb_out[2];
+
+    return rgb;
+/*
     float hh, p, q, t, ff;
     long i;
     ColorRGB rgb;
@@ -61,15 +73,35 @@ ColorRGB convert_HSV_to_RGB(ColorHSV hsv)
         break;
     }
     return rgb;
+    */
 }
 
 ColorHSV convert_RGB_to_HSV(ColorRGB rgb)
 {
+    double hsv_out[3];
+    rgbToHsv(rgb.r, rgb.g, rgb.b, hsv_out);
+
+    ColorHSV hsv;
+    hsv.h = hsv_out[0] * 360.0;
+    hsv.s = hsv_out[1];
+    hsv.v = hsv_out[2];
+
+    return hsv;
+    /*
     float maxc, minc, rc, gc, bc, h_tmp;
+    const float epsilon = 1e-5f;
 
     float r = rgb.r / 255.0f;
     float g = rgb.g / 255.0f;
     float b = rgb.b / 255.0f;
+
+    r *= 1000;
+    g *= 1000;
+    b *= 1000;
+
+    r = round(r) / 1000.0f;
+    g = round(g) / 1000.0f;
+    b = round(b) / 1000.0f;
 
     float hue, saturation, value;
 
@@ -78,7 +110,7 @@ ColorHSV convert_RGB_to_HSV(ColorRGB rgb)
     value = maxc;
 
     // If the min and max values are the same, it's a shade of gray (no hue, no saturation)
-    if (minc == maxc)
+    if (fabs(minc - maxc) < epsilon)
     {
         hue = 0.0f;
         saturation = 0.0f;
@@ -96,11 +128,11 @@ ColorHSV convert_RGB_to_HSV(ColorRGB rgb)
     bc = (maxc - b) / (maxc - minc);
 
     // Hue calculation based on which RGB component is the maximum
-    if (r == maxc)
+    if (fabs(r - maxc) < epsilon)
     {
         h_tmp = bc - gc;
     }
-    else if (g == maxc)
+    else if (fabs(g - maxc) < epsilon)
     {
         h_tmp = 2.0 + rc - bc;
     }
@@ -117,4 +149,5 @@ ColorHSV convert_RGB_to_HSV(ColorRGB rgb)
 
     ColorHSV hsv = { hue, saturation, value };
     return hsv;
+    */
 }
