@@ -285,14 +285,14 @@ void change_room3_led_status_by(int amount) // id = 13
 {
     Menu_element* elem = get_element_by_id(13);
 
-    elem->element.file.value = (int)(elem->element.file.value + amount) % 2;
+    elem->element.file.value = fmod(elem->element.file.value + (float)amount, 2.0);
 
     if (elem->element.file.value < 0.0f)
     {
-        elem->element.file.value = 2.0f + elem->element.file.value;
+        elem->element.file.value += 2.0f;
     }
 
-    if (elem->element.file.value == 1.0f)
+    if (elem->element.file.value != 0.0f)
     {
         turn_on_light_room_3();
     }
