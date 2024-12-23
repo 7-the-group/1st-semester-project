@@ -62,7 +62,7 @@ void turn_off_light_room_1()
 
 void switch_light_room_1()
 {
-    if (get_light_intensity_room_1() < 255)
+    if (get_light_intensity_room_1() != 0)
     {
         turn_off_light_room_1();
     }
