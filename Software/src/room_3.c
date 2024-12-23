@@ -155,7 +155,7 @@ int get_status_of_light_room_3()
 
     ColorRGB color = get_color_of_light_RGB_room_3();
 
-    if (color.r == 255 || color.g == 255 || color.b == 255)
+    if (color.r == 0 || color.g == 0 || color.b == 0)
     {
         return 0;
     }
