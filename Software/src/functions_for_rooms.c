@@ -312,7 +312,7 @@ void change_door_led_status_by(int amount) // id = 44
         elem->element.file.value = 2.0f + elem->element.file.value;
     }
 
-    if ((int)elem->element.file.value == 1)
+    if (elem->element.file.value == 1.0f)
     {
         turn_on_light_manually_door();
     }
