@@ -1282,6 +1282,12 @@
 		)
 	)
 	(junction
+		(at 58.42 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0e321665-b454-45f0-ae9e-242486b8f6dc")
+	)
+	(junction
 		(at 100.33 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1330,18 +1336,6 @@
 		(uuid "92fb3a13-3f92-4f6a-baed-a3f6de27226a")
 	)
 	(junction
-		(at 58.42 118.11)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c5bcdaa7-28a9-4f2b-94ea-07316163f17b")
-	)
-	(junction
-		(at 80.01 118.11)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c650e37a-5e49-4765-993b-00f32cb6b5ee")
-	)
-	(junction
 		(at 107.95 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1387,13 +1381,13 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 121.92) (xy 80.01 118.11)
+			(xy 58.42 121.92) (xy 60.96 121.92)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0b35e467-05f1-4cda-905a-03b0079e6517")
+		(uuid "0ad6a98a-be75-4fe3-a6bb-6ee00b42e8bc")
 	)
 	(wire
 		(pts
@@ -1477,16 +1471,6 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 118.11) (xy 80.01 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3a1d39a6-7dbf-4baf-ab6d-002e8104f901")
-	)
-	(wire
-		(pts
 			(xy 125.73 104.14) (xy 119.38 104.14)
 		)
 		(stroke
@@ -1567,13 +1551,23 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 118.11) (xy 58.42 118.11)
+			(xy 54.61 121.92) (xy 58.42 121.92)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "71a129d0-8029-44e8-ad80-569b4cca9bcb")
+	)
+	(wire
+		(pts
+			(xy 80.01 111.76) (xy 80.01 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "728949ba-ad13-43c4-b053-8d343586f76c")
 	)
 	(wire
 		(pts
@@ -1647,7 +1641,7 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 118.11) (xy 80.01 118.11)
+			(xy 71.12 121.92) (xy 80.01 121.92)
 		)
 		(stroke
 			(width 0)
@@ -1804,16 +1798,6 @@
 			(type default)
 		)
 		(uuid "f93320bf-3df7-4cc1-861d-fa958861c21b")
-	)
-	(wire
-		(pts
-			(xy 58.42 118.11) (xy 60.96 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fa980b65-a694-49dc-b2f3-510ead1384e6")
 	)
 	(global_label "lcd SCL"
 		(shape input)
@@ -2169,7 +2153,7 @@
 	)
 	(global_label "Button Sleep"
 		(shape input)
-		(at 54.61 118.11 180)
+		(at 54.61 121.92 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2179,7 +2163,7 @@
 		)
 		(uuid "dde1c012-712c-46be-b068-920d7ad50803")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.2879 118.11 0)
+			(at 39.2879 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3021,7 +3005,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 66.04 118.11 0)
+		(at 66.04 121.92 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3030,15 +3014,15 @@
 		(fields_autoplaced yes)
 		(uuid "8d394332-b4a9-4a7a-b656-e06ce88d5588")
 		(property "Reference" "SW5"
-			(at 66.04 110.49 0)
+			(at 66.04 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 66.04 113.03 0)
+		(property "Value" "Button_sleep"
+			(at 66.04 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3046,7 +3030,7 @@
 			)
 		)
 		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
-			(at 66.04 113.03 0)
+			(at 66.04 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3055,7 +3039,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 66.04 113.03 0)
+			(at 66.04 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3064,7 +3048,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 66.04 118.11 0)
+			(at 66.04 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3421,7 +3405,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 58.42 118.11 180)
+		(at 58.42 121.92 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3430,7 +3414,7 @@
 		(fields_autoplaced yes)
 		(uuid "b37e2f8e-a31a-4284-890d-3b1296e7f02a")
 		(property "Reference" "TP1"
-			(at 60.96 120.1419 0)
+			(at 60.96 123.9519 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3439,7 +3423,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 60.96 122.6819 0)
+			(at 60.96 126.4919 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3448,7 +3432,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_1.5x1.5mm"
-			(at 53.34 118.11 0)
+			(at 53.34 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3457,7 +3441,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 53.34 118.11 0)
+			(at 53.34 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3466,7 +3450,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 58.42 118.11 0)
+			(at 58.42 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
