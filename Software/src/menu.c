@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdint.h>
 #include "menu_helper.h"
-#include <functions_for_rooms.h>
+#include <mediator.h>
 
 #define ELM_COUNT 19
 

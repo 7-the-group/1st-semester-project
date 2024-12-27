@@ -4,6 +4,13 @@
 #include <stdlib.h>
 #include <util/delay.h>
 
+#define POTENTIOMETER1_ROOM3 2
+#define POTENTIOMETER2_ROOM3 7
+#define RED_LED 3
+#define GREEN_LED 5
+#define BLUE_LED 6
+#define BUTTON_ROOM3 4
+
 unsigned char previousButtonStateRoom3 = 1;
 ColorRGB RGBcolor;
 int prev_potentiometer_1;

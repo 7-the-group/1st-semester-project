@@ -1,4 +1,4 @@
-#include <functions_for_rooms.h>
+#include <mediator.h>
 
 #include <room_1.h>
 #include <room_2.h>

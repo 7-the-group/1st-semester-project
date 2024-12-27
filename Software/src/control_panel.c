@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <util/delay.h>
 
-#include <functions_for_rooms.h>
+#include <mediator.h>
 
 #define SDU_BOARD_TESTING 0
 

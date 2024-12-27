@@ -1,5 +1,5 @@
-#ifndef FUNCTIONS_FOR_ROOMS_H_INCLUDED
-#define FUNCTIONS_FOR_ROOMS_H_INCLUDED
+#ifndef MEDIATOR_H_INCLUDED
+#define MEDIATOR_H_INCLUDED
 
 typedef float (*get_value_func)(void);
 typedef void (*change_value_by_func)(int); // change value by n points
