@@ -17,14 +17,12 @@ void update_room_2()
 {
     int button_pressed = check_button_room_2(); // read button
     
-    // if button is pressed and it wasn't previously pressed, switch light
-    // checking if button wasn't previously pressed get rid of switching light when when button is being held for longer.
     if (button_pressed && previous_button_state == 0)
     {
         switch_light_room_2();
     }
 
-    previous_button_state = button_pressed; // set previous state of a button to current state
+    previous_button_state = button_pressed;
 }
 
 int check_button_room_2()
